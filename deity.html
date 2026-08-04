@@ -963,7 +963,7 @@ new URLSearchParams(window.location.search);
 
 const deityName =
 urlParams.get("name");
-
+const finalDeityName = deityName || "shiva";
 
 /* =================================
    LOAD PROFILE
@@ -975,7 +975,7 @@ const container =
 document.getElementById("profileContainer");
 
 const deity =
-deities[deityName];
+deities[finalDeityName];
 
 
 if (!deity) {
