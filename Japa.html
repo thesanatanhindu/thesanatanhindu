@@ -1,0 +1,1186 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Japa Mala - The Sanatan Hindu</title>
+
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+
+      font-family: 'Noto Sans Bengali', sans-serif;
+
+      min-height: 100vh;
+
+      background: linear-gradient(
+        135deg,
+        #fff8e1,
+        #ffe0b2
+      );
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 20px;
+
+    }
+
+
+    .japa-container {
+
+      width: 100%;
+
+      max-width: 520px;
+
+      background: white;
+
+      border-radius: 30px;
+
+      padding: 30px 20px 35px;
+
+      text-align: center;
+
+      box-shadow:
+        0 15px 40px
+        rgba(120, 70, 0, 0.18);
+
+    }
+
+
+    /* OM */
+
+    .om {
+
+      font-size: 52px;
+
+      color: #d88900;
+
+      margin-bottom: 5px;
+
+    }
+
+
+    h1 {
+
+      color: #8b5200;
+
+      font-size: 28px;
+
+      margin-bottom: 5px;
+
+    }
+
+
+    .subtitle {
+
+      color: #777;
+
+      font-size: 15px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    /* MANTRA BOX */
+
+    .mantra-box {
+
+      background: #fff8df;
+
+      border: 1px solid #f2cf73;
+
+      border-radius: 20px;
+
+      padding: 18px 12px;
+
+      margin-bottom: 25px;
+
+    }
+
+
+    .mantra-title {
+
+      color: #8b5200;
+
+      font-size: 18px;
+
+      font-weight: 700;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .mantra {
+
+      color: #704200;
+
+      line-height: 1.8;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .mantra:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+
+    .label {
+
+      display: block;
+
+      color: #b47700;
+
+      font-size: 13px;
+
+      margin-bottom: 3px;
+
+    }
+
+
+    .english {
+
+      font-family: Georgia, serif;
+
+      font-size: 17px;
+
+      font-weight: 600;
+
+    }
+
+
+    .sanskrit {
+
+      font-size: 19px;
+
+      font-weight: 600;
+
+    }
+
+
+    .bangla {
+
+      font-size: 17px;
+
+      font-weight: 600;
+
+    }
+
+
+    /* JAPA COUNT */
+
+    .count-box {
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .count {
+
+      font-size: 32px;
+
+      font-weight: 700;
+
+      color: #9a5b00;
+
+    }
+
+
+    .count-label {
+
+      color: #777;
+
+      font-size: 15px;
+
+      margin-top: 3px;
+
+    }
+
+
+    /* PROGRESS BAR */
+
+    .progress-container {
+
+      width: 90%;
+
+      height: 10px;
+
+      background: #eeeeee;
+
+      border-radius: 20px;
+
+      margin: 15px auto 25px;
+
+      overflow: hidden;
+
+    }
+
+
+    .progress-bar {
+
+      width: 0%;
+
+      height: 100%;
+
+      background: linear-gradient(
+        90deg,
+        #ffb300,
+        #ffd54f
+      );
+
+      border-radius: 20px;
+
+      transition:
+        width 0.3s ease;
+
+    }
+
+
+    /* ROUND JAPA AREA */
+
+    .japa-area {
+
+      width: 280px;
+
+      height: 280px;
+
+      margin: 0 auto 25px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+    }
+
+
+    /* WHITE ROUND BUTTON */
+
+    .japa-button {
+
+      width: 240px;
+
+      height: 240px;
+
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      border: 5px solid #eeeeee;
+
+      box-shadow:
+
+        0 8px 25px
+        rgba(0, 0, 0, 0.12),
+
+        inset 0 0 20px
+        rgba(0, 0, 0, 0.03);
+
+      cursor: pointer;
+
+      position: relative;
+
+      overflow: hidden;
+
+      user-select: none;
+
+      -webkit-user-select: none;
+
+      -webkit-tap-highlight-color:
+        transparent;
+
+      touch-action: manipulation;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      transition:
+        transform 0.1s ease;
+
+    }
+
+
+    /* PRESS EFFECT */
+
+    .japa-button:active {
+
+      transform:
+        scale(0.95);
+
+    }
+
+
+    .japa-icon {
+
+      font-size: 50px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .tap-text {
+
+      font-size: 18px;
+
+      font-weight: 600;
+
+      color: #666;
+
+    }
+
+
+    /* GOLDEN LIGHT */
+
+    .touch-light {
+
+      position: absolute;
+
+      width: 45px;
+
+      height: 45px;
+
+      border-radius: 50%;
+
+      background: #ffd700;
+
+      box-shadow:
+
+        0 0 10px #ffd700,
+
+        0 0 25px #ffc107,
+
+        0 0 50px #ffb300,
+
+        0 0 80px
+        rgba(255, 193, 7, 0.8);
+
+      pointer-events: none;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.2);
+
+      animation:
+        goldenTouch
+        0.7s
+        ease-out
+        forwards;
+
+      z-index: 10;
+
+    }
+
+
+    @keyframes goldenTouch {
+
+      0% {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(0.2);
+
+      }
+
+
+      40% {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1);
+
+      }
+
+
+      100% {
+
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          scale(2.8);
+
+      }
+
+    }
+
+
+    /* COMPLETE MESSAGE */
+
+    .complete-message {
+
+      display: none;
+
+      color: #b06b00;
+
+      font-size: 17px;
+
+      font-weight: 700;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    /* RESET BUTTON */
+
+    .reset-btn {
+
+      border: none;
+
+      background: #8b5200;
+
+      color: white;
+
+      padding: 12px 30px;
+
+      border-radius: 25px;
+
+      font-family: inherit;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+    }
+
+
+    .reset-btn:hover {
+
+      background: #6d3f00;
+
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 480px) {
+
+      .japa-container {
+
+        padding:
+          25px 15px 30px;
+
+      }
+
+
+      .japa-area {
+
+        width: 250px;
+
+        height: 250px;
+
+      }
+
+
+      .japa-button {
+
+        width: 215px;
+
+        height: 215px;
+
+      }
+
+
+      h1 {
+
+        font-size: 24px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <div class="japa-container">
+
+
+    <div class="om">
+
+      ॐ
+
+    </div>
+
+
+    <h1>
+
+      Japa Mala
+
+    </h1>
+
+
+    <p class="subtitle">
+
+      Hare Krishna Mahamantra
+
+    </p>
+
+
+    <!-- MANTRA -->
+
+    <div class="mantra-box">
+
+
+      <div class="mantra-title">
+
+        Hare Krishna Mahamantra
+
+      </div>
+
+
+      <!-- ENGLISH -->
+
+      <div class="mantra english">
+
+        <span class="label">
+
+          English
+
+        </span>
+
+        Hare Krishna Hare Krishna<br>
+
+        Krishna Krishna Hare Hare<br>
+
+        Hare Rama Hare Rama<br>
+
+        Rama Rama Hare Hare
+
+      </div>
+
+
+      <!-- SANSKRIT -->
+
+      <div class="mantra sanskrit">
+
+        <span class="label">
+
+          Sanskrit
+
+        </span>
+
+        हरे कृष्ण हरे कृष्ण<br>
+
+        कृष्ण कृष्ण हरे हरे<br>
+
+        हरे राम हरे राम<br>
+
+        राम राम हरे हरे
+
+      </div>
+
+
+      <!-- BANGLA -->
+
+      <div class="mantra bangla">
+
+        <span class="label">
+
+          বাংলা
+
+        </span>
+
+        হরে কৃষ্ণ হরে কৃষ্ণ<br>
+
+        কৃষ্ণ কৃষ্ণ হরে হরে<br>
+
+        হরে রাম হরে রাম<br>
+
+        রাম রাম হরে হরে
+
+      </div>
+
+
+    </div>
+
+
+    <!-- COUNT -->
+
+    <div class="count-box">
+
+      <div class="count">
+
+        <span id="count">
+
+          0
+
+        </span>
+
+        / 108
+
+      </div>
+
+
+      <div class="count-label">
+
+        আপনার সম্পন্ন করা জপ
+
+      </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress-container">
+
+      <div
+
+        class="progress-bar"
+
+        id="progressBar">
+
+      </div>
+
+    </div>
+
+
+    <!-- COMPLETE -->
+
+    <div
+
+      class="complete-message"
+
+      id="completeMessage">
+
+      🕉️ ১০৮ বার জপ সম্পূর্ণ হয়েছে 🕉️
+
+    </div>
+
+
+    <!-- ROUND JAPA BUTTON -->
+
+    <div class="japa-area">
+
+
+      <div
+
+        class="japa-button"
+
+        id="japaButton">
+
+
+        <div class="japa-icon">
+
+          📿
+
+        </div>
+
+
+        <div class="tap-text">
+
+          এখানে স্পর্শ করুন
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+    <!-- RESET -->
+
+    <button
+
+      class="reset-btn"
+
+      id="resetButton">
+
+      🔄 আবার শুরু করুন
+
+    </button>
+
+
+  </div>
+
+
+  <script>
+
+
+    /*
+      ======================================
+      JAPA COUNT STORAGE
+      ======================================
+
+      Local Storage ব্যবহার করা হয়েছে।
+
+      তাই Browser বন্ধ করলেও
+      Count মুছে যাবে না।
+
+    */
+
+
+    let count =
+
+      parseInt(
+
+        localStorage.getItem(
+          "japaCount"
+        )
+
+      ) || 0;
+
+
+    const japaButton =
+
+      document.getElementById(
+        "japaButton"
+      );
+
+
+    const countDisplay =
+
+      document.getElementById(
+        "count"
+      );
+
+
+    const progressBar =
+
+      document.getElementById(
+        "progressBar"
+      );
+
+
+    const resetButton =
+
+      document.getElementById(
+        "resetButton"
+      );
+
+
+    const completeMessage =
+
+      document.getElementById(
+        "completeMessage"
+      );
+
+
+    /*
+      ======================================
+      PAGE LOAD
+      ======================================
+    */
+
+
+    function updateDisplay() {
+
+
+      // Count show
+
+      countDisplay.textContent =
+        count;
+
+
+      // Progress
+
+      let progress =
+
+        (count / 108) * 100;
+
+
+      progressBar.style.width =
+
+        progress + "%";
+
+
+      // 108 complete
+
+      if (count >= 108) {
+
+        completeMessage.style.display =
+          "block";
+
+      }
+
+    }
+
+
+    /*
+      ======================================
+      JAPA COUNT
+      ======================================
+    */
+
+
+    function countJapa(event) {
+
+
+      // 108 এর বেশি হবে না
+
+      if (count >= 108) {
+
+        return;
+
+      }
+
+
+      // Count +1
+
+      count++;
+
+
+      /*
+        Local Storage-এ Save
+
+        Browser বন্ধ হলেও
+        Count থাকবে
+      */
+
+      localStorage.setItem(
+
+        "japaCount",
+
+        count
+
+      );
+
+
+      // Display update
+
+      updateDisplay();
+
+
+      /*
+        GOLDEN TOUCH LOCATION
+      */
+
+
+      const rect =
+
+        japaButton
+        .getBoundingClientRect();
+
+
+      let x;
+
+      let y;
+
+
+      /*
+        Mobile Touch
+      */
+
+      if (
+
+        event.touches &&
+
+        event.touches.length > 0
+
+      ) {
+
+
+        x =
+
+          event.touches[0].clientX
+
+          - rect.left;
+
+
+        y =
+
+          event.touches[0].clientY
+
+          - rect.top;
+
+
+      }
+
+
+      /*
+        Computer Mouse
+      */
+
+      else {
+
+
+        x =
+
+          event.clientX
+
+          - rect.left;
+
+
+        y =
+
+          event.clientY
+
+          - rect.top;
+
+      }
+
+
+      /*
+        Golden Light Create
+      */
+
+
+      const light =
+
+        document.createElement(
+          "div"
+        );
+
+
+      light.classList.add(
+
+        "touch-light"
+
+      );
+
+
+      light.style.left =
+
+        x + "px";
+
+
+      light.style.top =
+
+        y + "px";
+
+
+      japaButton.appendChild(
+
+        light
+
+      );
+
+
+      /*
+        Animation শেষে
+        Light Delete
+      */
+
+
+      setTimeout(
+
+        () => {
+
+          light.remove();
+
+        },
+
+        700
+
+      );
+
+
+      /*
+        Mobile Vibration
+      */
+
+
+      if (
+
+        navigator.vibrate
+
+      ) {
+
+        navigator.vibrate(30);
+
+      }
+
+
+      /*
+        108 Complete
+      */
+
+
+      if (
+
+        count === 108
+
+      ) {
+
+
+        completeMessage.style.display =
+
+          "block";
+
+
+        alert(
+
+          "🕉️ অভিনন্দন! আপনার ১০৮ বার জপ সম্পূর্ণ হয়েছে।"
+
+        );
+
+      }
+
+    }
+
+
+    /*
+      ======================================
+      MOBILE TOUCH
+      ======================================
+    */
+
+
+    japaButton.addEventListener(
+
+      "touchstart",
+
+      function(event) {
+
+
+        event.preventDefault();
+
+
+        countJapa(event);
+
+
+      },
+
+
+      {
+
+        passive: false
+
+      }
+
+    );
+
+
+    /*
+      ======================================
+      COMPUTER CLICK
+      ======================================
+    */
+
+
+    japaButton.addEventListener(
+
+      "click",
+
+      function(event) {
+
+
+        /*
+          Touch device-এ
+          Double Count বন্ধ করা
+
+        */
+
+        if (
+
+          "ontouchstart" in window
+
+        ) {
+
+          return;
+
+        }
+
+
+        countJapa(event);
+
+      }
+
+    );
+
+
+    /*
+      ======================================
+      RESET
+      ======================================
+    */
+
+
+    resetButton.addEventListener(
+
+      "click",
+
+      function() {
+
+
+        /*
+          Local Storage থেকে
+          Count Delete
+
+        */
+
+        localStorage.removeItem(
+
+          "japaCount"
+
+        );
+
+
+        count = 0;
+
+
+        updateDisplay();
+
+
+        completeMessage.style.display =
+
+          "none";
+
+
+      }
+
+    );
+
+
+    /*
+      ======================================
+      INITIAL LOAD
+      ======================================
+    */
+
+
+    updateDisplay();
+
+
+  </script>
+
+
+</body>
+
+</html>
+```

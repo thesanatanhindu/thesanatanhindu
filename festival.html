@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Durga Puja - The Sanatan Hindu</title>
+
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f5f5f5;
+
+            color: #333;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ===== HEADER ===== */
+
+
+        header {
+
+            width: 100%;
+
+            background-color: white;
+
+            padding: 18px 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+        }
+
+
+        .logo {
+
+            font-size: 26px;
+
+            font-weight: bold;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+
+        nav a {
+
+            text-decoration: none;
+
+            color: #333;
+
+            font-size: 16px;
+
+        }
+
+
+        nav a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* ===== MAIN ===== */
+
+
+        .festival-container {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: 50px auto;
+
+            padding: 20px;
+
+        }
+
+
+        .festival-header {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .festival-header h1 {
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .festival-header p {
+
+            color: #666;
+
+            font-size: 18px;
+
+        }
+
+
+        /* ===== COUNTDOWN ===== */
+
+
+        .countdown {
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .countdown h2 {
+
+            margin-bottom: 15px;
+
+        }
+
+
+        #countdownTimer {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* ===== INFO CARD ===== */
+
+
+        .info-card {
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .info-card h2 {
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .info-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .info-item {
+
+            padding: 20px;
+
+            background-color: #f8f8f8;
+
+            border-radius: 8px;
+
+        }
+
+
+        .info-item h3 {
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* ===== CONTENT ===== */
+
+
+        .content-card {
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .content-card h2 {
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .content-card p {
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* ===== FOOTER ===== */
+
+
+        footer {
+
+            width: 100%;
+
+            background-color: #222;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 50px;
+
+        }
+
+
+        /* ===== MOBILE ===== */
+
+
+        @media (max-width: 700px) {
+
+
+            header {
+
+                padding: 15px 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+
+            nav {
+
+                gap: 15px;
+
+            }
+
+
+            .festival-container {
+
+                margin: 30px auto;
+
+                padding: 15px;
+
+            }
+
+
+            .festival-header h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .info-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            #countdownTimer {
+
+                font-size: 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ===== HEADER ===== -->
+
+
+    <header>
+
+
+        <div class="logo">
+
+            The Sanatan Hindu
+
+        </div>
+
+
+        <nav>
+
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+
+            <a href="calendar.html">
+
+                Calendar
+
+            </a>
+
+
+        </nav>
+
+
+    </header>
+
+
+
+    <!-- ===== MAIN ===== -->
+
+
+    <main class="festival-container">
+
+
+        <!-- ===== TITLE ===== -->
+
+
+        <div class="festival-header">
+
+
+            <h1>
+
+                Durga Puja
+
+            </h1>
+
+
+            <p>
+
+                The great festival celebrating
+                Goddess Durga and the victory of
+                good over evil.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- ===== COUNTDOWN ===== -->
+
+
+        <div class="countdown">
+
+
+            <h2>
+
+                Countdown to Maha Shashthi
+
+            </h2>
+
+
+            <div id="countdownTimer">
+
+                Loading countdown...
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ===== FESTIVAL INFORMATION ===== -->
+
+
+        <div class="info-card">
+
+
+            <h2>
+
+                Durga Puja 2026
+
+            </h2>
+
+
+            <div class="info-grid">
+
+
+                <div class="info-item">
+
+
+                    <h3>
+
+                        Maha Shashthi
+
+                    </h3>
+
+
+                    <p>
+
+                        16 October 2026
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="info-item">
+
+
+                    <h3>
+
+                        Maha Saptami
+
+                    </h3>
+
+
+                    <p>
+
+                        18 October 2026
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="info-item">
+
+
+                    <h3>
+
+                        Maha Ashtami
+
+                    </h3>
+
+
+                    <p>
+
+                        19 October 2026
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="info-item">
+
+
+                    <h3>
+
+                        Maha Navami
+
+                    </h3>
+
+
+                    <p>
+
+                        20 October 2026
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="info-item">
+
+
+                    <h3>
+
+                        Vijaya Dashami
+
+                    </h3>
+
+
+                    <p>
+
+                        21 October 2026
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===== HISTORY ===== -->
+
+
+        <div class="content-card">
+
+
+            <h2>
+
+                About Durga Puja
+
+            </h2>
+
+
+            <p>
+
+                Durga Puja is one of the most
+                important Hindu festivals.
+                It celebrates the victory of
+                Goddess Durga over the demon
+                Mahishasura.
+
+            </p>
+
+
+            <p>
+
+                The festival represents the
+                victory of good over evil and
+                the triumph of righteousness.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- ===== RELIGIOUS SIGNIFICANCE ===== -->
+
+
+        <div class="content-card">
+
+
+            <h2>
+
+                Religious Significance
+
+            </h2>
+
+
+            <p>
+
+                Goddess Durga is worshipped
+                as a symbol of divine power,
+                strength and protection.
+
+            </p>
+
+
+            <p>
+
+                Devotees gather in temples
+                and community celebrations
+                to offer prayers and participate
+                in religious rituals.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- ===== PUJA VIDHI ===== -->
+
+
+        <div class="content-card">
+
+
+            <h2>
+
+                Puja Rituals
+
+            </h2>
+
+
+            <p>
+
+                The worship of Goddess Durga
+                includes prayers, offerings,
+                devotional songs and various
+                traditional rituals.
+
+            </p>
+
+
+            <p>
+
+                The exact rituals and timings
+                may vary according to regional
+                traditions and local Panchang.
+
+            </p>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ===== FOOTER ===== -->
+
+
+    <footer>
+
+
+        <p>
+
+            © 2026 The Sanatan Hindu
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- ===== COUNTDOWN SCRIPT ===== -->
+
+
+    <script>
+
+
+        const festivalDate =
+
+            new Date(
+
+                "October 16, 2026 00:00:00"
+
+            ).getTime();
+
+
+
+        const countdown =
+
+            setInterval(function() {
+
+
+                const now =
+
+                    new Date().getTime();
+
+
+                const distance =
+
+                    festivalDate - now;
+
+
+                const days =
+
+                    Math.floor(
+
+                        distance /
+
+                        (1000 * 60 * 60 * 24)
+
+                    );
+
+
+                const hours =
+
+                    Math.floor(
+
+                        (
+
+                            distance %
+
+                            (1000 * 60 * 60 * 24)
+
+                        )
+
+                        /
+
+                        (1000 * 60 * 60)
+
+                    );
+
+
+                const minutes =
+
+                    Math.floor(
+
+                        (
+
+                            distance %
+
+                            (1000 * 60 * 60)
+
+                        )
+
+                        /
+
+                        (1000 * 60)
+
+                    );
+
+
+                const seconds =
+
+                    Math.floor(
+
+                        (
+
+                            distance %
+
+                            (1000 * 60)
+
+                        )
+
+                        /
+
+                        1000
+
+                    );
+
+
+
+                if (distance > 0) {
+
+
+                    document.getElementById(
+
+                        "countdownTimer"
+
+                    ).innerHTML =
+
+                        days + " Days " +
+
+                        hours + " Hours " +
+
+                        minutes + " Minutes " +
+
+                        seconds + " Seconds";
+
+
+                }
+
+
+                else {
+
+
+                    document.getElementById(
+
+                        "countdownTimer"
+
+                    ).innerHTML =
+
+                        "Maha Shashthi has arrived!";
+
+
+                }
+
+
+            }, 1000);
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Temples - The Sanatan Hindu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans Bengali", "Nirmala UI", "SolaimanLipi", "Vrinda", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.language-button {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+/* TITLE */
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-title h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    color: #666;
+}
+
+/* COUNTRY TABS */
+
+.country-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.country-tabs button {
+    border: none;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 15px;
+}
+
+.country-tabs button.active {
+    background: #333;
+    color: white;
+}
+
+/* SEARCH */
+
+.search-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* TEMPLE GRID */
+
+.temple-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* TEMPLE CARD */
+
+.temple-card {
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.temple-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.temple-card h2 {
+    margin-bottom: 5px;
+}
+
+.temple-card h3 {
+    color: #777;
+    font-weight: normal;
+    margin-bottom: 18px;
+}
+
+.temple-info {
+    margin-top: 15px;
+}
+
+.temple-info p {
+    margin: 8px 0;
+}
+
+.temple-info a {
+    color: #333;
+}
+
+.details-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: #333;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* NO RESULT */
+
+.no-result {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* LANGUAGE */
+
+.bangla-content {
+    display: none;
+}
+
+.english-content {
+    display: block;
+}
+
+/* FOOTER */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        margin: 25px auto;
+        padding: 15px;
+    }
+
+    .page-title h1 {
+        font-size: 32px;
+    }
+
+    .temple-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+    The Sanatan Hindu
+</div>
+
+<nav>
+
+<a href="index.html">
+    Home
+</a>
+
+<a href="calendar.html">
+    Calendar
+</a>
+
+<a href="deities.html">
+    Deities
+</a>
+
+<a href="temples.html">
+    Temples
+</a>
+
+<button class="language-button" onclick="changeLanguage()">
+    বাংলা
+</button>
+
+</nav>
+
+</header>
+
+<!-- MAIN -->
+
+<main class="container">
+
+<!-- PAGE TITLE -->
+
+<div class="page-title">
+
+<h1 class="english-content">
+    🛕 Hindu Temples
+</h1>
+
+<h1 class="bangla-content">
+    🛕 হিন্দু মন্দিরসমূহ
+</h1>
+
+<p class="english-content">
+    Explore Hindu temples across Bangladesh and around the world.
+</p>
+
+<p class="bangla-content">
+    বাংলাদেশ ও বিশ্বের বিভিন্ন দেশের হিন্দু মন্দির সম্পর্কে জানুন।
+</p>
+
+</div>
+
+<!-- COUNTRY TABS -->
+
+<div class="country-tabs">
+
+<button class="active" onclick="selectCountry('Bangladesh', this)">
+    🇧🇩 Bangladesh
+</button>
+
+<button onclick="selectCountry('India', this)">
+    🇮🇳 India
+</button>
+
+<button onclick="selectCountry('Nepal', this)">
+    🇳🇵 Nepal
+</button>
+
+<button onclick="selectCountry('Sri Lanka', this)">
+    🇱🇰 Sri Lanka
+</button>
+
+<button onclick="selectCountry('USA', this)">
+    🇺🇸 USA
+</button>
+
+<button onclick="selectCountry('UK', this)">
+    🇬🇧 UK
+</button>
+
+<button onclick="selectCountry('Australia', this)">
+    🇦🇺 Australia
+</button>
+
+<button onclick="selectCountry('Canada', this)">
+    🇨🇦 Canada
+</button>
+
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Temple..."
+onkeyup="searchTemples()">
+
+</div>
+
+<!-- TEMPLE LIST -->
+
+<div id="templeGrid" class="temple-grid">
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 The Sanatan Hindu
+</p>
+
+</footer>
+
+<script>
+
+
+/* =========================================
+   TEMPLE DATABASE
+========================================= */
+
+const temples = [
+
+/* 1 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Dhakeshwari National Temple",
+
+nameBangla: "ঢাকেশ্বরী জাতীয় মন্দির",
+
+locationEnglish: "Old Dhaka, Dhaka, Bangladesh",
+
+locationBangla: "পুরান ঢাকা, ঢাকা, বাংলাদেশ",
+
+deityEnglish: "Goddess Dhakeshwari",
+
+deityBangla: "দেবী ঢাকেশ্বরী",
+
+aboutEnglish:
+"Dhakeshwari National Temple is one of the most important Hindu temples in Bangladesh and is recognized as the National Temple of Bangladesh.",
+
+aboutBangla:
+"ঢাকেশ্বরী জাতীয় মন্দির বাংলাদেশের অন্যতম গুরুত্বপূর্ণ হিন্দু মন্দির এবং এটি বাংলাদেশের জাতীয় মন্দির হিসেবে পরিচিত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Dhakeshwari+National+Temple+Dhaka"
+
+},
+
+
+/* 2 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Ramakrishna Math and Ramakrishna Mission, Dhaka",
+
+nameBangla: "রামকৃষ্ণ মঠ ও রামকৃষ্ণ মিশন, ঢাকা",
+
+locationEnglish: "27 Ramakrishna Mission Road, Dhaka-1203, Bangladesh",
+
+locationBangla: "২৭ রামকৃষ্ণ মিশন রোড, ঢাকা-১২০৩, বাংলাদেশ",
+
+deityEnglish: "Sri Ramakrishna",
+
+deityBangla: "শ্রী রামকৃষ্ণ",
+
+aboutEnglish:
+"Ramakrishna Math and Ramakrishna Mission, Dhaka is a religious and philanthropic institution associated with the Ramakrishna Order.",
+
+aboutBangla:
+"রামকৃষ্ণ মঠ ও রামকৃষ্ণ মিশন, ঢাকা রামকৃষ্ণ সংঘের সঙ্গে যুক্ত একটি ধর্মীয় ও জনকল্যাণমূলক প্রতিষ্ঠান।",
+
+phone: "+880-2-226640455",
+
+email: "dhaka@rkmm.org",
+
+website: "https://dhakarkmm.org/",
+
+hoursEnglish: "Please check the official website before visiting.",
+
+hoursBangla: "যাওয়ার আগে অফিসিয়াল ওয়েবসাইট দেখে নিন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Ramakrishna+Mission+Dhaka"
+
+},
+
+
+/* 3 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Chatteshwari Temple",
+
+nameBangla: "চট্টেশ্বরী মন্দির",
+
+locationEnglish: "Chattogram, Bangladesh",
+
+locationBangla: "চট্টগ্রাম, বাংলাদেশ",
+
+deityEnglish: "Goddess Chatteshwari",
+
+deityBangla: "দেবী চট্টেশ্বরী",
+
+aboutEnglish:
+"Chatteshwari Temple is a historic Hindu temple associated with the city of Chattogram and is dedicated to Goddess Chatteshwari.",
+
+aboutBangla:
+"চট্টেশ্বরী মন্দির চট্টগ্রাম শহরের সঙ্গে যুক্ত একটি ঐতিহাসিক হিন্দু মন্দির। মন্দিরটি দেবী চট্টেশ্বরীর উদ্দেশে নিবেদিত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Chatteshwari+Temple+Chattogram"
+
+},
+
+
+/* 4 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Chandranath Temple",
+
+nameBangla: "চন্দ্রনাথ মন্দির",
+
+locationEnglish: "Chandranath Hill, Sitakunda, Chattogram, Bangladesh",
+
+locationBangla: "চন্দ্রনাথ পাহাড়, সীতাকুণ্ড, চট্টগ্রাম, বাংলাদেশ",
+
+deityEnglish: "Lord Shiva / Chandrashekhar",
+
+deityBangla: "শিব / চন্দ্রশেখর",
+
+aboutEnglish:
+"Chandranath Temple is located on Chandranath Hill near Sitakunda. The site is regarded in Hindu tradition as a Shakti Peetha and is an important pilgrimage destination.",
+
+aboutBangla:
+"চন্দ্রনাথ মন্দির সীতাকুণ্ডের কাছে চন্দ্রনাথ পাহাড়ে অবস্থিত। হিন্দু ঐতিহ্যে এই স্থানটি একটি শক্তিপীঠ হিসেবে বিবেচিত এবং এটি একটি গুরুত্বপূর্ণ তীর্থস্থান।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Chandranath+Temple+Sitakunda"
+
+},
+
+
+/* 5 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Kantajew Temple",
+
+nameBangla: "কান্তজিউ মন্দির",
+
+locationEnglish: "Kantanagar, Dinajpur, Bangladesh",
+
+locationBangla: "কান্তনগর, দিনাজপুর, বাংলাদেশ",
+
+deityEnglish: "Lord Krishna",
+
+deityBangla: "ভগবান কৃষ্ণ",
+
+aboutEnglish:
+"Kantajew Temple, also known as Kantaji Temple, is a famous historic Hindu temple in Dinajpur and is renowned for its elaborate terracotta decoration.",
+
+aboutBangla:
+"কান্তজিউ মন্দির, যা কান্তজি মন্দির নামেও পরিচিত, দিনাজপুরের একটি বিখ্যাত ঐতিহাসিক হিন্দু মন্দির। এর অসাধারণ টেরাকোটা অলংকরণের জন্য এটি বিশেষভাবে পরিচিত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Kantajew+Temple+Dinajpur"
+
+},
+
+
+/* 6 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Adinath Temple",
+
+nameBangla: "আদিনাথ মন্দির",
+
+locationEnglish: "Mainak Hill, Maheshkhali, Cox's Bazar, Bangladesh",
+
+locationBangla: "মৈনাক পাহাড়, মহেশখালী, কক্সবাজার, বাংলাদেশ",
+
+deityEnglish: "Lord Shiva",
+
+deityBangla: "ভগবান শিব",
+
+aboutEnglish:
+"Adinath Temple is a historic Hindu temple located on Mainak Hill in Maheshkhali. The temple is associated with the worship of Lord Shiva.",
+
+aboutBangla:
+"আদিনাথ মন্দির মহেশখালীর মৈনাক পাহাড়ে অবস্থিত একটি ঐতিহাসিক হিন্দু মন্দির। মন্দিরটি ভগবান শিবের উপাসনার সঙ্গে যুক্ত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Adinath+Temple+Maheshkhali"
+
+},
+
+
+/* 7 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Puthia Temple Complex",
+
+nameBangla: "পুঠিয়া মন্দির কমপ্লেক্স",
+
+locationEnglish: "Puthia, Rajshahi, Bangladesh",
+
+locationBangla: "পুঠিয়া, রাজশাহী, বাংলাদেশ",
+
+deityEnglish: "Various Hindu Deities",
+
+deityBangla: "বিভিন্ন হিন্দু দেব-দেবী",
+
+aboutEnglish:
+"Puthia Temple Complex is a historic group of Hindu temples in Rajshahi. The complex is known for its distinctive architecture and religious heritage.",
+
+aboutBangla:
+"পুঠিয়া মন্দির কমপ্লেক্স রাজশাহীর একটি ঐতিহাসিক হিন্দু মন্দিরসমষ্টি। এর বিশেষ স্থাপত্য ও ধর্মীয় ঐতিহ্যের জন্য এটি পরিচিত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Puthia+Temple+Complex+Rajshahi"
+
+},
+
+
+/* 8 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Shiva Temple, Puthia",
+
+nameBangla: "শিব মন্দির, পুঠিয়া",
+
+locationEnglish: "Puthia, Rajshahi, Bangladesh",
+
+locationBangla: "পুঠিয়া, রাজশাহী, বাংলাদেশ",
+
+deityEnglish: "Lord Shiva",
+
+deityBangla: "ভগবান শিব",
+
+aboutEnglish:
+"The Shiva Temple at Puthia is one of the notable temples within the historic Puthia temple area.",
+
+aboutBangla:
+"পুঠিয়ার শিব মন্দির ঐতিহাসিক পুঠিয়া মন্দির এলাকার অন্যতম উল্লেখযোগ্য মন্দির।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Shiva+Temple+Puthia+Rajshahi"
+
+},
+
+
+/* 9 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Siddheshwari Kali Temple",
+
+nameBangla: "সিদ্ধেশ্বরী কালী মন্দির",
+
+locationEnglish: "Siddheshwari, Dhaka, Bangladesh",
+
+locationBangla: "সিদ্ধেশ্বরী, ঢাকা, বাংলাদেশ",
+
+deityEnglish: "Goddess Kali",
+
+deityBangla: "দেবী কালী",
+
+aboutEnglish:
+"Siddheshwari Kali Temple is a historic Hindu temple in Dhaka associated with the worship of Goddess Kali.",
+
+aboutBangla:
+"সিদ্ধেশ্বরী কালী মন্দির ঢাকার একটি ঐতিহাসিক হিন্দু মন্দির, যা দেবী কালীর উপাসনার সঙ্গে যুক্ত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Siddheshwari+Kali+Temple+Dhaka"
+
+},
+
+
+/* 10 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Joy Kali Temple",
+
+nameBangla: "জয়কালী মন্দির",
+
+locationEnglish: "Dhaka, Bangladesh",
+
+locationBangla: "ঢাকা, বাংলাদেশ",
+
+deityEnglish: "Goddess Kali",
+
+deityBangla: "দেবী কালী",
+
+aboutEnglish:
+"Joy Kali Temple is a Hindu temple in Dhaka dedicated to Goddess Kali and is associated with the city's Hindu religious heritage.",
+
+aboutBangla:
+"জয়কালী মন্দির ঢাকার একটি হিন্দু মন্দির, যা দেবী কালীর উপাসনার জন্য পরিচিত এবং শহরের হিন্দু ধর্মীয় ঐতিহ্যের সঙ্গে যুক্ত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Joy+Kali+Temple+Dhaka"
+
+},
+
+
+/* 11 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Loknath Brahmachari Ashram",
+
+nameBangla: "লোকনাথ ব্রহ্মচারী আশ্রম",
+
+locationEnglish: "Baradi, Sonargaon, Narayanganj, Bangladesh",
+
+locationBangla: "বারদী, সোনারগাঁও, নারায়ণগঞ্জ, বাংলাদেশ",
+
+deityEnglish: "Baba Loknath Brahmachari",
+
+deityBangla: "বাবা লোকনাথ ব্রহ্মচারী",
+
+aboutEnglish:
+"Baradi Ashram is associated with the spiritual life and teachings of Baba Loknath Brahmachari and is an important pilgrimage destination for his devotees.",
+
+aboutBangla:
+"বারদী আশ্রম বাবা লোকনাথ ব্রহ্মচারীর আধ্যাত্মিক জীবন ও শিক্ষার সঙ্গে যুক্ত এবং তাঁর ভক্তদের জন্য এটি একটি গুরুত্বপূর্ণ তীর্থস্থান।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Loknath+Brahmachari+Ashram+Baradi"
+
+},
+
+
+/* 12 */
+
+{
+
+country: "Bangladesh",
+
+nameEnglish: "Jagannath Temple, Dhaka",
+
+nameBangla: "জগন্নাথ মন্দির, ঢাকা",
+
+locationEnglish: "Dhaka, Bangladesh",
+
+locationBangla: "ঢাকা, বাংলাদেশ",
+
+deityEnglish: "Lord Jagannath",
+
+deityBangla: "ভগবান জগন্নাথ",
+
+aboutEnglish:
+"Jagannath worship has a long tradition in Bangladesh. Various Jagannath temples and shrines are associated with Vaishnava religious heritage.",
+
+aboutBangla:
+"বাংলাদেশে জগন্নাথ উপাসনার দীর্ঘ ঐতিহ্য রয়েছে। বিভিন্ন জগন্নাথ মন্দির ও মঠ বৈষ্ণব ধর্মীয় ঐতিহ্যের সঙ্গে যুক্ত।",
+
+phone: "Not officially verified",
+
+email: "Not officially verified",
+
+website: "Not officially verified",
+
+hoursEnglish: "Please check locally before visiting.",
+
+hoursBangla: "যাওয়ার আগে স্থানীয়ভাবে সময়সূচি যাচাই করুন।",
+
+maps:
+"https://www.google.com/maps/search/?api=1&query=Jagannath+Temple+Dhaka"
+
+}
+
+];
+
+
+/* =========================================
+   CURRENT COUNTRY
+========================================= */
+
+let currentCountry = "Bangladesh";
+
+
+/* =========================================
+   DISPLAY TEMPLES
+========================================= */
+
+function displayTemples() {
+
+const grid =
+document.getElementById("templeGrid");
+
+const searchValue =
+document.getElementById("searchInput").value.toLowerCase();
+
+
+const filteredTemples =
+temples.filter(function(temple) {
+
+const countryMatch =
+temple.country === currentCountry;
+
+const searchMatch =
+temple.nameEnglish.toLowerCase().includes(searchValue) ||
+temple.nameBangla.includes(searchValue);
+
+return countryMatch && searchMatch;
+
+});
+
+
+if (filteredTemples.length === 0) {
+
+grid.innerHTML = `
+
+<div class="no-result">
+
+<h2 class="english-content">
+No temples found
+</h2>
+
+<h2 class="bangla-content">
+কোনো মন্দির পাওয়া যায়নি
+</h2>
+
+<p class="english-content">
+More temples will be added soon.
+</p>
+
+<p class="bangla-content">
+আরও মন্দিরের তথ্য শীঘ্রই যোগ করা হবে।
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+grid.innerHTML =
+filteredTemples.map(function(temple) {
+
+return `
+
+<div class="temple-card">
+
+<div class="temple-icon">
+🛕
+</div>
+
+
+<h2 class="english-content">
+${temple.nameEnglish}
+</h2>
+
+<h2 class="bangla-content">
+${temple.nameBangla}
+</h2>
+
+
+<h3 class="english-content">
+${temple.deityEnglish}
+</h3>
+
+<h3 class="bangla-content">
+${temple.deityBangla}
+</h3>
+
+
+<div class="temple-info">
+
+
+<p>
+
+<strong>
+📍 Location:
+</strong>
+
+<span class="english-content">
+${temple.locationEnglish}
+</span>
+
+<span class="bangla-content">
+${temple.locationBangla}
+</span>
+
+</p>
+
+
+<p>
+
+<strong>
+📞 Contact Number:
+</strong>
+
+${temple.phone}
+
+</p>
+
+
+<p>
+
+<strong>
+📧 Email:
+</strong>
+
+${temple.email}
+
+</p>
+
+
+<p>
+
+<strong>
+🌐 Official Website:
+</strong>
+
+${temple.website}
+
+</p>
+
+
+<p>
+
+<strong class="english-content">
+🕐 Opening Hours:
+</strong>
+
+<strong class="bangla-content">
+🕐 খোলার সময়:
+</strong>
+
+<span class="english-content">
+${temple.hoursEnglish}
+</span>
+
+<span class="bangla-content">
+${temple.hoursBangla}
+</span>
+
+</p>
+
+
+<p>
+
+<strong class="english-content">
+📖 About Temple:
+</strong>
+
+<strong class="bangla-content">
+📖 মন্দির সম্পর্কে:
+</strong>
+
+</p>
+
+
+<p class="english-content">
+${temple.aboutEnglish}
+</p>
+
+<p class="bangla-content">
+${temple.aboutBangla}
+</p>
+
+
+<a
+href="${temple.maps}"
+target="_blank"
+class="details-button">
+
+🗺️
+
+<span class="english-content">
+View on Google Maps
+</span>
+
+<span class="bangla-content">
+Google Maps-এ দেখুন
+</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+
+}
+
+
+/* =========================================
+   COUNTRY SELECT
+========================================= */
+
+function selectCountry(country, button) {
+
+currentCountry = country;
+
+document
+.querySelectorAll(".country-tabs button")
+.forEach(function(btn) {
+
+btn.classList.remove("active");
+
+});
+
+
+button.classList.add("active");
+
+displayTemples();
+
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+function searchTemples() {
+
+displayTemples();
+
+}
+
+
+/* =========================================
+   LANGUAGE SWITCH
+========================================= */
+
+function changeLanguage() {
+
+const englishElements =
+document.querySelectorAll(".english-content");
+
+const banglaElements =
+document.querySelectorAll(".bangla-content");
+
+const button =
+document.querySelector(".language-button");
+
+
+const isEnglish =
+englishElements.length > 0 &&
+englishElements[0].style.display !== "none";
+
+
+englishElements.forEach(function(element) {
+
+element.style.display =
+isEnglish ? "none" : "block";
+
+});
+
+
+banglaElements.forEach(function(element) {
+
+element.style.display =
+isEnglish ? "block" : "none";
+
+});
+
+
+button.innerText =
+isEnglish ? "English" : "বাংলা";
+
+}
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+displayTemples();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hindu Calendar - The Sanatan Hindu</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .language-button {
+            padding: 9px 16px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* MAIN */
+
+        .calendar-container {
+            width: 100%;
+            max-width: 950px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .calendar-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .calendar-title h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .calendar-title p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* SELECTORS */
+
+        .selectors {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        select {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        /* CALENDAR CARD */
+
+        .calendar-card {
+            width: 100%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .month-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* FESTIVAL */
+
+        .festival {
+            width: 100%;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .festival:hover {
+            background-color: #f8f8f8;
+        }
+
+        .festival:last-child {
+            border-bottom: none;
+        }
+
+        .festival h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .festival p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .click-text {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .no-event {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
+        /* FOOTER */
+
+        footer {
+            width: 100%;
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .calendar-container {
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            .calendar-title h1 {
+                font-size: 30px;
+            }
+
+            .selectors {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            select {
+                width: 80%;
+            }
+
+            .calendar-card {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            The Sanatan Hindu
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+
+            <a href="calendar.html">
+
+                Calendar
+
+            </a>
+
+
+            <button
+                class="language-button"
+                onclick="changeLanguage()">
+
+                বাংলা
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="calendar-container">
+
+
+        <div class="calendar-title">
+
+            <h1 id="pageTitle">
+
+                Hindu Calendar
+
+            </h1>
+
+
+            <p id="pageDescription">
+
+                Explore Hindu festivals and important religious dates.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- YEAR AND MONTH -->
+
+        <div class="selectors">
+
+
+            <select
+                id="yearSelect"
+                onchange="updateCalendar()">
+
+
+                <option value="2026">
+
+                    2026
+
+                </option>
+
+
+                <option value="2027">
+
+                    2027
+
+                </option>
+
+
+                <option value="2028">
+
+                    2028
+
+                </option>
+
+
+                <option value="2029">
+
+                    2029
+
+                </option>
+
+
+                <option value="2030">
+
+                    2030
+
+                </option>
+
+
+            </select>
+
+
+
+            <select
+                id="monthSelect"
+                onchange="updateCalendar()">
+
+
+                <option value="January">
+
+                    January
+
+                </option>
+
+
+                <option value="February">
+
+                    February
+
+                </option>
+
+
+                <option value="March">
+
+                    March
+
+                </option>
+
+
+                <option value="April">
+
+                    April
+
+                </option>
+
+
+                <option value="May">
+
+                    May
+
+                </option>
+
+
+                <option value="June">
+
+                    June
+
+                </option>
+
+
+                <option value="July">
+
+                    July
+
+                </option>
+
+
+                <option value="August">
+
+                    August
+
+                </option>
+
+
+                <option value="September">
+
+                    September
+
+                </option>
+
+
+                <option value="October" selected>
+
+                    October
+
+                </option>
+
+
+                <option value="November">
+
+                    November
+
+                </option>
+
+
+                <option value="December">
+
+                    December
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- CALENDAR CARD -->
+
+        <div class="calendar-card">
+
+
+            <h2
+                class="month-title"
+                id="monthTitle">
+
+                October 2026
+
+            </h2>
+
+
+            <div id="festivalList">
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2026 The Sanatan Hindu
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        /* CALENDAR DATA */
+
+
+        const calendarData = {
+
+
+            "2026": {
+
+
+                "January": [
+
+                    "Makara Sankranti — 14 January 2026",
+
+                    "Vasant Panchami — 23 January 2026"
+
+                ],
+
+
+                "February": [
+
+                    "Maha Shivaratri — 15 February 2026"
+
+                ],
+
+
+                "March": [
+
+                    "Holi — 4 March 2026",
+
+                    "Chaitra Navratri Begins — 19 March 2026",
+
+                    "Rama Navami — 26 March 2026"
+
+                ],
+
+
+                "April": [
+
+                    "Hanuman Jayanti — Date to be verified",
+
+                    "Akshaya Tritiya — Date to be verified"
+
+                ],
+
+
+                "May": [
+
+                    "Narasimha Jayanti — Date to be verified",
+
+                    "Buddha Purnima — Date to be verified"
+
+                ],
+
+
+                "June": [
+
+                    "Ganga Dussehra — Date to be verified",
+
+                    "Jagannath Rath Yatra — Date to be verified"
+
+                ],
+
+
+                "July": [
+
+                    "Guru Purnima — Date to be verified"
+
+                ],
+
+
+                "August": [
+
+                    "Raksha Bandhan — Date to be verified",
+
+                    "Janmashtami — Date to be verified"
+
+                ],
+
+
+                "September": [
+
+                    "Ganesh Chaturthi — Date to be verified"
+
+                ],
+
+
+                "October": [
+
+                    "Mahalaya — 10 October 2026",
+
+                    "Navratri Begins — 11 October 2026",
+
+                    "Maha Shashthi — 16 October 2026",
+
+                    "Maha Saptami — 18 October 2026",
+
+                    "Maha Ashtami — 19 October 2026",
+
+                    "Maha Navami — 20 October 2026",
+
+                    "Vijaya Dashami — 21 October 2026"
+
+                ],
+
+
+                "November": [
+
+                    "Dhanteras — Date to be verified",
+
+                    "Diwali — Date to be verified",
+
+                    "Kali Puja — Date to be verified",
+
+                    "Bhai Dooj — Date to be verified"
+
+                ],
+
+
+                "December": [
+
+                    "Gita Jayanti — Date to be verified"
+
+                ]
+
+            },
+
+
+            "2027": {
+
+
+                "January": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "February": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "March": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "April": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "May": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "June": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "July": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "August": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "September": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "October": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "November": [
+
+                    "Festival information will be added soon."
+
+                ],
+
+
+                "December": [
+
+                    "Festival information will be added soon."
+
+                ]
+
+            }
+
+        };
+
+
+
+        /* UPDATE CALENDAR */
+
+
+        function updateCalendar() {
+
+
+            const year =
+
+                document.getElementById(
+
+                    "yearSelect"
+
+                ).value;
+
+
+            const month =
+
+                document.getElementById(
+
+                    "monthSelect"
+
+                ).value;
+
+
+            const monthTitle =
+
+                document.getElementById(
+
+                    "monthTitle"
+
+                );
+
+
+            const festivalList =
+
+                document.getElementById(
+
+                    "festivalList"
+
+                );
+
+
+            monthTitle.innerText =
+
+                month + " " + year;
+
+
+            festivalList.innerHTML = "";
+
+
+
+            if (
+
+                calendarData[year] &&
+
+                calendarData[year][month]
+
+            ) {
+
+
+                const events =
+
+                    calendarData[year][month];
+
+
+
+                events.forEach(function(event) {
+
+
+                    const festival =
+
+                        document.createElement(
+
+                            "div"
+
+                        );
+
+
+                    festival.className =
+
+                        "festival";
+
+
+                    festival.innerHTML =
+
+                        "<h3>" +
+
+                        event +
+
+                        "</h3>" +
+
+                        "<p class='click-text'>" +
+
+                        "Click to view details →" +
+
+                        "</p>";
+
+
+
+                    festival.onclick =
+
+                        function() {
+
+
+                            if (
+
+                                event.includes(
+
+                                    "Maha Shashthi"
+
+                                ) ||
+
+                                event.includes(
+
+                                    "Maha Saptami"
+
+                                ) ||
+
+                                event.includes(
+
+                                    "Maha Ashtami"
+
+                                ) ||
+
+                                event.includes(
+
+                                    "Maha Navami"
+
+                                ) ||
+
+                                event.includes(
+
+                                    "Vijaya Dashami"
+
+                                ) ||
+
+                                event.includes(
+
+                                    "Mahalaya"
+
+                                ) ||
+
+                                event.includes(
+
+                                    "Navratri"
+
+                                )
+
+                            ) {
+
+
+                                window.location.href =
+
+                                    "festival.html";
+
+                            }
+
+
+                        };
+
+
+
+                    festivalList.appendChild(
+
+                        festival
+
+                    );
+
+
+                });
+
+
+            }
+
+
+            else {
+
+
+                festivalList.innerHTML =
+
+                    '<div class="no-event">' +
+
+                    'Festival information will be added soon.' +
+
+                    '</div>';
+
+            }
+
+        }
+
+
+
+        /* LANGUAGE SWITCH */
+
+
+        function changeLanguage() {
+
+
+            const title =
+
+                document.getElementById(
+
+                    "pageTitle"
+
+                );
+
+
+            const description =
+
+                document.getElementById(
+
+                    "pageDescription"
+
+                );
+
+
+            if (
+
+                title.innerText ===
+
+                "Hindu Calendar"
+
+            ) {
+
+
+                title.innerText =
+
+                    "হিন্দু ক্যালেন্ডার";
+
+
+                description.innerText =
+
+                    "হিন্দু ধর্মীয় উৎসব ও গুরুত্বপূর্ণ তারিখ দেখুন।";
+
+            }
+
+
+            else {
+
+
+                title.innerText =
+
+                    "Hindu Calendar";
+
+
+                description.innerText =
+
+                    "Explore Hindu festivals and important religious dates.";
+
+            }
+
+        }
+
+
+
+        /* LOAD CALENDAR */
+
+
+        updateCalendar();
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deity Profile - The Sanatan Hindu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans Bengali", "Nirmala UI", "SolaimanLipi", "Vrinda", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.7;
+}
+/* HEADER */
+
+header {
+    width: 100%;
+    background-color: white;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.language-button {
+    padding: 9px 16px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* MAIN */
+
+.profile-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* PROFILE HEADER */
+
+.profile-header {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.deity-icon {
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+.profile-header h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.profile-header h2 {
+    color: #777;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.profile-intro {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+    color: #555;
+}
+
+/* LANGUAGE */
+
+.english-content {
+    display: block;
+}
+
+.bangla-content {
+    display: none;
+}
+
+/* INFO GRID */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.info-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.info-card h2 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.info-card p {
+    color: #555;
+}
+
+/* CONTENT */
+
+.content-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    margin-bottom: 25px;
+}
+
+.content-section h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* RELATED */
+
+.related {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    margin-bottom: 25px;
+}
+
+.related h2 {
+    margin-bottom: 20px;
+}
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.related-links a {
+    text-decoration: none;
+    color: #333;
+    background-color: #f1f1f1;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+.related-links a:hover {
+    background-color: #ddd;
+}
+
+/* ERROR */
+
+.error-message {
+    text-align: center;
+    background-color: white;
+    padding: 50px;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .profile-container {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .profile-header {
+        padding: 25px 20px;
+    }
+
+    .profile-header h1 {
+        font-size: 32px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 22px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+    The Sanatan Hindu
+</div>
+
+<nav>
+
+<a href="index.html">
+    Home
+</a>
+
+<a href="calendar.html">
+    Calendar
+</a>
+
+<a href="deities.html">
+    Deities
+</a>
+
+<button
+class="language-button"
+onclick="changeLanguage()">
+    বাংলা
+</button>
+
+</nav>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main
+class="profile-container"
+id="profileContainer">
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+    © 2026 The Sanatan Hindu
+</p>
+
+</footer>
+
+
+<script>
+
+/* =================================
+   DEITY DATABASE
+================================= */
+
+const deities = {
+
+shiva: {
+
+icon: "🔱",
+
+banglaName: "শিব",
+
+englishName: "Lord Shiva",
+
+introBangla:
+"শিব হিন্দু ধর্মের অন্যতম প্রধান দেবতা। তাঁকে মহাদেব, মহেশ্বর, রুদ্র, নটরাজসহ বিভিন্ন নামে অভিহিত করা হয়। তিনি তপস্যা, যোগ, রূপান্তর ও আধ্যাত্মিক শক্তির সঙ্গে গভীরভাবে যুক্ত।",
+
+introEnglish:
+"Shiva is one of the principal deities of Hinduism. He is known by many names including Mahadeva, Maheshvara, Rudra and Nataraja. He is deeply associated with meditation, yoga, transformation and spiritual power.",
+
+namesBangla:
+"মহাদেব, মহেশ্বর, রুদ্র, নটরাজ, শম্ভু, শংকর, পশুপতি।",
+
+namesEnglish:
+"Mahadeva, Maheshvara, Rudra, Nataraja, Shambhu, Shankara and Pashupati.",
+
+identityBangla:
+"শৈব ঐতিহ্যে শিবকে সর্বোচ্চ ঈশ্বর হিসেবে পূজা করা হয়। তিনি সৃষ্টির ধ্বংস বা লয়ের পাশাপাশি পুনর্নবীকরণ ও রূপান্তরের প্রতীক।",
+
+identityEnglish:
+"In Shaiva traditions, Shiva is worshipped as the Supreme Being. He is associated not only with dissolution but also with renewal, transformation and spiritual liberation.",
+
+familyBangla:
+"শিবের সহধর্মিণী পার্বতী। তাঁদের সন্তান হিসেবে গণেশ ও কার্তিকেয়কে বিশেষভাবে উল্লেখ করা হয়।",
+
+familyEnglish:
+"Parvati is regarded as Shiva's consort. Ganesha and Kartikeya are traditionally regarded as their sons.",
+
+symbolsBangla:
+"ত্রিশূল, ডমরু, জটা, গঙ্গা, অর্ধচন্দ্র, সাপ এবং নন্দী শিবের গুরুত্বপূর্ণ প্রতীক।",
+
+symbolsEnglish:
+"The trident, damaru drum, matted hair, Ganga, crescent moon, serpent and Nandi are among Shiva's major symbols.",
+
+worshipBangla:
+"শিবলিঙ্গ ও শিবের মূর্তির উপাসনা হিন্দু ধর্মে অত্যন্ত প্রচলিত। সোমবার এবং মহাশিবরাত্রি শিব উপাসনার বিশেষ সময়।",
+
+worshipEnglish:
+"Worship of the Shiva Linga and images of Shiva is widespread. Mondays and Maha Shivaratri are especially important occasions for Shiva worship.",
+
+storiesBangla:
+"শিবকে কেন্দ্র করে বহু পুরাণকাহিনি প্রচলিত। সমুদ্র মন্থনের সময় হালাহল বিষ ধারণ করে নীলকণ্ঠ হওয়া এবং গঙ্গাকে জটায় ধারণ করার কাহিনি বিশেষভাবে পরিচিত।",
+
+storiesEnglish:
+"Many sacred stories are associated with Shiva. Among the best known are his drinking of the halahala poison during the churning of the ocean and receiving the descent of the Ganga upon his matted hair.",
+
+festivalsBangla:
+"মহাশিবরাত্রি শিবের প্রধান উৎসব। এছাড়াও শ্রাবণ মাসে শিব উপাসনার বিশেষ গুরুত্ব রয়েছে।",
+
+festivalsEnglish:
+"Maha Shivaratri is the principal festival dedicated to Shiva. The month of Shravana is also considered especially important for his worship.",
+
+mantraBangla:
+"ওঁ নমঃ শিবায় — এটি শিবের অন্যতম প্রসিদ্ধ মন্ত্র।",
+
+mantraEnglish:
+"Om Namah Shivaya is one of the most widely known mantras dedicated to Shiva.",
+
+templesBangla:
+"কাশী বিশ্বনাথ, কেদারনাথ, সোমনাথ, মহাকালেশ্বর, ত্র্যম্বকেশ্বরসহ বহু গুরুত্বপূর্ণ শিব মন্দির রয়েছে।",
+
+templesEnglish:
+"Important Shiva temples include Kashi Vishwanath, Kedarnath, Somnath, Mahakaleshwar and Tryambakeshwar."
+
+},
+
+vishnu: {
+
+icon: "🪷",
+
+banglaName: "বিষ্ণু",
+
+englishName: "Lord Vishnu",
+
+introBangla:
+"বিষ্ণু হিন্দু ধর্মের অন্যতম প্রধান দেবতা এবং বৈষ্ণব ঐতিহ্যে সর্বোচ্চ ঈশ্বর হিসেবে পূজিত। তিনি জগতের পালন, সংরক্ষণ ও ধর্ম রক্ষার সঙ্গে যুক্ত।",
+
+introEnglish:
+"Vishnu is one of the principal deities of Hinduism and is worshipped as the Supreme Being in Vaishnavism. He is associated with the preservation of the universe and protection of dharma.",
+
+namesBangla:
+"নারায়ণ, হরি, গোবিন্দ, কেশব, মাধব, পদ্মনাভ।",
+
+namesEnglish:
+"Narayana, Hari, Govinda, Keshava, Madhava and Padmanabha.",
+
+identityBangla:
+"বৈষ্ণব দর্শনে বিষ্ণু সর্বোচ্চ ঈশ্বর। তিনি ধর্ম প্রতিষ্ঠার জন্য বিভিন্ন অবতার গ্রহণ করেন বলে বিশ্বাস করা হয়।",
+
+identityEnglish:
+"In Vaishnava traditions, Vishnu is regarded as the Supreme Being. He is believed to manifest through various avatars for the protection of dharma.",
+
+familyBangla:
+"লক্ষ্মীকে বিষ্ণুর সহধর্মিণী হিসেবে পূজা করা হয়।",
+
+familyEnglish:
+"Lakshmi is traditionally regarded as the consort of Vishnu.",
+
+symbolsBangla:
+"শঙ্খ, চক্র, গদা ও পদ্ম বিষ্ণুর প্রধান চারটি প্রতীক। তাঁর বাহন গরুড়।",
+
+symbolsEnglish:
+"The conch, discus, mace and lotus are Vishnu's four principal attributes. His traditional vehicle is Garuda.",
+
+worshipBangla:
+"বিষ্ণুর উপাসনা বৈষ্ণব ধর্মীয় ঐতিহ্যের কেন্দ্রে রয়েছে। ভক্তি, নামসংকীর্তন ও মন্দির পূজা তাঁর উপাসনার গুরুত্বপূর্ণ অংশ।",
+
+worshipEnglish:
+"Worship of Vishnu is central to Vaishnava traditions. Devotion, chanting divine names and temple worship are important forms of practice.",
+
+storiesBangla:
+"বিষ্ণুর দশ অবতার সম্পর্কিত কাহিনি হিন্দু ধর্মীয় ঐতিহ্যে অত্যন্ত গুরুত্বপূর্ণ। রাম ও কৃষ্ণ তাঁর সর্বাধিক জনপ্রিয় অবতারদের মধ্যে অন্যতম।",
+
+storiesEnglish:
+"Stories of Vishnu's avatars are central to Hindu traditions. Rama and Krishna are among his most widely worshipped avatars.",
+
+festivalsBangla:
+"বৈকুণ্ঠ একাদশী, রাম নবমী ও জন্মাষ্টমী বৈষ্ণব ঐতিহ্যে বিশেষভাবে গুরুত্বপূর্ণ।",
+
+festivalsEnglish:
+"Vaikuntha Ekadashi, Rama Navami and Janmashtami are particularly important in Vaishnava traditions.",
+
+mantraBangla:
+"ওঁ নমো নারায়ণায় এবং ওঁ নমো ভগবতে বাসুদেবায় বিষ্ণুর প্রসিদ্ধ মন্ত্র।",
+
+mantraEnglish:
+"Om Namo Narayanaya and Om Namo Bhagavate Vasudevaya are well-known mantras associated with Vishnu.",
+
+templesBangla:
+"তিরুপতি বালাজি, বদ্রীনাথ, শ্রীরঙ্গম ও জগন্নাথ মন্দির বিষ্ণু ঐতিহ্যের গুরুত্বপূর্ণ তীর্থস্থান।",
+
+templesEnglish:
+"Tirupati Balaji, Badrinath, Srirangam and the Jagannath Temple are important pilgrimage centers associated with Vishnu traditions."
+
+},
+
+durga: {
+
+icon: "🌺",
+
+banglaName: "দুর্গা",
+
+englishName: "Goddess Durga",
+
+introBangla:
+"দেবী দুর্গা হিন্দু শক্তি উপাসনার অন্যতম প্রধান দেবী। তিনি শক্তি, সাহস, সুরক্ষা এবং অশুভের বিরুদ্ধে শুভ শক্তির বিজয়ের প্রতীক।",
+
+introEnglish:
+"Goddess Durga is one of the principal deities of Shakti traditions. She represents divine power, courage, protection and the triumph of good over evil.",
+
+namesBangla:
+"দুর্গা, চণ্ডী, মহিষাসুরমর্দিনী, অম্বিকা, জগদ্ধাত্রী।",
+
+namesEnglish:
+"Durga, Chandi, Mahishasuramardini, Ambika and Jagaddhatri.",
+
+identityBangla:
+"শাক্ত ঐতিহ্যে দেবী দুর্গা মহাশক্তির একটি প্রধান রূপ। তাঁকে জগতের রক্ষাকর্ত্রী ও অশুভ শক্তি বিনাশকারিণী হিসেবে দেখা হয়।",
+
+identityEnglish:
+"In Shakta traditions, Durga is a principal manifestation of the Divine Mother. She is revered as a protector and as the destroyer of evil forces.",
+
+familyBangla:
+"দুর্গাকে সাধারণত পার্বতীর রূপ হিসেবে দেখা হয়। শিব তাঁর সহধর্মী এবং গণেশ ও কার্তিকেয় তাঁর সন্তান হিসেবে পূজিত।",
+
+familyEnglish:
+"Durga is often understood as a form of Parvati. Shiva is regarded as her consort, while Ganesha and Kartikeya are worshipped as her sons.",
+
+symbolsBangla:
+"সিংহ বা বাঘ তাঁর বাহন হিসেবে পরিচিত। বিভিন্ন অস্ত্র তাঁর ঐশ্বরিক শক্তির প্রতীক।",
+
+symbolsEnglish:
+"The lion or tiger is traditionally associated with Durga as her vehicle. Her various weapons symbolize divine power and protection.",
+
+worshipBangla:
+"দুর্গাপূজা, নবরাত্রি ও বিভিন্ন শক্তি উপাসনার মাধ্যমে দেবী দুর্গার আরাধনা করা হয়।",
+
+worshipEnglish:
+"Durga is worshipped through Durga Puja, Navaratri and various forms of Shakti worship.",
+
+storiesBangla:
+"মহিষাসুরের বিরুদ্ধে দেবী দুর্গার যুদ্ধ ও বিজয়ের কাহিনি তাঁর অন্যতম প্রধান পৌরাণিক কাহিনি।",
+
+storiesEnglish:
+"The battle between Durga and the buffalo demon Mahishasura is one of the most important sacred narratives associated with her.",
+
+festivalsBangla:
+"দুর্গাপূজা ও নবরাত্রি দেবী দুর্গার প্রধান উৎসব।",
+
+festivalsEnglish:
+"Durga Puja and Navaratri are the principal festivals dedicated to Goddess Durga.",
+
+mantraBangla:
+"ওঁ দুং দুর্গায়ৈ নমঃ — দেবী দুর্গার একটি প্রসিদ্ধ মন্ত্র।",
+
+mantraEnglish:
+"Om Dum Durgayai Namah is a well-known mantra associated with Goddess Durga.",
+
+templesBangla:
+"বৈষ্ণোদেবী, কামাখ্যা, কালীঘাট ও বিভিন্ন শক্তিপীঠ দেবী উপাসনার গুরুত্বপূর্ণ তীর্থস্থান।",
+
+templesEnglish:
+"Vaishno Devi, Kamakhya, Kalighat and the various Shakti Peethas are important pilgrimage centers associated with Goddess worship."
+
+},
+
+ganesha: {
+
+icon: "🐘",
+
+banglaName: "গণেশ",
+
+englishName: "Lord Ganesha",
+
+introBangla:
+"গণেশ জ্ঞান, প্রজ্ঞা, শুভ সূচনা এবং বাধা অপসারণের দেবতা হিসেবে হিন্দু ধর্মে ব্যাপকভাবে পূজিত।",
+
+introEnglish:
+"Ganesha is widely worshipped as the deity associated with wisdom, knowledge, auspicious beginnings and the removal of obstacles.",
+
+namesBangla:
+"গণেশ, গণপতি, বিনায়ক, গজানন, একদন্ত।",
+
+namesEnglish:
+"Ganesha, Ganapati, Vinayaka, Gajanana and Ekadanta.",
+
+identityBangla:
+"গণেশকে শিব ও পার্বতীর পুত্র হিসেবে পূজা করা হয়। যেকোনো শুভ কাজের শুরুতে তাঁর পূজা করার প্রচলন রয়েছে।",
+
+identityEnglish:
+"Ganesha is worshipped as the son of Shiva and Parvati. He is traditionally invoked at the beginning of auspicious activities.",
+
+familyBangla:
+"শিব ও পার্বতী তাঁর পিতা-মাতা। কার্তিকেয় তাঁর ভাই হিসেবে পরিচিত।",
+
+familyEnglish:
+"Shiva and Parvati are regarded as his parents, and Kartikeya is traditionally regarded as his brother.",
+
+symbolsBangla:
+"হাতির মাথা, ভাঙা দাঁত, মোদক, পাশ, অঙ্কুশ এবং ইঁদুর তাঁর গুরুত্বপূর্ণ প্রতীক।",
+
+symbolsEnglish:
+"His elephant head, broken tusk, modaka, noose, goad and mouse are among his important symbols.",
+
+worshipBangla:
+"শুভ কাজের শুরুতে গণেশের পূজা করা হয়। গণেশ চতুর্থী তাঁর বিশেষ উৎসব।",
+
+worshipEnglish:
+"Ganesha is commonly worshipped before auspicious activities. Ganesh Chaturthi is his major festival.",
+
+storiesBangla:
+"গণেশের জন্ম, তাঁর হাতির মস্তক লাভ এবং মহাভারত লিখনে ব্যাসদেবকে সহায়তা করার কাহিনি বিশেষভাবে পরিচিত।",
+
+storiesEnglish:
+"Stories of Ganesha's birth, his elephant head and his role as the scribe of the Mahabharata are particularly well known.",
+
+festivalsBangla:
+"গণেশ চতুর্থী তাঁর প্রধান উৎসব।",
+
+festivalsEnglish:
+"Ganesh Chaturthi is the principal festival dedicated to Ganesha.",
+
+mantraBangla:
+"ওঁ গণ গণপতয়ে নমঃ — গণেশের অন্যতম প্রসিদ্ধ মন্ত্র।",
+
+mantraEnglish:
+"Om Gam Ganapataye Namah is one of the most widely known mantras dedicated to Ganesha.",
+
+templesBangla:
+"সিদ্ধিবিনায়ক মন্দিরসহ ভারতের বিভিন্ন অঞ্চলে বহু গুরুত্বপূর্ণ গণেশ মন্দির রয়েছে।",
+
+templesEnglish:
+"The Siddhivinayak Temple and many other temples across India are important centers of Ganesha worship."
+
+},
+
+krishna: {
+
+icon: "🦚",
+
+banglaName: "কৃষ্ণ",
+
+englishName: "Lord Krishna",
+
+introBangla:
+"কৃষ্ণ হিন্দু ঐতিহ্যের অন্যতম গুরুত্বপূর্ণ দেবতা এবং বৈষ্ণব ধর্মে বিষ্ণুর অবতার হিসেবে পূজিত। তিনি ভগবদ্গীতার বক্তা এবং ভক্তি, জ্ঞান ও ধর্মের গুরুত্বপূর্ণ প্রতীক।",
+
+introEnglish:
+"Krishna is one of the most important figures in Hindu traditions and is worshipped as an avatar of Vishnu in Vaishnavism. He is the speaker of the Bhagavad Gita and a central figure in devotional traditions.",
+
+namesBangla:
+"কৃষ্ণ, গোবিন্দ, গোপাল, মাধব, বাসুদেব, মুরলীধর।",
+
+namesEnglish:
+"Krishna, Govinda, Gopala, Madhava, Vasudeva and Muralidhara.",
+
+identityBangla:
+"কৃষ্ণকে বিষ্ণুর অবতার এবং অনেক বৈষ্ণব ঐতিহ্যে পরম ঈশ্বর হিসেবে পূজা করা হয়।",
+
+identityEnglish:
+"Krishna is worshipped as an avatar of Vishnu and, in several Vaishnava traditions, as the Supreme Being.",
+
+familyBangla:
+"কৃষ্ণের জন্মদাতা পিতা-মাতা বাসুদেব ও দেবকী। পালক পিতা-মাতা নন্দ ও যশোদা। রাধার সঙ্গে তাঁর ভক্তিমূলক সম্পর্ক বৈষ্ণব সাহিত্যে বিশেষ গুরুত্বপূর্ণ।",
+
+familyEnglish:
+"Vasudeva and Devaki are traditionally regarded as his birth parents, while Nanda and Yashoda raised him. His devotional relationship with Radha is highly significant in Vaishnava literature.",
+
+symbolsBangla:
+"বাঁশি, ময়ূরপুচ্ছ, গরু এবং নীল বর্ণ কৃষ্ণের সঙ্গে বহুলভাবে যুক্ত প্রতীক।",
+
+symbolsEnglish:
+"The flute, peacock feather, cows and his dark-blue complexion are among the symbols commonly associated with Krishna.",
+
+worshipBangla:
+"ভক্তি, নামসংকীর্তন, কীর্তন, মন্দির পূজা ও কৃষ্ণনাম জপ তাঁর উপাসনার গুরুত্বপূর্ণ অংশ।",
+
+worshipEnglish:
+"Devotion, chanting divine names, kirtan, temple worship and remembrance of Krishna are important forms of his worship.",
+
+storiesBangla:
+"বৃন্দাবনের শৈশবলীলা, কংসবধ, গোবর্ধন পর্বত ধারণ এবং মহাভারতে তাঁর ভূমিকা বিশেষভাবে পরিচিত।",
+
+storiesEnglish:
+"His childhood pastimes in Vrindavan, the defeat of Kamsa, lifting Govardhana Hill and his role in the Mahabharata are among the best-known stories associated with Krishna.",
+
+festivalsBangla:
+"জন্মাষ্টমী কৃষ্ণের প্রধান উৎসব। এছাড়াও হোলি ও ঝুলনযাত্রার সঙ্গে কৃষ্ণের ঐতিহ্যগত সম্পর্ক রয়েছে।",
+
+festivalsEnglish:
+"Janmashtami is the principal festival dedicated to Krishna. Holi and Jhulan Yatra are also traditionally associated with Krishna traditions.",
+
+mantraBangla:
+"হরে কৃষ্ণ মহামন্ত্র বৈষ্ণব ভক্তি ঐতিহ্যে অত্যন্ত প্রসিদ্ধ।",
+
+mantraEnglish:
+"The Hare Krishna Mahamantra is one of the best-known devotional chants in Vaishnava traditions.",
+
+templesBangla:
+"বৃন্দাবন, মথুরা, দ্বারকা ও পুরীর জগন্নাথ মন্দির কৃষ্ণ ঐতিহ্যের গুরুত্বপূর্ণ তীর্থস্থান।",
+
+templesEnglish:
+"Vrindavan, Mathura, Dwarka and the Jagannath Temple in Puri are important pilgrimage centers associated with Krishna traditions."
+
+},
+
+lakshmi: {
+
+icon: "🪷",
+
+banglaName: "লক্ষ্মী",
+
+englishName: "Goddess Lakshmi",
+
+introBangla:
+"দেবী লক্ষ্মী সমৃদ্ধি, সৌভাগ্য, ঐশ্বর্য, সৌন্দর্য ও কল্যাণের দেবী হিসেবে পূজিত হন। তিনি বিষ্ণুর সহধর্মিণী হিসেবে পরিচিত।",
+
+introEnglish:
+"Goddess Lakshmi is worshipped as the deity of prosperity, fortune, abundance, beauty and well-being. She is traditionally regarded as the consort of Vishnu.",
+
+namesBangla:
+"লক্ষ্মী, শ্রী, কমলা, পদ্মা, চঞ্চলা।",
+
+namesEnglish:
+"Lakshmi, Shri, Kamala, Padma and Chanchala.",
+
+identityBangla:
+"লক্ষ্মীকে সৌভাগ্য, সমৃদ্ধি ও কল্যাণের ঐশ্বরিক শক্তি হিসেবে পূজা করা হয়।",
+
+identityEnglish:
+"Lakshmi is worshipped as the divine embodiment of prosperity, fortune and well-being.",
+
+familyBangla:
+"বিষ্ণুর সহধর্মিণী হিসেবে লক্ষ্মীকে পূজা করা হয়।",
+
+familyEnglish:
+"Lakshmi is traditionally regarded as the consort of Vishnu.",
+
+symbolsBangla:
+"পদ্মফুল, স্বর্ণমুদ্রা, পেঁচা এবং হাতি তাঁর সঙ্গে যুক্ত গুরুত্বপূর্ণ প্রতীক।",
+
+symbolsEnglish:
+"The lotus, gold coins, owl and elephants are among the symbols associated with Lakshmi.",
+
+worshipBangla:
+"দীপাবলি ও লক্ষ্মীপূজায় দেবী লক্ষ্মীর বিশেষ আরাধনা করা হয়।",
+
+worshipEnglish:
+"Lakshmi is especially worshipped during Diwali and Lakshmi Puja.",
+
+storiesBangla:
+"সমুদ্র মন্থন থেকে লক্ষ্মীর আবির্ভাবের কাহিনি হিন্দু পুরাণে বিশেষভাবে পরিচিত।",
+
+storiesEnglish:
+"The emergence of Lakshmi from the churning of the cosmic ocean is one of the best-known stories associated with her.",
+
+festivalsBangla:
+"দীপাবলি ও কোজাগরী লক্ষ্মীপূজা তাঁর প্রধান উৎসবগুলোর মধ্যে রয়েছে।",
+
+festivalsEnglish:
+"Diwali and Kojagari Lakshmi Puja are among the important festivals dedicated to Lakshmi.",
+
+mantraBangla:
+"ওঁ শ্রীং মহালক্ষ্ম্যৈ নমঃ — লক্ষ্মীর একটি প্রসিদ্ধ মন্ত্র।",
+
+mantraEnglish:
+"Om Shreem Mahalakshmyai Namah is a well-known mantra associated with Lakshmi.",
+
+templesBangla:
+"মহালক্ষ্মী মন্দির, কোলহাপুরসহ ভারতের বিভিন্ন স্থানে লক্ষ্মীর গুরুত্বপূর্ণ মন্দির রয়েছে।",
+
+templesEnglish:
+"The Mahalakshmi Temple in Kolhapur and various other temples are important centers of Lakshmi worship."
+
+},
+
+saraswati: {
+
+icon: "📚",
+
+banglaName: "সরস্বতী",
+
+englishName: "Goddess Saraswati",
+
+introBangla:
+"দেবী সরস্বতী জ্ঞান, বিদ্যা, সংগীত, শিল্প, ভাষা ও বাকশক্তির সঙ্গে যুক্ত। শিক্ষার্থী, শিল্পী ও জ্ঞানসাধকদের কাছে তিনি বিশেষভাবে পূজিত।",
+
+introEnglish:
+"Goddess Saraswati is associated with knowledge, learning, music, arts, language and speech. She is especially revered by students, artists and seekers of knowledge.",
+
+namesBangla:
+"সরস্বতী, বাগদেবী, বীণাপাণি, ভারতী, শারদা।",
+
+namesEnglish:
+"Saraswati, Vagdevi, Veena-pani, Bharati and Sharada.",
+
+identityBangla:
+"সরস্বতী জ্ঞান ও বিদ্যার দেবী হিসেবে হিন্দু ধর্মে বিশেষ মর্যাদা লাভ করেছেন।",
+
+identityEnglish:
+"Saraswati holds a special place in Hindu traditions as the goddess associated with knowledge and learning.",
+
+familyBangla:
+"বিভিন্ন ঐতিহ্যে সরস্বতীর সম্পর্ক সম্পর্কে ভিন্ন ভিন্ন ধারণা পাওয়া যায়।",
+
+familyEnglish:
+"Different Hindu traditions present varying accounts regarding Saraswati's familial associations.",
+
+symbolsBangla:
+"বীণা, পুস্তক, জপমালা, পদ্ম এবং রাজহাঁস তাঁর প্রধান প্রতীকগুলোর মধ্যে রয়েছে।",
+
+symbolsEnglish:
+"The veena, book, rosary, lotus and swan are among her principal symbols.",
+
+worshipBangla:
+"শিক্ষাপ্রতিষ্ঠান, পরিবার ও সাংস্কৃতিক পরিসরে সরস্বতী পূজা ব্যাপকভাবে পালিত হয়।",
+
+worshipEnglish:
+"Saraswati Puja is widely observed in educational institutions, homes and cultural communities.",
+
+storiesBangla:
+"বেদ, জ্ঞান ও বাকশক্তির সঙ্গে সরস্বতীর সম্পর্ক হিন্দু ধর্মীয় ও দার্শনিক ঐতিহ্যে গুরুত্বপূর্ণ।",
+
+storiesEnglish:
+"Saraswati's association with the Vedas, knowledge and speech is significant in Hindu religious and philosophical traditions.",
+
+festivalsBangla:
+"বসন্ত পঞ্চমী বা সরস্বতী পূজা তাঁর প্রধান উৎসব।",
+
+festivalsEnglish:
+"Vasant Panchami, also celebrated as Saraswati Puja, is her principal festival.",
+
+mantraBangla:
+"ওঁ ঐং সরস্বত্যৈ নমঃ — সরস্বতীর একটি প্রসিদ্ধ মন্ত্র।",
+
+mantraEnglish:
+"Om Aim Saraswatyai Namah is a well-known mantra associated with Saraswati.",
+
+templesBangla:
+"শারদা পীঠসহ বিভিন্ন অঞ্চলে সরস্বতী উপাসনার ঐতিহাসিক কেন্দ্র রয়েছে।",
+
+templesEnglish:
+"Sharada Peeth and various historical centers of learning and worship are associated with Saraswati traditions."
+
+},
+
+rama: {
+
+icon: "🏹",
+
+banglaName: "রাম",
+
+englishName: "Lord Rama",
+
+introBangla:
+"রাম রামায়ণের কেন্দ্রীয় চরিত্র এবং বিষ্ণুর অবতার হিসেবে পূজিত। তিনি ধর্ম, ন্যায়, আদর্শ রাজত্ব ও নৈতিকতার প্রতীক হিসেবে পরিচিত।",
+
+introEnglish:
+"Rama is the central figure of the Ramayana and is worshipped as an avatar of Vishnu. He is regarded as a symbol of dharma, righteousness, ideal kingship and moral conduct.",
+
+namesBangla:
+"রাম, রামচন্দ্র, রঘুনাথ, রঘুবীর, দশরথনন্দন।",
+
+namesEnglish:
+"Rama, Ramachandra, Raghunatha, Raghubira and Dasharatha-nandana.",
+
+identityBangla:
+"রামকে বিষ্ণুর অবতার এবং ধর্মের আদর্শ অনুসরণকারী রাজা হিসেবে পূজা করা হয়।",
+
+identityEnglish:
+"Rama is worshipped as an avatar of Vishnu and as an ideal king who exemplifies dharma.",
+
+familyBangla:
+"দশরথ ও কৌশল্যার পুত্র রাম। সীতা তাঁর সহধর্মিণী এবং লক্ষ্মণ, ভরত ও শত্রুঘ্ন তাঁর ভাই।",
+
+familyEnglish:
+"Rama is traditionally described as the son of Dasharatha and Kaushalya. Sita is his consort, while Lakshmana, Bharata and Shatrughna are his brothers.",
+
+symbolsBangla:
+"ধনুক ও তীর রামের প্রধান প্রতীক।",
+
+symbolsEnglish:
+"The bow and arrow are among the principal symbols associated with Rama.",
+
+worshipBangla:
+"রাম নাম জপ, রামায়ণ পাঠ এবং মন্দির পূজা তাঁর উপাসনার গুরুত্বপূর্ণ অংশ।",
+
+worshipEnglish:
+"Chanting Rama's name, reciting the Ramayana and temple worship are important forms of devotion.",
+
+storiesBangla:
+"রামায়ণে তাঁর বনবাস, সীতাহরণ, রাবণের বিরুদ্ধে যুদ্ধ এবং অযোধ্যায় প্রত্যাবর্তনের কাহিনি বিশেষভাবে পরিচিত।",
+
+storiesEnglish:
+"His exile, the abduction of Sita, the war against Ravana and his return to Ayodhya are central episodes of the Ramayana.",
+
+festivalsBangla:
+"রাম নবমী ও দীপাবলির সঙ্গে রামের ঐতিহ্যগত সম্পর্ক রয়েছে।",
+
+festivalsEnglish:
+"Rama Navami and Diwali are traditionally associated with Rama's story and worship.",
+
+mantraBangla:
+"শ্রী রাম জয় রাম জয় জয় রাম একটি প্রসিদ্ধ রাম মন্ত্র।",
+
+mantraEnglish:
+"Shri Ram Jai Ram Jai Jai Ram is a widely known devotional mantra associated with Rama.",
+
+templesBangla:
+"অযোধ্যার রাম মন্দিরসহ ভারতের বিভিন্ন স্থানে রামের গুরুত্বপূর্ণ মন্দির রয়েছে।",
+
+templesEnglish:
+"The Ram Mandir in Ayodhya and numerous temples across India are important centers of Rama worship."
+
+},
+
+indra: {
+
+icon: "⚡",
+
+banglaName: "ইন্দ্র",
+
+englishName: "Indra",
+
+introBangla:
+"ইন্দ্র বৈদিক সাহিত্যের অন্যতম প্রধান দেবতা। তিনি বজ্র, বৃষ্টি, যুদ্ধ ও দেবতাদের নেতৃত্বের সঙ্গে যুক্ত এবং ঋগ্বেদে তাঁর বিশেষ গুরুত্ব রয়েছে।",
+
+introEnglish:
+"Indra is one of the principal deities of Vedic literature. He is associated with thunder, rain, warfare and leadership among the gods, and holds a prominent position in the Rigveda.",
+
+namesBangla:
+"ইন্দ্র, শক্র, মঘবান, পুরন্দর।",
+
+namesEnglish:
+"Indra, Shakra, Maghavan and Purandara.",
+
+identityBangla:
+"বৈদিক যুগে ইন্দ্র ছিলেন অন্যতম প্রধান দেবতা এবং দেবতাদের রাজা হিসেবে পরিচিত।",
+
+identityEnglish:
+"In the Vedic period, Indra was one of the most prominent deities and was described as the king of the gods.",
+
+familyBangla:
+"বৈদিক ও পুরাণিক সাহিত্যে ইন্দ্রের পরিবার সম্পর্কে বিভিন্ন বর্ণনা পাওয়া যায়। শচীকে তাঁর সহধর্মিণী হিসেবে উল্লেখ করা হয়।",
+
+familyEnglish:
+"Vedic and Puranic literature contains different accounts of Indra's family. Shachi is traditionally regarded as his consort.",
+
+symbolsBangla:
+"বজ্র, ঐরাবত হাতি এবং মেঘ ইন্দ্রের সঙ্গে যুক্ত প্রধান প্রতীক।",
+
+symbolsEnglish:
+"The vajra, Airavata elephant and clouds are among the principal symbols associated with Indra.",
+
+worshipBangla:
+"বৈদিক যজ্ঞ ও স্তোত্রে ইন্দ্রের বিশেষ গুরুত্ব ছিল। ঋগ্বেদের বহু সূক্ত তাঁকে উদ্দেশ করে রচিত।",
+
+worshipEnglish:
+"Indra held an important place in Vedic sacrifices and hymns. Many Rigvedic hymns are dedicated to him.",
+
+storiesBangla:
+"বৃত্রাসুরের বিরুদ্ধে ইন্দ্রের যুদ্ধ এবং বৃষ্টি ও জল মুক্ত করার কাহিনি বৈদিক সাহিত্যে বিশেষভাবে গুরুত্বপূর্ণ।",
+
+storiesEnglish:
+"Indra's battle with Vritra and the release of waters and rain are important narratives in Vedic literature.",
+
+festivalsBangla:
+"ইন্দ্রের সঙ্গে যুক্ত ঐতিহ্য বিভিন্ন অঞ্চলে দেখা যায়। ইন্দ্র পূজা ও ইন্দ্রযজ্ঞের উল্লেখ প্রাচীন ঐতিহ্যে পাওয়া যায়।",
+
+festivalsEnglish:
+"Traditions associated with Indra vary across regions. References to Indra worship and Indra rituals appear in ancient traditions.",
+
+mantraBangla:
+"ঋগ্বেদের বিভিন্ন সূক্ত ইন্দ্রের উদ্দেশে নিবেদিত।",
+
+mantraEnglish:
+"Several hymns of the Rigveda are dedicated to Indra.",
+
+templesBangla:
+"ইন্দ্রের উপাসনা প্রাচীন বৈদিক ঐতিহ্যে বিশেষ গুরুত্বপূর্ণ হলেও বর্তমানে তাঁর জন্য পৃথক মন্দির তুলনামূলকভাবে বিরল।",
+
+templesEnglish:
+"While Indra was highly prominent in ancient Vedic worship, dedicated temples to him are relatively uncommon today."
+
+}
+
+};
+
+
+/* =================================
+   GET DEITY FROM URL
+================================= */
+
+const urlParams =
+new URLSearchParams(window.location.search);
+
+const deityName =
+urlParams.get("name");
+
+
+/* =================================
+   LOAD PROFILE
+================================= */
+
+function loadProfile() {
+
+const container =
+document.getElementById("profileContainer");
+
+const deity =
+deities[deityName];
+
+
+if (!deity) {
+
+container.innerHTML = `
+
+<div class="error-message">
+
+<h1>
+Deity Not Found
+</h1>
+
+<p>
+The requested deity profile could not be found.
+</p>
+
+<br>
+
+<a href="deities.html">
+← Back to Deities
+</a>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+container.innerHTML = `
+
+<!-- PROFILE HEADER -->
+
+<div class="profile-header">
+
+<div class="deity-icon">
+${deity.icon}
+</div>
+
+<h1>
+${deity.banglaName}
+</h1>
+
+<h2>
+${deity.englishName}
+</h2>
+
+<div class="profile-intro english-content">
+${deity.introEnglish}
+</div>
+
+<div class="profile-intro bangla-content">
+${deity.introBangla}
+</div>
+
+</div>
+
+
+<!-- BASIC INFORMATION -->
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h2 class="english-content">
+📜 Names & Titles
+</h2>
+
+<h2 class="bangla-content">
+📜 নাম ও উপাধি
+</h2>
+
+<p class="english-content">
+${deity.namesEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.namesBangla}
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h2 class="english-content">
+🕉️ Identity & Nature
+</h2>
+
+<h2 class="bangla-content">
+🕉️ পরিচয় ও বৈশিষ্ট্য
+</h2>
+
+<p class="english-content">
+${deity.identityEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.identityBangla}
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h2 class="english-content">
+👨‍👩‍👧 Family & Relationships
+</h2>
+
+<h2 class="bangla-content">
+👨‍👩‍👧 পরিবার ও সম্পর্ক
+</h2>
+
+<p class="english-content">
+${deity.familyEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.familyBangla}
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h2 class="english-content">
+🔱 Symbols & Attributes
+</h2>
+
+<h2 class="bangla-content">
+🔱 প্রতীক ও বৈশিষ্ট্য
+</h2>
+
+<p class="english-content">
+${deity.symbolsEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.symbolsBangla}
+</p>
+
+</div>
+
+</div>
+
+
+<!-- WORSHIP -->
+
+<div class="content-section">
+
+<h2 class="english-content">
+🛕 Worship
+</h2>
+
+<h2 class="bangla-content">
+🛕 উপাসনা
+</h2>
+
+<p class="english-content">
+${deity.worshipEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.worshipBangla}
+</p>
+
+</div>
+
+
+<!-- STORIES -->
+
+<div class="content-section">
+
+<h2 class="english-content">
+📚 Major Stories
+</h2>
+
+<h2 class="bangla-content">
+📚 প্রধান কাহিনি
+</h2>
+
+<p class="english-content">
+${deity.storiesEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.storiesBangla}
+</p>
+
+</div>
+
+
+<!-- FESTIVALS -->
+
+<div class="content-section">
+
+<h2 class="english-content">
+🪔 Major Festivals
+</h2>
+
+<h2 class="bangla-content">
+🪔 প্রধান উৎসব
+</h2>
+
+<p class="english-content">
+${deity.festivalsEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.festivalsBangla}
+</p>
+
+</div>
+
+
+<!-- MANTRA -->
+
+<div class="content-section">
+
+<h2 class="english-content">
+📿 Mantra & Stotra
+</h2>
+
+<h2 class="bangla-content">
+📿 মন্ত্র ও স্তোত্র
+</h2>
+
+<p class="english-content">
+${deity.mantraEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.mantraBangla}
+</p>
+
+</div>
+
+
+<!-- TEMPLES -->
+
+<div class="content-section">
+
+<h2 class="english-content">
+🛕 Famous Temples
+</h2>
+
+<h2 class="bangla-content">
+🛕 বিখ্যাত মন্দির
+</h2>
+
+<p class="english-content">
+${deity.templesEnglish}
+</p>
+
+<p class="bangla-content">
+${deity.templesBangla}
+</p>
+
+</div>
+
+
+<!-- RELATED -->
+
+<div class="related">
+
+<h2 class="english-content">
+Explore More
+</h2>
+
+<h2 class="bangla-content">
+আরও অন্বেষণ করুন
+</h2>
+
+<div class="related-links">
+
+<a href="deities.html">
+<span class="english-content">
+← All Deities
+</span>
+
+<span class="bangla-content">
+← সকল দেব-দেবী
+</span>
+</a>
+
+
+<a href="calendar.html">
+
+<span class="english-content">
+Hindu Calendar
+</span>
+
+<span class="bangla-content">
+হিন্দু ক্যালেন্ডার
+</span>
+
+</a>
+
+
+<a href="index.html">
+
+<span class="english-content">
+Home
+</span>
+
+<span class="bangla-content">
+হোম
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+/* =================================
+   LANGUAGE SWITCH
+================================= */
+
+function changeLanguage() {
+
+const englishElements =
+document.querySelectorAll(".english-content");
+
+const banglaElements =
+document.querySelectorAll(".bangla-content");
+
+const button =
+document.querySelector(".language-button");
+
+
+const isEnglish =
+englishElements[0].style.display !== "none";
+
+
+englishElements.forEach(function(element) {
+
+element.style.display =
+isEnglish ? "none" : "block";
+
+});
+
+
+banglaElements.forEach(function(element) {
+
+element.style.display =
+isEnglish ? "block" : "none";
+
+});
+
+
+button.innerText =
+isEnglish ? "English" : "বাংলা";
+
+}
+
+
+/* START */
+
+loadProfile();
+
+</script>
+
+</body>
+
+</html>

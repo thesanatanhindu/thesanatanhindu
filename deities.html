@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hindu Deities Encyclopedia - The Sanatan Hindu</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f5f5f5;
+
+            color: #333;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ===== HEADER ===== */
+
+
+        header {
+
+            width: 100%;
+
+            background-color: white;
+
+            padding: 18px 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+        }
+
+
+        .logo {
+
+            font-size: 26px;
+
+            font-weight: bold;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+
+        nav a {
+
+            text-decoration: none;
+
+            color: #333;
+
+            font-size: 16px;
+
+        }
+
+
+        nav a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        .language-button {
+
+            padding: 9px 16px;
+
+            border: 1px solid #ddd;
+
+            background-color: white;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* ===== MAIN ===== */
+
+
+        .deities-container {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 50px auto;
+
+            padding: 20px;
+
+        }
+
+
+        .page-header {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .page-header h1 {
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .page-header p {
+
+            font-size: 18px;
+
+            color: #666;
+
+        }
+
+
+        /* ===== SEARCH ===== */
+
+
+        .search-box {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            margin: 0 auto 25px auto;
+
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            padding: 15px 20px;
+
+            font-size: 16px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            outline: none;
+
+        }
+
+
+        .search-box input:focus {
+
+            border-color: #999;
+
+        }
+
+
+        /* ===== FILTER ===== */
+
+
+        .filter-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .filter-button {
+
+            padding: 10px 18px;
+
+            border: 1px solid #ddd;
+
+            background-color: white;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+        }
+
+
+        .filter-button:hover {
+
+            background-color: #eee;
+
+        }
+
+
+        .filter-button.active {
+
+            background-color: #333;
+
+            color: white;
+
+        }
+
+
+        /* ===== DEITY GRID ===== */
+
+
+        .deity-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        /* ===== DEITY CARD ===== */
+
+
+        .deity-card {
+
+            background-color: white;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            box-shadow:
+
+                0 4px 15px
+
+                rgba(0,0,0,0.08);
+
+            transition: 0.2s;
+
+        }
+
+
+        .deity-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+
+                0 8px 20px
+
+                rgba(0,0,0,0.12);
+
+        }
+
+
+        .deity-icon {
+
+            font-size: 55px;
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .deity-card h2 {
+
+            text-align: center;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .deity-card h3 {
+
+            text-align: center;
+
+            color: #777;
+
+            font-weight: normal;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .deity-card p {
+
+            color: #555;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .read-more {
+
+            display: block;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            color: #333;
+
+            font-weight: bold;
+
+            padding-top: 10px;
+
+            border-top: 1px solid #eee;
+
+        }
+
+
+        .read-more:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* ===== NO RESULT ===== */
+
+
+        .no-result {
+
+            text-align: center;
+
+            padding: 50px;
+
+            color: #777;
+
+            display: none;
+
+        }
+
+
+        /* ===== FOOTER ===== */
+
+
+        footer {
+
+            width: 100%;
+
+            background-color: #222;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 50px;
+
+        }
+
+
+        /* ===== MOBILE ===== */
+
+
+        @media (max-width: 900px) {
+
+            .deity-grid {
+
+                grid-template-columns:
+
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+
+            header {
+
+                padding: 15px 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+
+            nav {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+            }
+
+
+            .deities-container {
+
+                margin: 30px auto;
+
+                padding: 15px;
+
+            }
+
+
+            .page-header h1 {
+
+                font-size: 30px;
+
+            }
+
+
+            .deity-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ===== HEADER ===== -->
+
+
+    <header>
+
+
+        <div class="logo">
+
+            The Sanatan Hindu
+
+        </div>
+
+
+        <nav>
+
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+
+            <a href="calendar.html">
+
+                Calendar
+
+            </a>
+
+
+            <a href="deities.html">
+
+                Deities
+
+            </a>
+
+
+            <button
+
+                class="language-button"
+
+                onclick="changeLanguage()">
+
+                বাংলা
+
+            </button>
+
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ===== MAIN ===== -->
+
+
+    <main class="deities-container">
+
+
+        <div class="page-header">
+
+
+            <h1 id="pageTitle">
+
+                Hindu Deities Encyclopedia
+
+            </h1>
+
+
+            <p id="pageDescription">
+
+                Explore Hindu deities,
+                their identities,
+                traditions and stories.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ===== SEARCH ===== -->
+
+
+        <div class="search-box">
+
+
+            <input
+
+                type="text"
+
+                id="searchInput"
+
+                placeholder=
+
+                "Search deity / দেব-দেবীর নাম..."
+
+                onkeyup="searchDeities()">
+
+
+        </div>
+
+
+
+        <!-- ===== FILTER ===== -->
+
+
+        <div class="filter-buttons">
+
+
+            <button
+
+                class="filter-button active"
+
+                onclick=
+
+                "filterDeities('all', this)">
+
+                All
+
+            </button>
+
+
+            <button
+
+                class="filter-button"
+
+                onclick=
+
+                "filterDeities('deva', this)">
+
+                Deva
+
+            </button>
+
+
+            <button
+
+                class="filter-button"
+
+                onclick=
+
+                "filterDeities('devi', this)">
+
+                Devi
+
+            </button>
+
+
+            <button
+
+                class="filter-button"
+
+                onclick=
+
+                "filterDeities('avatar', this)">
+
+                Avatar
+
+            </button>
+
+
+            <button
+
+                class="filter-button"
+
+                onclick=
+
+                "filterDeities('vedic', this)">
+
+                Vedic Deities
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ===== DEITY GRID ===== -->
+
+
+        <div
+
+            class="deity-grid"
+
+            id="deityGrid">
+
+
+
+            <!-- SHIVA -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="deva"
+
+
+                data-name=
+
+                "shiva শিব mahadeva মহাদেব">
+
+
+                <div class="deity-icon">
+
+                    🔱
+
+                </div>
+
+
+                <h2>
+
+                    শিব
+
+                </h2>
+
+
+                <h3>
+
+                    Lord Shiva
+
+                </h3>
+
+
+                <p>
+
+                    হিন্দু ধর্মের অন্যতম প্রধান দেবতা।
+                    শিবকে মহাদেব, রুদ্র ও নটরাজসহ
+                    বিভিন্ন নামে অভিহিত করা হয়।
+                    তিনি ধ্বংস, রূপান্তর, তপস্যা ও
+                    আধ্যাত্মিক শক্তির সঙ্গে যুক্ত।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=shiva"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- VISHNU -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="deva"
+
+
+                data-name=
+
+                "vishnu বিষ্ণু narayana নারায়ণ">
+
+
+                <div class="deity-icon">
+
+                    🪷
+
+                </div>
+
+
+                <h2>
+
+                    বিষ্ণু
+
+                </h2>
+
+
+                <h3>
+
+                    Lord Vishnu
+
+                </h3>
+
+
+                <p>
+
+                    বিষ্ণু হিন্দু ধর্মের অন্যতম প্রধান
+                    দেবতা এবং বৈষ্ণব ঐতিহ্যে সর্বোচ্চ
+                    ঈশ্বর হিসেবে পূজিত। তিনি জগতের
+                    পালন ও সংরক্ষণের সঙ্গে যুক্ত।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=vishnu"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- DURGA -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="devi"
+
+
+                data-name=
+
+                "durga দুর্গা devi দেবী">
+
+
+                <div class="deity-icon">
+
+                    🌺
+
+                </div>
+
+
+                <h2>
+
+                    দুর্গা
+
+                </h2>
+
+
+                <h3>
+
+                    Goddess Durga
+
+                </h3>
+
+
+                <p>
+
+                    দেবী দুর্গা শক্তির অন্যতম প্রধান
+                    রূপ। তিনি অশুভ শক্তির বিরুদ্ধে
+                    শুভ শক্তির বিজয়, সাহস, সুরক্ষা
+                    ও ঐশ্বরিক শক্তির প্রতীক।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=durga"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- GANESHA -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="deva"
+
+
+                data-name=
+
+                "ganesha গণেশ ganapati গণপতি">
+
+
+                <div class="deity-icon">
+
+                    🐘
+
+                </div>
+
+
+                <h2>
+
+                    গণেশ
+
+                </h2>
+
+
+                <h3>
+
+                    Lord Ganesha
+
+                </h3>
+
+
+                <p>
+
+                    গণেশ জ্ঞান, প্রজ্ঞা, শুভ সূচনা
+                    ও বাধা অপসারণের সঙ্গে যুক্ত
+                    একজন অত্যন্ত জনপ্রিয় হিন্দু দেবতা।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=ganesha"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- KRISHNA -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="avatar"
+
+
+                data-name=
+
+                "krishna কৃষ্ণ vasudeva বাসুদেব">
+
+
+                <div class="deity-icon">
+
+                    🦚
+
+                </div>
+
+
+                <h2>
+
+                    কৃষ্ণ
+
+                </h2>
+
+
+                <h3>
+
+                    Lord Krishna
+
+                </h3>
+
+
+                <p>
+
+                    কৃষ্ণ হিন্দু ঐতিহ্যের অন্যতম
+                    গুরুত্বপূর্ণ দেবতা এবং বিষ্ণুর
+                    অবতার হিসেবে ব্যাপকভাবে পূজিত।
+                    তিনি ভগবদ্গীতার বক্তা এবং ভক্তি,
+                    জ্ঞান ও ধর্মের গুরুত্বপূর্ণ প্রতীক।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=krishna"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- LAKSHMI -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="devi"
+
+
+                data-name=
+
+                "lakshmi লক্ষ্মী shri শ্রী">
+
+
+                <div class="deity-icon">
+
+                    🪷
+
+                </div>
+
+
+                <h2>
+
+                    লক্ষ্মী
+
+                </h2>
+
+
+                <h3>
+
+                    Goddess Lakshmi
+
+                </h3>
+
+
+                <p>
+
+                    দেবী লক্ষ্মী সমৃদ্ধি, সৌভাগ্য,
+                    ঐশ্বর্য ও কল্যাণের দেবী হিসেবে
+                    পূজিত হন। তিনি বিষ্ণুর সহধর্মিণী
+                    হিসেবে পরিচিত।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=lakshmi"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SARASWATI -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="devi"
+
+
+                data-name=
+
+                "saraswati সরস্বতী">
+
+
+                <div class="deity-icon">
+
+                    📚
+
+                </div>
+
+
+                <h2>
+
+                    সরস্বতী
+
+                </h2>
+
+
+                <h3>
+
+                    Goddess Saraswati
+
+                </h3>
+
+
+                <p>
+
+                    দেবী সরস্বতী জ্ঞান, বিদ্যা,
+                    সংগীত, শিল্প ও বাকশক্তির সঙ্গে
+                    যুক্ত। শিক্ষার্থী ও জ্ঞানসাধকদের
+                    কাছে তিনি বিশেষভাবে পূজিত।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=saraswati"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- RAMA -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="avatar"
+
+
+                data-name=
+
+                "rama রাম ram রামচন্দ্র">
+
+
+                <div class="deity-icon">
+
+                    🏹
+
+                </div>
+
+
+                <h2>
+
+                    রাম
+
+                </h2>
+
+
+                <h3>
+
+                    Lord Rama
+
+                </h3>
+
+
+                <p>
+
+                    রাম রামায়ণের কেন্দ্রীয় চরিত্র
+                    এবং বিষ্ণুর অবতার হিসেবে পূজিত।
+                    তিনি ধর্ম, ন্যায়, আদর্শ রাজত্ব
+                    ও নৈতিকতার প্রতীক।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=rama"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- INDRA -->
+
+
+            <div
+
+                class="deity-card"
+
+                data-category="vedic"
+
+
+                data-name=
+
+                "indra ইন্দ্র">
+
+
+                <div class="deity-icon">
+
+                    ⚡
+
+                </div>
+
+
+                <h2>
+
+                    ইন্দ্র
+
+                </h2>
+
+
+                <h3>
+
+                    Indra
+
+                </h3>
+
+
+                <p>
+
+                    ইন্দ্র বৈদিক সাহিত্যের অন্যতম
+                    প্রধান দেবতা। তিনি বজ্র, বৃষ্টি,
+                    যুদ্ধ ও দেবতাদের নেতৃত্বের সঙ্গে
+                    যুক্ত এবং ঋগ্বেদে তাঁর বিশেষ
+                    গুরুত্ব রয়েছে।
+
+                </p>
+
+
+                <a
+
+                    href="deity.html?name=indra"
+
+                    class="read-more">
+
+                    Explore Full Profile →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- NO RESULT -->
+
+
+        <div
+
+            class="no-result"
+
+            id="noResult">
+
+            No deity found.
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ===== FOOTER ===== -->
+
+
+    <footer>
+
+
+        <p>
+
+            © 2026 The Sanatan Hindu
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- ===== JAVASCRIPT ===== -->
+
+
+    <script>
+
+
+        let currentCategory = "all";
+
+
+        /* SEARCH */
+
+
+        function searchDeities() {
+
+
+            const searchText =
+
+                document.getElementById(
+
+                    "searchInput"
+
+                ).value.toLowerCase();
+
+
+            const cards =
+
+                document.querySelectorAll(
+
+                    ".deity-card"
+
+                );
+
+
+            let visibleCount = 0;
+
+
+            cards.forEach(function(card) {
+
+
+                const name =
+
+                    card.dataset.name.toLowerCase();
+
+
+                const category =
+
+                    card.dataset.category;
+
+
+                const matchesSearch =
+
+                    name.includes(searchText);
+
+
+                const matchesCategory =
+
+                    currentCategory === "all" ||
+
+                    category === currentCategory;
+
+
+                if (
+
+                    matchesSearch &&
+
+                    matchesCategory
+
+                ) {
+
+
+                    card.style.display =
+
+                        "block";
+
+
+                    visibleCount++;
+
+
+                }
+
+
+                else {
+
+
+                    card.style.display =
+
+                        "none";
+
+                }
+
+
+            });
+
+
+            document.getElementById(
+
+                "noResult"
+
+            ).style.display =
+
+                visibleCount === 0
+
+                ? "block"
+
+                : "none";
+
+        }
+
+
+
+        /* FILTER */
+
+
+        function filterDeities(
+
+            category,
+
+            button
+
+        ) {
+
+
+            currentCategory = category;
+
+
+            const buttons =
+
+                document.querySelectorAll(
+
+                    ".filter-button"
+
+                );
+
+
+            buttons.forEach(function(btn) {
+
+
+                btn.classList.remove(
+
+                    "active"
+
+                );
+
+            });
+
+
+            button.classList.add(
+
+                "active"
+
+            );
+
+
+            searchDeities();
+
+        }
+
+
+
+        /* LANGUAGE */
+
+
+        function changeLanguage() {
+
+
+            const title =
+
+                document.getElementById(
+
+                    "pageTitle"
+
+                );
+
+
+            const description =
+
+                document.getElementById(
+
+                    "pageDescription"
+
+                );
+
+
+            if (
+
+                title.innerText ===
+
+                "Hindu Deities Encyclopedia"
+
+            ) {
+
+
+                title.innerText =
+
+                    "হিন্দু দেব-দেবী বিশ্বকোষ";
+
+
+                description.innerText =
+
+                    "হিন্দু ধর্মের দেব-দেবী, তাঁদের পরিচয়, ঐতিহ্য ও কাহিনি সম্পর্কে জানুন।";
+
+            }
+
+
+            else {
+
+
+                title.innerText =
+
+                    "Hindu Deities Encyclopedia";
+
+
+                description.innerText =
+
+                    "Explore Hindu deities, their identities, traditions and stories.";
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hindu Names Directory | The Sanatan Hindu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:"Noto Sans Bengali", sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #fff7e6,
+        #f5e6cc
+    );
+
+    color:#3d2b1f;
+
+    padding:20px;
+
+}
+
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.15);
+
+}
+
+
+/* HEADER */
+
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.header h1{
+
+    font-size:38px;
+
+    color:#7b3f00;
+
+    margin-bottom:10px;
+
+}
+
+
+.header p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+
+/* CATEGORY BUTTONS */
+
+
+.category-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin:25px 0;
+
+    flex-wrap:wrap;
+
+}
+
+
+.category-btn{
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ead2a5;
+
+    color:#5c2e0b;
+
+    font-family:inherit;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.category-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+.category-btn.active{
+
+    background:#8b4513;
+
+    color:white;
+
+}
+
+
+
+/* SEARCH */
+
+
+.search-box{
+
+    text-align:center;
+
+    margin:25px 0;
+
+}
+
+
+.search-box input{
+
+    width:90%;
+
+    max-width:600px;
+
+    padding:15px 20px;
+
+    border:2px solid #dfc27d;
+
+    border-radius:15px;
+
+    font-family:inherit;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+
+.search-box input:focus{
+
+    border-color:#8b4513;
+
+}
+
+
+
+/* ALPHABET */
+
+
+.alphabet{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:25px 0;
+
+}
+
+
+.alphabet button{
+
+    min-width:42px;
+
+    padding:8px;
+
+    border:1px solid #dfc27d;
+
+    background:#fffaf0;
+
+    color:#7b3f00;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+}
+
+
+.alphabet button:hover{
+
+    background:#8b4513;
+
+    color:white;
+
+}
+
+
+
+/* SECTION TITLE */
+
+
+.section-title{
+
+    text-align:center;
+
+    color:#8b4513;
+
+    margin:30px 0 20px;
+
+    font-size:28px;
+
+}
+
+
+
+/* NAME GRID */
+
+
+.name-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:18px;
+
+}
+
+
+
+/* NAME CARD */
+
+
+.name-card{
+
+    background:#fffaf0;
+
+    border:2px solid #e5c98b;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    transition:.3s;
+
+}
+
+
+.name-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.12);
+
+}
+
+
+.name-bangla{
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    color:#7b3f00;
+
+}
+
+
+.name-english{
+
+    font-family:Arial,sans-serif;
+
+    font-size:18px;
+
+    color:#a0522d;
+
+    margin-top:5px;
+
+}
+
+
+.meaning{
+
+    margin-top:12px;
+
+    padding-top:10px;
+
+    border-top:1px solid #ead9b5;
+
+    color:#555;
+
+    line-height:1.7;
+
+}
+
+
+
+/* HIDE */
+
+
+.hidden{
+
+    display:none;
+
+}
+
+
+
+/* FOOTER */
+
+
+.footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    padding-top:20px;
+
+    border-top:1px solid #eee;
+
+    color:#777;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+    body{
+
+        padding:10px;
+
+    }
+
+
+    .container{
+
+        padding:20px;
+
+    }
+
+
+    .header h1{
+
+        font-size:30px;
+
+    }
+
+
+    .name-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- HEADER -->
+
+
+<div class="header">
+
+<h1>
+🪔 Hindu Names Directory
+</h1>
+
+<p>
+
+হিন্দু নামের অভিধান
+
+<br>
+
+সনাতন ঐতিহ্য, সংস্কৃতি ও আধ্যাত্মিকতার সঙ্গে সম্পর্কিত নাম
+
+</p>
+
+</div>
+
+
+
+<!-- CATEGORY BUTTONS -->
+
+
+<div class="category-buttons">
+
+
+<button
+class="category-btn active"
+onclick="showCategory('boys',this)">
+
+👦 পুত্রের নাম
+
+<br>
+
+Boy Names
+
+</button>
+
+
+<button
+class="category-btn"
+onclick="showCategory('girls',this)">
+
+👧 কন্যার নাম
+
+<br>
+
+Girl Names
+
+</button>
+
+
+</div>
+
+
+
+<!-- SEARCH -->
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="নাম খুঁজুন / Search Name..."
+onkeyup="searchNames()">
+
+</div>
+
+
+
+<!-- ALPHABET -->
+
+
+<div class="alphabet">
+
+<button onclick="filterLetter('অ')">অ</button>
+
+<button onclick="filterLetter('আ')">আ</button>
+
+<button onclick="filterLetter('ই')">ই</button>
+
+<button onclick="filterLetter('উ')">উ</button>
+
+<button onclick="filterLetter('এ')">এ</button>
+
+<button onclick="filterLetter('ক')">ক</button>
+
+<button onclick="filterLetter('খ')">খ</button>
+
+<button onclick="filterLetter('গ')">গ</button>
+
+<button onclick="filterLetter('চ')">চ</button>
+
+<button onclick="filterLetter('জ')">জ</button>
+
+<button onclick="filterLetter('ত')">ত</button>
+
+<button onclick="filterLetter('দ')">দ</button>
+
+<button onclick="filterLetter('ন')">ন</button>
+
+<button onclick="filterLetter('প')">প</button>
+
+<button onclick="filterLetter('ব')">ব</button>
+
+<button onclick="filterLetter('ম')">ম</button>
+
+<button onclick="filterLetter('র')">র</button>
+
+<button onclick="filterLetter('স')">স</button>
+
+<button onclick="filterLetter('হ')">হ</button>
+
+</div>
+
+
+
+<!-- BOY NAMES -->
+
+
+<div id="boys">
+
+<h2 class="section-title">
+
+👦 পুত্রের নাম | Boy Names
+
+</h2>
+
+
+<div class="name-grid">
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অর্জুন
+</div>
+
+<div class="name-english">
+Arjun
+</div>
+
+<div class="meaning">
+অর্থ: উজ্জ্বল, দীপ্তিমান; মহাভারতের অন্যতম পাণ্ডব বীর।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অরুণ
+</div>
+
+<div class="name-english">
+Arun
+</div>
+
+<div class="meaning">
+অর্থ: সূর্যের লাল আভা; সূর্যদেবের রথের সারথি হিসেবে অরুণের উল্লেখ আছে।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অভিষেক
+</div>
+
+<div class="name-english">
+Abhishek
+</div>
+
+<div class="meaning">
+অর্থ: পবিত্র স্নান বা ধর্মীয় অভিষেক।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অনিরুদ্ধ
+</div>
+
+<div class="name-english">
+Aniruddha
+</div>
+
+<div class="meaning">
+অর্থ: অপ্রতিরোধ্য; শ্রীকৃষ্ণের পৌত্র হিসেবে পরিচিত।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অমর
+</div>
+
+<div class="name-english">
+Amar
+</div>
+
+<div class="meaning">
+অর্থ: অমর, যার মৃত্যু নেই।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+ঈশান
+</div>
+
+<div class="name-english">
+Ishan
+</div>
+
+<div class="meaning">
+অর্থ: শিবের একটি নাম; উত্তর-পূর্ব দিকের অধিপতি।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+কৃষ্ণ
+</div>
+
+<div class="name-english">
+Krishna
+</div>
+
+<div class="meaning">
+অর্থ: শ্রীবিষ্ণুর অবতার; পরম আকর্ষণীয় ও সর্বজনপ্রিয়।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+রাম
+</div>
+
+<div class="name-english">
+Rama
+</div>
+
+<div class="meaning">
+অর্থ: শ্রীবিষ্ণুর অবতার; ধর্ম, সত্য ও আদর্শের প্রতীক।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+শিব
+</div>
+
+<div class="name-english">
+Shiva
+</div>
+
+<div class="meaning">
+অর্থ: মঙ্গলময়; হিন্দু ধর্মের অন্যতম প্রধান দেবতা।
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<!-- GIRL NAMES -->
+
+
+<div id="girls" class="hidden">
+
+<h2 class="section-title">
+
+👧 কন্যার নাম | Girl Names
+
+</h2>
+
+
+<div class="name-grid">
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অদিতি
+</div>
+
+<div class="name-english">
+Aditi
+</div>
+
+<div class="meaning">
+অর্থ: অসীম, সীমাহীন; বৈদিক ঐতিহ্যে দেবমাতা হিসেবে পরিচিত।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অনন্যা
+</div>
+
+<div class="name-english">
+Ananya
+</div>
+
+<div class="meaning">
+অর্থ: অতুলনীয়, যার তুলনা নেই।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অপর্ণা
+</div>
+
+<div class="name-english">
+Aparna
+</div>
+
+<div class="meaning">
+অর্থ: দেবী পার্বতীর একটি নাম।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অরুণা
+</div>
+
+<div class="name-english">
+Aruna
+</div>
+
+<div class="meaning">
+অর্থ: সূর্যের লাল আভা বা প্রভাতের আলো।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+অমৃতা
+</div>
+
+<div class="name-english">
+Amrita
+</div>
+
+<div class="meaning">
+অর্থ: অমৃত, অমরত্বের প্রতীক।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+গৌরী
+</div>
+
+<div class="name-english">
+Gauri
+</div>
+
+<div class="meaning">
+অর্থ: দেবী পার্বতীর একটি নাম; উজ্জ্বল ও শুভ্র।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+লক্ষ্মী
+</div>
+
+<div class="name-english">
+Lakshmi
+</div>
+
+<div class="meaning">
+অর্থ: সৌভাগ্য, সমৃদ্ধি ও ঐশ্বর্যের দেবী।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+সরস্বতী
+</div>
+
+<div class="name-english">
+Saraswati
+</div>
+
+<div class="meaning">
+অর্থ: জ্ঞান, বিদ্যা, সংগীত ও কলার দেবী।
+</div>
+
+</div>
+
+
+
+<div class="name-card">
+
+<div class="name-bangla">
+সীতা
+</div>
+
+<div class="name-english">
+Sita
+</div>
+
+<div class="meaning">
+অর্থ: রামায়ণের আদর্শ নারী চরিত্র; ধৈর্য, সততা ও পবিত্রতার প্রতীক।
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+
+<div class="footer">
+
+🪔 The Sanatan Hindu
+
+<br>
+
+জ্ঞান • ধর্ম • সংস্কৃতি • ঐতিহ্য
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* CATEGORY SWITCH */
+
+
+function showCategory(category,button){
+
+
+document.getElementById("boys")
+.classList.add("hidden");
+
+
+document.getElementById("girls")
+.classList.add("hidden");
+
+
+document.getElementById(category)
+.classList.remove("hidden");
+
+
+document
+.querySelectorAll(".category-btn")
+.forEach(btn => {
+
+    btn.classList.remove("active");
+
+});
+
+
+button.classList.add("active");
+
+
+}
+
+
+
+/* SEARCH */
+
+
+function searchNames(){
+
+
+let input =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase();
+
+
+let cards =
+document
+.querySelectorAll(".name-card");
+
+
+cards.forEach(card => {
+
+
+let text =
+card.innerText
+.toLowerCase();
+
+
+if(text.includes(input)){
+
+    card.style.display="block";
+
+}
+
+else{
+
+    card.style.display="none";
+
+}
+
+
+});
+
+
+}
+
+
+
+/* LETTER FILTER */
+
+
+function filterLetter(letter){
+
+
+let activeSection;
+
+
+if(!document
+.getElementById("boys")
+.classList.contains("hidden")){
+
+    activeSection =
+    document.getElementById("boys");
+
+}
+
+else{
+
+    activeSection =
+    document.getElementById("girls");
+
+}
+
+
+let cards =
+activeSection
+.querySelectorAll(".name-card");
+
+
+cards.forEach(card => {
+
+
+let name =
+card
+.querySelector(".name-bangla")
+.innerText;
+
+
+if(name.startsWith(letter)){
+
+    card.style.display="block";
+
+}
+
+else{
+
+    card.style.display="none";
+
+}
+
+
+});
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
