@@ -2,12 +2,20 @@
 <html lang="bn">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Hindu Compass - The Sanatan Hindu</title>
 
+
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 *{
     margin:0;
@@ -16,373 +24,1036 @@
 }
 
 body{
-    font-family:Arial,"Noto Sans Bengali",sans-serif;
+
+    font-family:
+        Arial,
+        "Noto Sans Bengali",
+        sans-serif;
+
     background:#fff7e6;
+
     color:#333;
+
     text-align:center;
+
+    min-height:100vh;
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-    background:#fff;
-    padding:18px 25px;
+
+    background:white;
+
+    padding:18px 30px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,.12);
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.12);
 }
 
 .logo{
+
     font-size:24px;
+
     font-weight:bold;
+
     color:#8b4513;
 }
 
 nav a{
+
     text-decoration:none;
+
     color:#333;
+
     margin:0 8px;
+
+    font-size:15px;
 }
 
+nav a:hover{
+
+    color:#d35400;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
 .container{
-    max-width:700px;
+
+    max-width:750px;
+
     margin:35px auto;
+
     padding:20px;
 }
 
 h1{
+
     color:#8b4513;
+
     margin-bottom:8px;
+
+    font-size:34px;
 }
 
 .subtitle{
+
     color:#666;
+
+    margin-bottom:25px;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+
     margin-bottom:20px;
 }
 
 button{
+
     padding:12px 20px;
-    border:0;
-    border-radius:8px;
-    background:#d35400;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+
     margin:5px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#d35400;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
 }
 
 button:hover{
+
     background:#a04000;
 }
 
-/* COMPASS AREA */
+
+/* =========================
+   COMPASS
+========================= */
 
 .compass-wrapper{
+
     width:320px;
+
     height:320px;
+
     margin:30px auto;
+
     position:relative;
 }
 
-/* ROTATING DIAL */
 
-.compass-dial{
+/*
+Rotating compass
+*/
+
+.compass{
+
     position:absolute;
+
     width:100%;
+
     height:100%;
-    border-radius:50%;
-    border:8px solid #c78b30;
-    background:#fff;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
 
-    transition:transform .12s linear;
+    border-radius:50%;
+
+    border:
+        8px solid #c78b30;
+
+    background:white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.20);
+
+    transition:
+        transform 0.15s linear;
 }
 
-/* INNER CIRCLE */
 
-.compass-dial::before{
+/*
+Inner circle
+*/
+
+.compass::before{
+
     content:"";
+
     position:absolute;
-    top:12%;
-    left:12%;
-    width:76%;
-    height:76%;
-    border:1px solid #e2c98c;
+
+    width:78%;
+
+    height:78%;
+
+    left:11%;
+
+    top:11%;
+
+    border:
+        1px solid #e4c989;
+
     border-radius:50%;
 }
 
-/* FIXED CENTER */
 
-.center-symbol{
+/* =========================
+   CENTER
+========================= */
+
+.center{
+
     position:absolute;
+
     top:50%;
+
     left:50%;
-    transform:translate(-50%,-50%);
-    width:68px;
-    height:68px;
-    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:70px;
+
+    height:70px;
+
     background:#fff3cd;
-    border:3px solid #c78b30;
+
+    border:
+        3px solid #c78b30;
+
+    border-radius:50%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    font-size:34px;
-    z-index:10;
+    font-size:35px;
+
+    z-index:20;
 }
 
-/* DIRECTIONS */
+
+/* =========================
+   DIRECTION LABELS
+========================= */
 
 .direction{
+
     position:absolute;
+
+    z-index:10;
+
     font-weight:bold;
-    z-index:3;
-    line-height:1.25;
+
+    text-align:center;
+
+    line-height:1.3;
+
+    white-space:nowrap;
+
 }
+
+
+/* NORTH */
 
 .n{
-    top:14px;
+
+    top:20px;
+
     left:50%;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     color:#b22222;
 }
+
+
+/* NORTH EAST */
 
 .ne{
-    top:52px;
-    right:35px;
+
+    top:65px;
+
+    right:48px;
 }
+
+
+/* EAST */
 
 .e{
-    right:15px;
+
+    right:20px;
+
     top:50%;
-    transform:translateY(-50%);
+
+    transform:
+        translateY(-50%);
+
     color:#b22222;
 }
+
+
+/* SOUTH EAST */
 
 .se{
-    bottom:52px;
-    right:30px;
+
+    bottom:65px;
+
+    right:40px;
 }
+
+
+/* SOUTH */
 
 .s{
-    bottom:14px;
+
+    bottom:20px;
+
     left:50%;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
+
     color:#b22222;
 }
+
+
+/* SOUTH WEST */
 
 .sw{
-    bottom:52px;
-    left:25px;
+
+    bottom:65px;
+
+    left:35px;
 }
 
+
+/* WEST */
+
 .w{
-    left:15px;
+
+    left:20px;
+
     top:50%;
-    transform:translateY(-50%);
+
+    transform:
+        translateY(-50%);
+
     color:#b22222;
 }
 
+
+/* NORTH WEST */
+
 .nw{
-    top:52px;
-    left:25px;
+
+    top:65px;
+
+    left:35px;
 }
 
-/* NORTH MARK */
 
-.north-arrow{
+/* Sanskrit */
+
+.sanskrit{
+
+    font-size:12px;
+
+    font-weight:normal;
+
+    color:#777;
+
+    display:block;
+
+    margin-top:2px;
+}
+
+
+/* =========================
+   NORTH POINTER
+========================= */
+
+.pointer{
+
     position:absolute;
-    top:38px;
+
+    top:43px;
+
     left:50%;
-    transform:translateX(-50%);
+
+    transform:
+        translateX(-50%);
 
     width:0;
+
     height:0;
 
-    border-left:8px solid transparent;
-    border-right:8px solid transparent;
-    border-bottom:28px solid #b22222;
+    border-left:
+        9px solid transparent;
 
-    z-index:8;
+    border-right:
+        9px solid transparent;
+
+    border-bottom:
+        28px solid #b22222;
+
+    z-index:15;
 }
 
-/* INFO */
+
+/* =========================
+   INFORMATION BOX
+========================= */
 
 .info{
-    background:#fff;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,.1);
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.10);
+
+    margin-top:20px;
+}
+
+.info h2{
+
+    color:#8b4513;
+
+    margin-bottom:10px;
 }
 
 #currentDirection{
-    margin-top:8px;
-    font-size:25px;
+
+    font-size:26px;
+
     font-weight:bold;
+
+    color:#d35400;
+
+    margin-bottom:5px;
+}
+
+#sanskritName{
+
+    font-size:18px;
+
+    color:#777;
+
+    margin-bottom:8px;
+}
+
+#dikpala{
+
+    font-size:20px;
+
+    font-weight:bold;
+
     color:#8b4513;
 }
 
 #degree{
-    margin-top:5px;
+
+    margin-top:8px;
+
     color:#777;
-}
 
-/* STATUS */
-
-#status{
-    margin-top:15px;
-    color:#666;
     font-size:14px;
 }
 
-footer{
-    margin-top:45px;
-    background:#222;
-    color:white;
-    padding:25px;
+#status{
+
+    margin-top:12px;
+
+    color:#777;
+
+    font-size:14px;
 }
+
+
+/* =========================
+   DIRECTIONS LIST
+========================= */
+
+.direction-list{
+
+    background:white;
+
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.08);
+}
+
+.direction-list h2{
+
+    color:#8b4513;
+
+    margin-bottom:18px;
+}
+
+.direction-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 5px;
+
+    border-bottom:
+        1px solid #eee;
+
+    text-align:left;
+}
+
+.direction-item:last-child{
+
+    border-bottom:none;
+}
+
+.direction-item strong{
+
+    color:#8b4513;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#222;
+
+    color:white;
+
+    padding:25px;
+
+    margin-top:50px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:500px){
 
+    header{
+
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    .container{
+
+        padding:15px;
+    }
+
+    h1{
+
+        font-size:29px;
+    }
+
     .compass-wrapper{
+
         width:290px;
+
         height:290px;
     }
 
-    header{
-        flex-direction:column;
-        gap:12px;
+    .direction{
+
+        font-size:13px;
+    }
+
+    .ne{
+
+        right:38px;
+    }
+
+    .se{
+
+        right:32px;
+    }
+
+    .sw{
+
+        left:28px;
+    }
+
+    .nw{
+
+        left:28px;
+    }
+
+    .info{
+
+        padding:20px;
     }
 
 }
 
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
 <div class="logo">
+
 The Sanatan Hindu
+
 </div>
+
 
 <nav>
 
-<a href="index.html">Home</a>
+<a href="index.html">
+Home
+</a>
 
-<a href="calendar.html">Calendar</a>
+<a href="calendar.html">
+Calendar
+</a>
 
 </nav>
 
 </header>
 
 
+
+<!-- =========================
+     MAIN
+========================= -->
+
 <div class="container">
 
-<h1>🧭 Hindu Compass</h1>
+
+<h1>
+
+🧭 Hindu Compass
+
+</h1>
+
 
 <p class="subtitle">
-হিন্দু ধর্মীয় ঐতিহ্য অনুযায়ী দিক ও দিকপাল
+
+হিন্দু ধর্মীয় ঐতিহ্য অনুযায়ী
+দিক ও দিকপাল
+
 </p>
 
 
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
 <button onclick="startCompass()">
+
 🧭 Start Compass
+
 </button>
 
-<button onclick="calibrate()">
+
+<button onclick="calibrateCompass()">
+
 ↻ Calibrate
+
 </button>
 
+</div>
+
+
+
+<!-- =========================
+     COMPASS
+========================= -->
 
 <div class="compass-wrapper">
 
-    <div
-        class="compass-dial"
-        id="compassDial"
-    >
 
-        <div class="north-arrow"></div>
-
-        <div class="direction n">
-            উত্তর<br>
-            उत्तर<br>
-            <small>কুবের</small>
-        </div>
-
-        <div class="direction ne">
-            উত্তর-পূর্ব<br>
-            ईशान<br>
-            <small>ঈশান</small>
-        </div>
-
-        <div class="direction e">
-            পূর্ব<br>
-            पूर्व<br>
-            <small>ইন্দ্র</small>
-        </div>
-
-        <div class="direction se">
-            দক্ষিণ-পূর্ব<br>
-            आग्नेय<br>
-            <small>অগ্নি</small>
-        </div>
-
-        <div class="direction s">
-            দক্ষিণ<br>
-            दक्षिण<br>
-            <small>যম</small>
-        </div>
-
-        <div class="direction sw">
-            দক্ষিণ-পশ্চিম<br>
-            नैऋत्य<br>
-            <small>নৈঋতি</small>
-        </div>
-
-        <div class="direction w">
-            পশ্চিম<br>
-            पश्चिम<br>
-            <small>বরুণ</small>
-        </div>
-
-        <div class="direction nw">
-            উত্তর-পশ্চিম<br>
-            वायव्य<br>
-            <small>বায়ু</small>
-        </div>
-
-    </div>
+<div
+    class="compass"
+    id="compass"
+>
 
 
-    <div class="center-symbol">
-        🕉️
-    </div>
+<!-- POINTER -->
+
+<div class="pointer"></div>
+
+
+
+<!-- NORTH -->
+
+<div class="direction n">
+
+উত্তর
+
+<span class="sanskrit">
+
+उत्तर
+
+</span>
 
 </div>
 
+
+
+<!-- NORTH EAST -->
+
+<div class="direction ne">
+
+উত্তর-পূর্ব
+
+<span class="sanskrit">
+
+ईशान
+
+</span>
+
+</div>
+
+
+
+<!-- EAST -->
+
+<div class="direction e">
+
+পূর্ব
+
+<span class="sanskrit">
+
+पूर्व
+
+</span>
+
+</div>
+
+
+
+<!-- SOUTH EAST -->
+
+<div class="direction se">
+
+দক্ষিণ-পূর্ব
+
+<span class="sanskrit">
+
+आग्नेय
+
+</span>
+
+</div>
+
+
+
+<!-- SOUTH -->
+
+<div class="direction s">
+
+দক্ষিণ
+
+<span class="sanskrit">
+
+दक्षिण
+
+</span>
+
+</div>
+
+
+
+<!-- SOUTH WEST -->
+
+<div class="direction sw">
+
+দক্ষিণ-পশ্চিম
+
+<span class="sanskrit">
+
+नैऋत्य
+
+</span>
+
+</div>
+
+
+
+<!-- WEST -->
+
+<div class="direction w">
+
+পশ্চিম
+
+<span class="sanskrit">
+
+पश्चिम
+
+</span>
+
+</div>
+
+
+
+<!-- NORTH WEST -->
+
+<div class="direction nw">
+
+উত্তর-পশ্চিম
+
+<span class="sanskrit">
+
+वायव्य
+
+</span>
+
+</div>
+
+
+</div>
+
+
+<!-- CENTER -->
+
+<div class="center">
+
+🕉️
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+     CURRENT INFORMATION
+========================= -->
 
 <div class="info">
 
-<h2>বর্তমান দিক</h2>
+<h2>
+
+বর্তমান দিক
+
+</h2>
+
 
 <div id="currentDirection">
+
 Compass চালু করুন
+
 </div>
+
+
+<div id="sanskritName">
+
+—
+
+</div>
+
+
+<div id="dikpala">
+
+দিকপাল: —
+
+</div>
+
 
 <div id="degree">
+
 0°
+
 </div>
+
 
 <div id="status">
+
 Compass বন্ধ আছে
-</div>
 
 </div>
 
 </div>
 
+
+
+<!-- =========================
+     DIRECTION LIST
+========================= -->
+
+<div class="direction-list">
+
+<h2>
+
+🕉️ অষ্টদিক ও দিকপাল
+
+</h2>
+
+
+<div class="direction-item">
+
+<strong>
+উত্তর
+</strong>
+
+<span>
+कुबेर — কুবের
+</span>
+
+</div>
+
+
+<div class="direction-item">
+
+<strong>
+উত্তর-পূর্ব
+</strong>
+
+<span>
+ईशान — ঈশান
+</span>
+
+</div>
+
+
+<div class="direction-item">
+
+<strong>
+পূর্ব
+</strong>
+
+<span>
+इन्द्र — ইন্দ্র
+</span>
+
+</div>
+
+
+<div class="direction-item">
+
+<strong>
+দক্ষিণ-পূর্ব
+</strong>
+
+<span>
+अग्नि — অগ্নি
+</span>
+
+</div>
+
+
+<div class="direction-item">
+
+<strong>
+দক্ষিণ
+</strong>
+
+<span>
+यम — যম
+</span>
+
+</div>
+
+
+<div class="direction-item">
+
+<strong>
+দক্ষিণ-পশ্চিম
+</strong>
+
+<span>
+नैऋति — নৈঋতি
+</span>
+
+</div>
+
+
+<div class="direction-item">
+
+<strong>
+পশ্চিম
+</strong>
+
+<span>
+वरुण — বরুণ
+</span>
+
+</div>
+
+
+<div class="direction-item">
+
+<strong>
+উত্তর-পশ্চিম
+</strong>
+
+<span>
+वायु — বায়ু
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -391,17 +1062,27 @@ Compass বন্ধ আছে
 </footer>
 
 
+
 <script>
 
-let headingOffset = 0;
-let lastHeading = null;
+/* =================================
+   COMPASS VARIABLES
+================================= */
+
+let currentHeading = null;
+
+let calibrationOffset = 0;
 
 
-/* START COMPASS */
+
+/* =================================
+   START COMPASS
+================================= */
 
 async function startCompass(){
 
     try{
+
 
         /*
         iPhone / iPad
@@ -415,23 +1096,30 @@ async function startCompass(){
             const permission =
                 await DeviceOrientationEvent.requestPermission();
 
+
             if(permission !== "granted"){
 
                 alert(
-                    "Compass ব্যবহার করতে Motion & Orientation permission দিতে হবে।"
+                    "Compass চালু করতে Motion & Orientation permission Allow করুন।"
                 );
 
                 return;
+
             }
 
         }
 
+
+        /*
+        Listen for orientation
+        */
 
         window.addEventListener(
             "deviceorientationabsolute",
             handleOrientation,
             true
         );
+
 
         window.addEventListener(
             "deviceorientation",
@@ -441,14 +1129,17 @@ async function startCompass(){
 
 
         document.getElementById("status").textContent =
-            "Compass চালু হয়েছে — ফোন ধীরে ঘোরান";
+
+            "Compass চালু হয়েছে। ফোন ধীরে ঘোরান।";
+
 
     }
 
     catch(error){
 
         document.getElementById("status").textContent =
-            "Compass চালু করা যায়নি";
+
+            "Compass চালু করা যায়নি।";
 
         console.log(error);
 
@@ -457,20 +1148,24 @@ async function startCompass(){
 }
 
 
-/* ORIENTATION */
+
+/* =================================
+   HANDLE ORIENTATION
+================================= */
 
 function handleOrientation(event){
+
 
     let heading = null;
 
 
+
     /*
-    iPhone / Safari
+    iPhone
     */
 
     if(
-        typeof event.webkitCompassHeading === "number" &&
-        event.webkitCompassAccuracy !== -1
+        typeof event.webkitCompassHeading === "number"
     ){
 
         heading =
@@ -479,8 +1174,9 @@ function handleOrientation(event){
     }
 
 
+
     /*
-    Android / absolute orientation
+    Android absolute
     */
 
     else if(
@@ -494,16 +1190,20 @@ function handleOrientation(event){
     }
 
 
+
     /*
-    Fallback
+    General fallback
     */
 
-    else if(event.alpha !== null){
+    else if(
+        event.alpha !== null
+    ){
 
         heading =
             360 - event.alpha;
 
     }
+
 
 
     if(heading === null){
@@ -513,101 +1213,233 @@ function handleOrientation(event){
     }
 
 
+
+    /*
+    Apply calibration
+    */
+
     heading =
-        (heading + headingOffset + 360) % 360;
+
+        (heading + calibrationOffset + 360) % 360;
 
 
-    lastHeading = heading;
+
+    currentHeading =
+        heading;
+
 
 
     /*
-    ROTATE DIAL
+    Rotate compass
     */
 
-    const dial =
-        document.getElementById("compassDial");
+    document.getElementById(
+        "compass"
+    ).style.transform =
 
-
-    dial.style.transform =
         "rotate(" + (-heading) + "deg)";
 
 
+
     /*
-    SHOW DEGREE
+    Degree
     */
 
-    document.getElementById("degree").textContent =
+    document.getElementById(
+        "degree"
+    ).textContent =
+
         Math.round(heading) + "°";
 
 
+
     /*
-    SHOW DIRECTION
+    Direction information
     */
+
+    updateInformation(heading);
+
+}
+
+
+
+/* =================================
+   UPDATE INFORMATION
+================================= */
+
+function updateInformation(degree){
+
+
+    let direction;
+
+    let sanskrit;
+
+    let dikpala;
+
+
+
+    if(
+        degree >= 337.5 ||
+        degree < 22.5
+    ){
+
+        direction =
+            "উত্তর";
+
+        sanskrit =
+            "उत्तर";
+
+        dikpala =
+            "কুবের";
+
+    }
+
+
+    else if(
+        degree < 67.5
+    ){
+
+        direction =
+            "উত্তর-পূর্ব";
+
+        sanskrit =
+            "ईशान";
+
+        dikpala =
+            "ঈশান";
+
+    }
+
+
+    else if(
+        degree < 112.5
+    ){
+
+        direction =
+            "পূর্ব";
+
+        sanskrit =
+            "पूर्व";
+
+        dikpala =
+            "ইন্দ্র";
+
+    }
+
+
+    else if(
+        degree < 157.5
+    ){
+
+        direction =
+            "দক্ষিণ-পূর্ব";
+
+        sanskrit =
+            "आग्नेय";
+
+        dikpala =
+            "অগ্নি";
+
+    }
+
+
+    else if(
+        degree < 202.5
+    ){
+
+        direction =
+            "দক্ষিণ";
+
+        sanskrit =
+            "दक्षिण";
+
+        dikpala =
+            "যম";
+
+    }
+
+
+    else if(
+        degree < 247.5
+    ){
+
+        direction =
+            "দক্ষিণ-পশ্চিম";
+
+        sanskrit =
+            "नैऋत्य";
+
+        dikpala =
+            "নৈঋতি";
+
+    }
+
+
+    else if(
+        degree < 292.5
+    ){
+
+        direction =
+            "পশ্চিম";
+
+        sanskrit =
+            "पश्चिम";
+
+        dikpala =
+            "বরুণ";
+
+    }
+
+
+    else{
+
+        direction =
+            "উত্তর-পশ্চিম";
+
+        sanskrit =
+            "वायव्य";
+
+        dikpala =
+            "বায়ু";
+
+    }
+
+
 
     document.getElementById(
         "currentDirection"
     ).textContent =
-        getDirection(heading);
+
+        direction;
+
+
+
+    document.getElementById(
+        "sanskritName"
+    ).textContent =
+
+        sanskrit;
+
+
+
+    document.getElementById(
+        "dikpala"
+    ).textContent =
+
+        "দিকপাল: " + dikpala;
 
 }
 
 
-/* DIRECTION */
 
-function getDirection(degree){
+/* =================================
+   CALIBRATION
+================================= */
 
-    if(degree >= 337.5 || degree < 22.5){
-
-        return "উত্তর — কুবের";
-
-    }
-
-    if(degree < 67.5){
-
-        return "উত্তর-পূর্ব — ঈশান";
-
-    }
-
-    if(degree < 112.5){
-
-        return "পূর্ব — ইন্দ্র";
-
-    }
-
-    if(degree < 157.5){
-
-        return "দক্ষিণ-পূর্ব — অগ্নি";
-
-    }
-
-    if(degree < 202.5){
-
-        return "দক্ষিণ — যম";
-
-    }
-
-    if(degree < 247.5){
-
-        return "দক্ষিণ-পশ্চিম — নৈঋতি";
-
-    }
-
-    if(degree < 292.5){
-
-        return "পশ্চিম — বরুণ";
-
-    }
-
-    return "উত্তর-পশ্চিম — বায়ু";
-
-}
+function calibrateCompass(){
 
 
-/* CALIBRATE */
-
-function calibrate(){
-
-    if(lastHeading === null){
+    if(currentHeading === null){
 
         alert(
             "আগে Start Compass চাপুন।"
@@ -618,15 +1450,24 @@ function calibrate(){
     }
 
 
-    headingOffset =
-        -lastHeading;
 
-    document.getElementById("status").textContent =
-        "Compass calibrated";
+    calibrationOffset =
+
+        -currentHeading;
+
+
+
+    document.getElementById(
+        "status"
+    ).textContent =
+
+        "Compass calibrated হয়েছে।";
+
 
 }
 
 </script>
+
 
 </body>
 
