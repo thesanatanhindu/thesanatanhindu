@@ -4,125 +4,366 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gurukul - The Sanatan Hindu</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ===== GENERAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
 
-body{
+    font-family: "Noto Sans Bengali", sans-serif;
 
-    font-family:"Noto Sans Bengali", sans-serif;
-    background:#fff7e6;
-    padding:20px;
+    background: #fff7e6;
 
-}
+    color: #333;
 
-
-.container{
-
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-    text-align:center;
+    padding: 20px;
 
 }
 
 
-h1{
+/* ===== MAIN CONTAINER ===== */
 
-    color:#8b4513;
-    font-size:36px;
-    margin-bottom:10px;
+.container {
 
-}
+    max-width: 1000px;
 
+    margin: auto;
 
-.subtitle{
+    background: white;
 
-    color:#555;
-    margin-bottom:30px;
+    padding: 35px;
 
-}
+    border-radius: 20px;
 
-
-
-/* Cards */
-
-.cards{
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
 
 }
 
 
-.card{
+/* ===== TITLE ===== */
 
-    background:#fff8dc;
-    padding:25px;
-    border-radius:18px;
-    border:2px solid #e6c36a;
-    cursor:pointer;
-    transition:.3s;
+h1 {
+
+    text-align: center;
+
+    color: #8b4513;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+}
+
+.subtitle {
+
+    text-align: center;
+
+    color: #555;
+
+    margin-bottom: 35px;
+
+    line-height: 1.8;
 
 }
 
 
-.card:hover{
+/* ===== OLD GURUKUL CARDS ===== */
 
-    transform:translateY(-8px);
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+.cards {
 
-}
+    display: grid;
 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-.card h2{
+    gap: 20px;
 
-    color:#a0522d;
-    margin-bottom:12px;
-
-}
-
-
-.card p{
-
-    line-height:1.7;
+    margin-bottom: 45px;
 
 }
 
 
-.icon{
+.card {
 
-    font-size:45px;
-    margin-bottom:15px;
+    background: #fff8dc;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    border: 2px solid #e6c36a;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: .3s;
 
 }
 
 
+.card:hover {
 
-.footer{
+    transform: translateY(-5px);
 
-    margin-top:35px;
-    color:#777;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
 
 }
 
 
+.card h2 {
+
+    color: #a0522d;
+
+    margin-bottom: 12px;
+
+}
+
+
+.card p {
+
+    line-height: 1.7;
+
+}
+
+
+.icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ===== SANSKRIT SECTION ===== */
+
+.sanskrit-section {
+
+    margin-top: 20px;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    color: #8b4513;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-subtitle {
+
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ===== CATEGORY TITLE ===== */
+
+.category-title {
+
+    text-align: left;
+
+    color: #a0522d;
+
+    font-size: 24px;
+
+    margin: 30px 0 15px;
+
+    border-bottom: 2px solid #e6c36a;
+
+    padding-bottom: 8px;
+
+}
+
+
+/* ===== LETTER GRID ===== */
+
+.letter-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+    gap: 15px;
+
+}
+
+
+/* ===== LETTER CARD ===== */
+
+.letter-card {
+
+    background: #fffaf0;
+
+    border: 2px solid #e6c36a;
+
+    border-radius: 14px;
+
+    padding: 18px 10px;
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+
+.letter-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 6px 15px rgba(0,0,0,.12);
+
+    background: #fff8dc;
+
+}
+
+
+/* ===== SANSKRIT LETTER ===== */
+
+.sanskrit-letter {
+
+    font-family: "Noto Sans Devanagari", sans-serif;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    color: #8b4513;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ===== PRONUNCIATION ===== */
+
+.bangla-pronunciation {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #333;
+
+    margin-bottom: 3px;
+
+}
+
+
+.english-pronunciation {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #777;
+
+}
+
+
+/* ===== FOOTER ===== */
+
+.footer {
+
+    margin-top: 45px;
+
+    text-align: center;
+
+    color: #777;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eee;
+
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+    .container {
+
+        padding: 20px 15px;
+
+    }
+
+    h1 {
+
+        font-size: 30px;
+
+    }
+
+    .section-title {
+
+        font-size: 26px;
+
+    }
+
+    .letter-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 10px;
+
+    }
+
+    .letter-card {
+
+        padding: 14px 5px;
+
+    }
+
+    .sanskrit-letter {
+
+        font-size: 32px;
+
+    }
+
+    .bangla-pronunciation {
+
+        font-size: 14px;
+
+    }
+
+    .english-pronunciation {
+
+        font-size: 12px;
+
+    }
+
+}
 
 </style>
 
@@ -135,10 +376,11 @@ h1{
 <div class="container">
 
 
+<!-- ===== GURUKUL HEADER ===== -->
+
 <h1>
 🪔 Gurukul
 </h1>
-
 
 <p class="subtitle">
 
@@ -151,6 +393,7 @@ Learn • Values • Wisdom
 </p>
 
 
+<!-- ===== GURUKUL CARDS ===== -->
 
 <div class="cards">
 
@@ -162,7 +405,7 @@ Learn • Values • Wisdom
 </div>
 
 <h2>
-অ আ ক খ
+বাংলা
 </h2>
 
 <p>
@@ -172,8 +415,6 @@ Learn • Values • Wisdom
 </div>
 
 
-
-
 <div class="card">
 
 <div class="icon">
@@ -181,7 +422,7 @@ Learn • Values • Wisdom
 </div>
 
 <h2>
-A B C D
+English
 </h2>
 
 <p>
@@ -191,12 +432,10 @@ English Alphabet with Hindu Wisdom
 </div>
 
 
-
-
 <div class="card">
 
 <div class="icon">
-🕉️
+सं
 </div>
 
 <h2>
@@ -204,12 +443,10 @@ English Alphabet with Hindu Wisdom
 </h2>
 
 <p>
-Sanskrit letters and basic learning
+Sanskrit Letters
 </p>
 
 </div>
-
-
 
 
 <div class="card">
@@ -229,17 +466,417 @@ Dharma & Values
 </div>
 
 
+</div>
+
+
+<!-- ===== SANSKRIT LETTERS ===== -->
+
+<section class="sanskrit-section">
+
+
+<h2 class="section-title">
+संस्कृत वर्णमाला
+</h2>
+
+<p class="section-subtitle">
+Sanskrit Alphabet
+<br>
+সংস্কৃত বর্ণমালা
+</p>
+
+
+<!-- ===== VOWELS ===== -->
+
+<h3 class="category-title">
+स्वर — স্বরবর্ণ
+</h3>
+
+
+<div class="letter-grid">
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">अ</div>
+<div class="bangla-pronunciation">অ</div>
+<div class="english-pronunciation">A</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">आ</div>
+<div class="bangla-pronunciation">আ</div>
+<div class="english-pronunciation">Ā</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">इ</div>
+<div class="bangla-pronunciation">ই</div>
+<div class="english-pronunciation">I</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ई</div>
+<div class="bangla-pronunciation">ঈ</div>
+<div class="english-pronunciation">Ī</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">उ</div>
+<div class="bangla-pronunciation">উ</div>
+<div class="english-pronunciation">U</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ऊ</div>
+<div class="bangla-pronunciation">ঊ</div>
+<div class="english-pronunciation">Ū</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ऋ</div>
+<div class="bangla-pronunciation">ঋ</div>
+<div class="english-pronunciation">Ṛ</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ॠ</div>
+<div class="bangla-pronunciation">ৠ</div>
+<div class="english-pronunciation">Ṝ</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ऌ</div>
+<div class="bangla-pronunciation">ঌ</div>
+<div class="english-pronunciation">Ḷ</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ए</div>
+<div class="bangla-pronunciation">এ</div>
+<div class="english-pronunciation">E</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ऐ</div>
+<div class="bangla-pronunciation">ঐ</div>
+<div class="english-pronunciation">Ai</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ओ</div>
+<div class="bangla-pronunciation">ও</div>
+<div class="english-pronunciation">O</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">औ</div>
+<div class="bangla-pronunciation">ঔ</div>
+<div class="english-pronunciation">Au</div>
+</div>
+
 
 </div>
 
 
+<!-- ===== CONSONANTS ===== -->
+
+<h3 class="category-title">
+व्यञ्जन — ব্যঞ্জনবর্ণ
+</h3>
+
+
+<div class="letter-grid">
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">क</div>
+<div class="bangla-pronunciation">ক</div>
+<div class="english-pronunciation">Ka</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ख</div>
+<div class="bangla-pronunciation">খ</div>
+<div class="english-pronunciation">Kha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ग</div>
+<div class="bangla-pronunciation">গ</div>
+<div class="english-pronunciation">Ga</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">घ</div>
+<div class="bangla-pronunciation">ঘ</div>
+<div class="english-pronunciation">Gha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ङ</div>
+<div class="bangla-pronunciation">ঙ</div>
+<div class="english-pronunciation">Ṅa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">च</div>
+<div class="bangla-pronunciation">চ</div>
+<div class="english-pronunciation">Ca</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">छ</div>
+<div class="bangla-pronunciation">ছ</div>
+<div class="english-pronunciation">Cha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ज</div>
+<div class="bangla-pronunciation">জ</div>
+<div class="english-pronunciation">Ja</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">झ</div>
+<div class="bangla-pronunciation">ঝ</div>
+<div class="english-pronunciation">Jha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ञ</div>
+<div class="bangla-pronunciation">ঞ</div>
+<div class="english-pronunciation">Ña</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ट</div>
+<div class="bangla-pronunciation">ট</div>
+<div class="english-pronunciation">Ṭa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ठ</div>
+<div class="bangla-pronunciation">ঠ</div>
+<div class="english-pronunciation">Ṭha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ड</div>
+<div class="bangla-pronunciation">ড</div>
+<div class="english-pronunciation">Ḍa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ढ</div>
+<div class="bangla-pronunciation">ঢ</div>
+<div class="english-pronunciation">Ḍha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ण</div>
+<div class="bangla-pronunciation">ণ</div>
+<div class="english-pronunciation">Ṇa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">त</div>
+<div class="bangla-pronunciation">ত</div>
+<div class="english-pronunciation">Ta</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">थ</div>
+<div class="bangla-pronunciation">থ</div>
+<div class="english-pronunciation">Tha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">द</div>
+<div class="bangla-pronunciation">দ</div>
+<div class="english-pronunciation">Da</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ध</div>
+<div class="bangla-pronunciation">ধ</div>
+<div class="english-pronunciation">Dha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">न</div>
+<div class="bangla-pronunciation">ন</div>
+<div class="english-pronunciation">Na</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">प</div>
+<div class="bangla-pronunciation">প</div>
+<div class="english-pronunciation">Pa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">फ</div>
+<div class="bangla-pronunciation">ফ</div>
+<div class="english-pronunciation">Pha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ब</div>
+<div class="bangla-pronunciation">ব</div>
+<div class="english-pronunciation">Ba</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">भ</div>
+<div class="bangla-pronunciation">ভ</div>
+<div class="english-pronunciation">Bha</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">म</div>
+<div class="bangla-pronunciation">ম</div>
+<div class="english-pronunciation">Ma</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">य</div>
+<div class="bangla-pronunciation">য</div>
+<div class="english-pronunciation">Ya</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">र</div>
+<div class="bangla-pronunciation">র</div>
+<div class="english-pronunciation">Ra</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ल</div>
+<div class="bangla-pronunciation">ল</div>
+<div class="english-pronunciation">La</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">व</div>
+<div class="bangla-pronunciation">ব/ৱ</div>
+<div class="english-pronunciation">Va</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">श</div>
+<div class="bangla-pronunciation">শ</div>
+<div class="english-pronunciation">Śa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ष</div>
+<div class="bangla-pronunciation">ষ</div>
+<div class="english-pronunciation">Ṣa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">स</div>
+<div class="bangla-pronunciation">স</div>
+<div class="english-pronunciation">Sa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ह</div>
+<div class="bangla-pronunciation">হ</div>
+<div class="english-pronunciation">Ha</div>
+</div>
+
+
+</div>
+
+
+<!-- ===== SPECIAL COMBINATIONS ===== -->
+
+<h3 class="category-title">
+संयुक्ताक्षर — প্রচলিত যুক্তবর্ণ
+</h3>
+
+
+<div class="letter-grid">
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">क्ष</div>
+<div class="bangla-pronunciation">ক্ষ</div>
+<div class="english-pronunciation">Kṣa</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">त्र</div>
+<div class="bangla-pronunciation">ত্র</div>
+<div class="english-pronunciation">Tra</div>
+</div>
+
+
+<div class="letter-card">
+<div class="sanskrit-letter">ज्ञ</div>
+<div class="bangla-pronunciation">জ্ঞ</div>
+<div class="english-pronunciation">Jña</div>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
 
 <div class="footer">
 
 🪔 The Sanatan Hindu Gurukul
 
 </div>
-
 
 
 </div>
