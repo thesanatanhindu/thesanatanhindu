@@ -13,353 +13,381 @@
 
 <style>
 
-/* ===== GENERAL ===== */
+/* =========================
+   GENERAL
+========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
+body{
 
-    font-family: "Noto Sans Bengali", sans-serif;
+    font-family:"Noto Sans Bengali", sans-serif;
 
-    background: #fff7e6;
+    background:#fff7e6;
 
-    color: #333;
+    color:#333;
 
-    padding: 20px;
-
-}
-
-
-/* ===== MAIN CONTAINER ===== */
-
-.container {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    padding:20px;
 
 }
 
 
-/* ===== TITLE ===== */
+/* =========================
+   MAIN CONTAINER
+========================= */
 
-h1 {
+.container{
 
-    text-align: center;
+    max-width:1100px;
 
-    color: #8b4513;
+    margin:auto;
 
-    font-size: 36px;
+    background:white;
 
-    margin-bottom: 10px;
+    padding:30px;
 
-}
+    border-radius:20px;
 
-.subtitle {
-
-    text-align: center;
-
-    color: #555;
-
-    margin-bottom: 35px;
-
-    line-height: 1.8;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 
 }
 
 
-/* ===== OLD GURUKUL CARDS ===== */
+/* =========================
+   HEADER
+========================= */
 
-.cards {
+.header{
 
-    display: grid;
+    text-align:center;
 
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-bottom:35px;
 
-    gap: 20px;
+}
 
-    margin-bottom: 45px;
+.header h1{
+
+    color:#8b4513;
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#666;
+
+    font-size:17px;
+
+    line-height:1.8;
 
 }
 
 
-.card {
+/* =========================
+   SECTION
+========================= */
 
-    background: #fff8dc;
+.section{
 
-    padding: 25px;
+    margin-top:40px;
 
-    border-radius: 18px;
+}
 
-    border: 2px solid #e6c36a;
+.section-title{
 
-    text-align: center;
+    text-align:center;
 
-    cursor: pointer;
+    color:#8b4513;
 
-    transition: .3s;
+    font-size:28px;
+
+    margin-bottom:25px;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid #e6c36a;
 
 }
 
 
-.card:hover {
+/* =========================
+   LETTER GRID
+========================= */
 
-    transform: translateY(-5px);
+.letter-grid{
 
-    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    display:grid;
 
-}
+    grid-template-columns:
+    repeat(auto-fit,minmax(130px,1fr));
 
-
-.card h2 {
-
-    color: #a0522d;
-
-    margin-bottom: 12px;
+    gap:15px;
 
 }
 
 
-.card p {
+/* =========================
+   LETTER CARD
+========================= */
 
-    line-height: 1.7;
+.letter-card{
+
+    background:#fff8dc;
+
+    border:2px solid #e6c36a;
+
+    border-radius:14px;
+
+    padding:18px 10px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.letter-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 7px 18px rgba(0,0,0,.12);
 
 }
 
 
-.icon {
+/* Sanskrit letter */
 
-    font-size: 45px;
+.sanskrit-letter{
 
-    margin-bottom: 15px;
+    font-family:"Noto Sans Devanagari", sans-serif;
 
-}
+    font-size:36px;
 
+    font-weight:700;
 
-/* ===== SANSKRIT SECTION ===== */
+    color:#8b4513;
 
-.sanskrit-section {
-
-    margin-top: 20px;
-
-}
-
-
-.section-title {
-
-    text-align: center;
-
-    color: #8b4513;
-
-    font-size: 30px;
-
-    margin-bottom: 10px;
+    margin-bottom:8px;
 
 }
 
 
-.section-subtitle {
+/* Bangla pronunciation */
 
-    text-align: center;
+.bangla-pronunciation{
 
-    color: #666;
+    font-size:16px;
 
-    margin-bottom: 30px;
+    font-weight:700;
 
-}
+    color:#333;
 
-
-/* ===== CATEGORY TITLE ===== */
-
-.category-title {
-
-    text-align: left;
-
-    color: #a0522d;
-
-    font-size: 24px;
-
-    margin: 30px 0 15px;
-
-    border-bottom: 2px solid #e6c36a;
-
-    padding-bottom: 8px;
+    margin-bottom:3px;
 
 }
 
 
-/* ===== LETTER GRID ===== */
+/* English pronunciation */
 
-.letter-grid {
+.english-pronunciation{
 
-    display: grid;
+    font-family:Arial,sans-serif;
 
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    font-size:13px;
 
-    gap: 15px;
-
-}
-
-
-/* ===== LETTER CARD ===== */
-
-.letter-card {
-
-    background: #fffaf0;
-
-    border: 2px solid #e6c36a;
-
-    border-radius: 14px;
-
-    padding: 18px 10px;
-
-    text-align: center;
-
-    transition: .3s;
+    color:#777;
 
 }
 
 
-.letter-card:hover {
+/* =========================
+   NUMBER GRID
+========================= */
 
-    transform: translateY(-4px);
+.number-grid{
 
-    box-shadow: 0 6px 15px rgba(0,0,0,.12);
+    display:grid;
 
-    background: #fff8dc;
+    grid-template-columns:
+    repeat(auto-fit,minmax(150px,1fr));
 
-}
-
-
-/* ===== SANSKRIT LETTER ===== */
-
-.sanskrit-letter {
-
-    font-family: "Noto Sans Devanagari", sans-serif;
-
-    font-size: 38px;
-
-    font-weight: 700;
-
-    color: #8b4513;
-
-    margin-bottom: 8px;
+    gap:12px;
 
 }
 
 
-/* ===== PRONUNCIATION ===== */
+/* Number card */
 
-.bangla-pronunciation {
+.number-card{
 
-    font-size: 16px;
+    background:#fff8dc;
 
-    font-weight: 700;
+    border:1px solid #e6c36a;
 
-    color: #333;
+    border-radius:12px;
 
-    margin-bottom: 3px;
+    padding:15px 8px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.number-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
 
 }
 
 
-.english-pronunciation {
+/* Sanskrit number */
 
-    font-family: Arial, sans-serif;
+.number-sanskrit{
 
-    font-size: 14px;
+    font-family:"Noto Sans Devanagari", sans-serif;
 
-    color: #777;
+    font-size:27px;
 
-}
+    font-weight:700;
 
-
-/* ===== FOOTER ===== */
-
-.footer {
-
-    margin-top: 45px;
-
-    text-align: center;
-
-    color: #777;
-
-    padding-top: 20px;
-
-    border-top: 1px solid #eee;
+    color:#8b4513;
 
 }
 
 
-/* ===== MOBILE ===== */
+/* Number */
 
-@media (max-width: 600px) {
+.number-digit{
 
-    body {
+    font-family:Arial,sans-serif;
 
-        padding: 10px;
+    font-size:14px;
+
+    color:#999;
+
+    margin:3px 0;
+
+}
+
+
+/* Bangla */
+
+.number-bangla{
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+
+/* English */
+
+.number-english{
+
+    font-family:Arial,sans-serif;
+
+    font-size:12px;
+
+    color:#777;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:45px;
+
+    padding-top:25px;
+
+    border-top:1px solid #ddd;
+
+    color:#777;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    body{
+
+        padding:10px;
 
     }
 
-    .container {
+    .container{
 
-        padding: 20px 15px;
-
-    }
-
-    h1 {
-
-        font-size: 30px;
+        padding:20px 12px;
 
     }
 
-    .section-title {
+    .header h1{
 
-        font-size: 26px;
-
-    }
-
-    .letter-grid {
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 10px;
+        font-size:32px;
 
     }
 
-    .letter-card {
+    .section-title{
 
-        padding: 14px 5px;
-
-    }
-
-    .sanskrit-letter {
-
-        font-size: 32px;
+        font-size:24px;
 
     }
 
-    .bangla-pronunciation {
+    .letter-grid{
 
-        font-size: 14px;
+        grid-template-columns:
+        repeat(3,1fr);
+
+        gap:10px;
 
     }
 
-    .english-pronunciation {
+    .number-grid{
 
-        font-size: 12px;
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:10px;
+
+    }
+
+    .sanskrit-letter{
+
+        font-size:30px;
+
+    }
+
+}
+
+
+/* Very small screen */
+
+@media(max-width:380px){
+
+    .letter-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
 
     }
 
@@ -376,224 +404,212 @@ h1 {
 <div class="container">
 
 
-<!-- ===== GURUKUL HEADER ===== -->
+<!-- =========================
+     HEADER
+========================= -->
 
-<h1>
-🪔 Gurukul
-</h1>
+<div class="header">
 
-<p class="subtitle">
+    <h1>🪔 Gurukul</h1>
 
-Learn • Values • Wisdom
+    <p class="subtitle">
 
-<br>
+        Learn • Values • Wisdom
 
-জ্ঞান, সংস্কৃতি ও নৈতিক শিক্ষার কেন্দ্র
+        <br>
 
-</p>
+        জ্ঞান, সংস্কৃতি ও নৈতিক শিক্ষার কেন্দ্র
 
-
-<!-- ===== GURUKUL CARDS ===== -->
-
-<div class="cards">
-
-
-<div class="card">
-
-<div class="icon">
-অ
-</div>
-
-<h2>
-বাংলা
-</h2>
-
-<p>
-বাংলা বর্ণমালা ও ধর্মীয় শব্দ শিক্ষা
-</p>
+    </p>
 
 </div>
 
 
-<div class="card">
 
-<div class="icon">
-🔤
-</div>
+<!-- =========================
+     SANSKRIT VOWELS
+========================= -->
 
-<h2>
-English
-</h2>
-
-<p>
-English Alphabet with Hindu Wisdom
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-सं
-</div>
-
-<h2>
-संस्कृत
-</h2>
-
-<p>
-Sanskrit Letters
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📖
-</div>
-
-<h2>
-Dharma & Values
-</h2>
-
-<p>
-নৈতিক শিক্ষা, সংস্কৃতি ও জীবন দর্শন
-</p>
-
-</div>
-
-
-</div>
-
-
-<!-- ===== SANSKRIT LETTERS ===== -->
-
-<section class="sanskrit-section">
-
+<section class="section">
 
 <h2 class="section-title">
-संस्कृत वर्णमाला
+
+    संस्कृत स्वरवर्ण
+
+    <br>
+
+    Sanskrit Vowels
+
 </h2>
-
-<p class="section-subtitle">
-Sanskrit Alphabet
-<br>
-সংস্কৃত বর্ণমালা
-</p>
-
-
-<!-- ===== VOWELS ===== -->
-
-<h3 class="category-title">
-स्वर — স্বরবর্ণ
-</h3>
 
 
 <div class="letter-grid">
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">अ</div>
+
 <div class="bangla-pronunciation">অ</div>
-<div class="english-pronunciation">A</div>
+
+<div class="english-pronunciation">a</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">आ</div>
+
 <div class="bangla-pronunciation">আ</div>
-<div class="english-pronunciation">Ā</div>
+
+<div class="english-pronunciation">aa</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">इ</div>
+
 <div class="bangla-pronunciation">ই</div>
-<div class="english-pronunciation">I</div>
+
+<div class="english-pronunciation">i</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">ई</div>
+
 <div class="bangla-pronunciation">ঈ</div>
-<div class="english-pronunciation">Ī</div>
+
+<div class="english-pronunciation">ee</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">उ</div>
+
 <div class="bangla-pronunciation">উ</div>
-<div class="english-pronunciation">U</div>
+
+<div class="english-pronunciation">u</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">ऊ</div>
+
 <div class="bangla-pronunciation">ঊ</div>
-<div class="english-pronunciation">Ū</div>
+
+<div class="english-pronunciation">oo</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">ऋ</div>
+
 <div class="bangla-pronunciation">ঋ</div>
-<div class="english-pronunciation">Ṛ</div>
+
+<div class="english-pronunciation">ri</div>
+
 </div>
 
 
 <div class="letter-card">
-<div class="sanskrit-letter">ॠ</div>
-<div class="bangla-pronunciation">ৠ</div>
-<div class="english-pronunciation">Ṝ</div>
-</div>
 
-
-<div class="letter-card">
-<div class="sanskrit-letter">ऌ</div>
-<div class="bangla-pronunciation">ঌ</div>
-<div class="english-pronunciation">Ḷ</div>
-</div>
-
-
-<div class="letter-card">
 <div class="sanskrit-letter">ए</div>
+
 <div class="bangla-pronunciation">এ</div>
-<div class="english-pronunciation">E</div>
+
+<div class="english-pronunciation">e</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">ऐ</div>
+
 <div class="bangla-pronunciation">ঐ</div>
-<div class="english-pronunciation">Ai</div>
+
+<div class="english-pronunciation">ai</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">ओ</div>
+
 <div class="bangla-pronunciation">ও</div>
-<div class="english-pronunciation">O</div>
+
+<div class="english-pronunciation">o</div>
+
 </div>
 
 
 <div class="letter-card">
+
 <div class="sanskrit-letter">औ</div>
+
 <div class="bangla-pronunciation">ঔ</div>
-<div class="english-pronunciation">Au</div>
+
+<div class="english-pronunciation">au</div>
+
+</div>
+
+
+<div class="letter-card">
+
+<div class="sanskrit-letter">अं</div>
+
+<div class="bangla-pronunciation">অং</div>
+
+<div class="english-pronunciation">am / an</div>
+
+</div>
+
+
+<div class="letter-card">
+
+<div class="sanskrit-letter">अः</div>
+
+<div class="bangla-pronunciation">অঃ</div>
+
+<div class="english-pronunciation">ah</div>
+
 </div>
 
 
 </div>
 
+</section>
 
-<!-- ===== CONSONANTS ===== -->
 
-<h3 class="category-title">
-व्यञ्जन — ব্যঞ্জনবর্ণ
-</h3>
+
+<!-- =========================
+     SANSKRIT CONSONANTS
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+    संस्कृत व्यञ्जनवर्ण
+
+    <br>
+
+    Sanskrit Consonants
+
+</h2>
 
 
 <div class="letter-grid">
@@ -602,279 +618,1007 @@ Sanskrit Alphabet
 <div class="letter-card">
 <div class="sanskrit-letter">क</div>
 <div class="bangla-pronunciation">ক</div>
-<div class="english-pronunciation">Ka</div>
+<div class="english-pronunciation">ka</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ख</div>
 <div class="bangla-pronunciation">খ</div>
-<div class="english-pronunciation">Kha</div>
+<div class="english-pronunciation">kha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ग</div>
 <div class="bangla-pronunciation">গ</div>
-<div class="english-pronunciation">Ga</div>
+<div class="english-pronunciation">ga</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">घ</div>
 <div class="bangla-pronunciation">ঘ</div>
-<div class="english-pronunciation">Gha</div>
+<div class="english-pronunciation">gha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ङ</div>
 <div class="bangla-pronunciation">ঙ</div>
-<div class="english-pronunciation">Ṅa</div>
+<div class="english-pronunciation">nga</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">च</div>
 <div class="bangla-pronunciation">চ</div>
-<div class="english-pronunciation">Ca</div>
+<div class="english-pronunciation">cha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">छ</div>
 <div class="bangla-pronunciation">ছ</div>
-<div class="english-pronunciation">Cha</div>
+<div class="english-pronunciation">chha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ज</div>
 <div class="bangla-pronunciation">জ</div>
-<div class="english-pronunciation">Ja</div>
+<div class="english-pronunciation">ja</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">झ</div>
 <div class="bangla-pronunciation">ঝ</div>
-<div class="english-pronunciation">Jha</div>
+<div class="english-pronunciation">jha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ञ</div>
 <div class="bangla-pronunciation">ঞ</div>
-<div class="english-pronunciation">Ña</div>
+<div class="english-pronunciation">nya</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ट</div>
 <div class="bangla-pronunciation">ট</div>
-<div class="english-pronunciation">Ṭa</div>
+<div class="english-pronunciation">ta</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ठ</div>
 <div class="bangla-pronunciation">ঠ</div>
-<div class="english-pronunciation">Ṭha</div>
+<div class="english-pronunciation">tha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ड</div>
 <div class="bangla-pronunciation">ড</div>
-<div class="english-pronunciation">Ḍa</div>
+<div class="english-pronunciation">da</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ढ</div>
 <div class="bangla-pronunciation">ঢ</div>
-<div class="english-pronunciation">Ḍha</div>
+<div class="english-pronunciation">dha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ण</div>
 <div class="bangla-pronunciation">ণ</div>
-<div class="english-pronunciation">Ṇa</div>
+<div class="english-pronunciation">na</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">त</div>
 <div class="bangla-pronunciation">ত</div>
-<div class="english-pronunciation">Ta</div>
+<div class="english-pronunciation">ta</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">थ</div>
 <div class="bangla-pronunciation">থ</div>
-<div class="english-pronunciation">Tha</div>
+<div class="english-pronunciation">tha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">द</div>
 <div class="bangla-pronunciation">দ</div>
-<div class="english-pronunciation">Da</div>
+<div class="english-pronunciation">da</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ध</div>
 <div class="bangla-pronunciation">ধ</div>
-<div class="english-pronunciation">Dha</div>
+<div class="english-pronunciation">dha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">न</div>
 <div class="bangla-pronunciation">ন</div>
-<div class="english-pronunciation">Na</div>
+<div class="english-pronunciation">na</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">प</div>
 <div class="bangla-pronunciation">প</div>
-<div class="english-pronunciation">Pa</div>
+<div class="english-pronunciation">pa</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">फ</div>
 <div class="bangla-pronunciation">ফ</div>
-<div class="english-pronunciation">Pha</div>
+<div class="english-pronunciation">pha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ब</div>
 <div class="bangla-pronunciation">ব</div>
-<div class="english-pronunciation">Ba</div>
+<div class="english-pronunciation">ba</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">भ</div>
 <div class="bangla-pronunciation">ভ</div>
-<div class="english-pronunciation">Bha</div>
+<div class="english-pronunciation">bha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">म</div>
 <div class="bangla-pronunciation">ম</div>
-<div class="english-pronunciation">Ma</div>
+<div class="english-pronunciation">ma</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">य</div>
 <div class="bangla-pronunciation">য</div>
-<div class="english-pronunciation">Ya</div>
+<div class="english-pronunciation">ya</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">र</div>
 <div class="bangla-pronunciation">র</div>
-<div class="english-pronunciation">Ra</div>
+<div class="english-pronunciation">ra</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ल</div>
 <div class="bangla-pronunciation">ল</div>
-<div class="english-pronunciation">La</div>
+<div class="english-pronunciation">la</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">व</div>
-<div class="bangla-pronunciation">ব/ৱ</div>
-<div class="english-pronunciation">Va</div>
+<div class="bangla-pronunciation">ব / ভ</div>
+<div class="english-pronunciation">va</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">श</div>
 <div class="bangla-pronunciation">শ</div>
-<div class="english-pronunciation">Śa</div>
+<div class="english-pronunciation">sha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ष</div>
 <div class="bangla-pronunciation">ষ</div>
-<div class="english-pronunciation">Ṣa</div>
+<div class="english-pronunciation">sha</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">स</div>
 <div class="bangla-pronunciation">স</div>
-<div class="english-pronunciation">Sa</div>
+<div class="english-pronunciation">sa</div>
 </div>
 
 
 <div class="letter-card">
 <div class="sanskrit-letter">ह</div>
 <div class="bangla-pronunciation">হ</div>
-<div class="english-pronunciation">Ha</div>
+<div class="english-pronunciation">ha</div>
 </div>
 
 
 </div>
-
-
-<!-- ===== SPECIAL COMBINATIONS ===== -->
-
-<h3 class="category-title">
-संयुक्ताक्षर — প্রচলিত যুক্তবর্ণ
-</h3>
-
-
-<div class="letter-grid">
-
-
-<div class="letter-card">
-<div class="sanskrit-letter">क्ष</div>
-<div class="bangla-pronunciation">ক্ষ</div>
-<div class="english-pronunciation">Kṣa</div>
-</div>
-
-
-<div class="letter-card">
-<div class="sanskrit-letter">त्र</div>
-<div class="bangla-pronunciation">ত্র</div>
-<div class="english-pronunciation">Tra</div>
-</div>
-
-
-<div class="letter-card">
-<div class="sanskrit-letter">ज्ञ</div>
-<div class="bangla-pronunciation">জ্ঞ</div>
-<div class="english-pronunciation">Jña</div>
-</div>
-
-
-</div>
-
 
 </section>
 
 
-<!-- ===== FOOTER ===== -->
+
+<!-- =========================
+     SANSKRIT NUMBERS
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+    संस्कृत संख्याः
+
+    <br>
+
+    Sanskrit Numbers 1–100
+
+</h2>
+
+
+<div class="number-grid">
+
+
+<!-- 1-10 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकम्</div>
+<div class="number-digit">1</div>
+<div class="number-bangla">এক</div>
+<div class="number-english">Ekam</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्वे</div>
+<div class="number-digit">2</div>
+<div class="number-bangla">দুই</div>
+<div class="number-english">Dve</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रीणि</div>
+<div class="number-digit">3</div>
+<div class="number-bangla">তিন</div>
+<div class="number-english">Trini</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चत्वारि</div>
+<div class="number-digit">4</div>
+<div class="number-bangla">চার</div>
+<div class="number-english">Chatvari</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्च</div>
+<div class="number-digit">5</div>
+<div class="number-bangla">পাঁচ</div>
+<div class="number-english">Pancha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षट्</div>
+<div class="number-digit">6</div>
+<div class="number-bangla">ছয়</div>
+<div class="number-english">Shat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्त</div>
+<div class="number-digit">7</div>
+<div class="number-bangla">সাত</div>
+<div class="number-english">Sapta</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्ट</div>
+<div class="number-digit">8</div>
+<div class="number-bangla">আট</div>
+<div class="number-english">Ashta</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नव</div>
+<div class="number-digit">9</div>
+<div class="number-bangla">নয়</div>
+<div class="number-english">Nava</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">दश</div>
+<div class="number-digit">10</div>
+<div class="number-bangla">দশ</div>
+<div class="number-english">Dasha</div>
+</div>
+
+
+<!-- 11-20 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकादश</div>
+<div class="number-digit">11</div>
+<div class="number-bangla">এগারো</div>
+<div class="number-english">Ekadasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्वादश</div>
+<div class="number-digit">12</div>
+<div class="number-bangla">বারো</div>
+<div class="number-english">Dvadasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रयोदश</div>
+<div class="number-digit">13</div>
+<div class="number-bangla">তেরো</div>
+<div class="number-english">Trayodasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुर्दश</div>
+<div class="number-digit">14</div>
+<div class="number-bangla">চৌদ্দ</div>
+<div class="number-english">Chaturdasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चदश</div>
+<div class="number-digit">15</div>
+<div class="number-bangla">পনেরো</div>
+<div class="number-english">Panchadasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षोडश</div>
+<div class="number-digit">16</div>
+<div class="number-bangla">ষোলো</div>
+<div class="number-english">Shodasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तदश</div>
+<div class="number-digit">17</div>
+<div class="number-bangla">সতেরো</div>
+<div class="number-english">Saptadasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टादश</div>
+<div class="number-digit">18</div>
+<div class="number-bangla">আঠারো</div>
+<div class="number-english">Ashtadasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवदश</div>
+<div class="number-digit">19</div>
+<div class="number-bangla">উনিশ</div>
+<div class="number-english">Navadasha</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">विंशतिः</div>
+<div class="number-digit">20</div>
+<div class="number-bangla">বিশ</div>
+<div class="number-english">Vimshatih</div>
+</div>
+
+
+<!-- 21-30 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकविंशतिः</div>
+<div class="number-digit">21</div>
+<div class="number-bangla">একুশ</div>
+<div class="number-english">Ekavimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्वाविंशतिः</div>
+<div class="number-digit">22</div>
+<div class="number-bangla">বাইশ</div>
+<div class="number-english">Dvavimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रयोविंशतिः</div>
+<div class="number-digit">23</div>
+<div class="number-bangla">তেইশ</div>
+<div class="number-english">Trayovimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुर्विंशतिः</div>
+<div class="number-digit">24</div>
+<div class="number-bangla">চব্বিশ</div>
+<div class="number-english">Chaturvimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चविंशतिः</div>
+<div class="number-digit">25</div>
+<div class="number-bangla">পঁচিশ</div>
+<div class="number-english">Panchavimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षड्विंशतिः</div>
+<div class="number-digit">26</div>
+<div class="number-bangla">ছাব্বিশ</div>
+<div class="number-english">Shadvimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तविंशतिः</div>
+<div class="number-digit">27</div>
+<div class="number-bangla">সাতাশ</div>
+<div class="number-english">Saptavimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टाविंशतिः</div>
+<div class="number-digit">28</div>
+<div class="number-bangla">আঠাশ</div>
+<div class="number-english">Ashtavimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवविंशतिः</div>
+<div class="number-digit">29</div>
+<div class="number-bangla">ঊনত্রিশ</div>
+<div class="number-english">Navavimshatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रिंशत्</div>
+<div class="number-digit">30</div>
+<div class="number-bangla">ত্রিশ</div>
+<div class="number-english">Trimshat</div>
+</div>
+
+
+<!-- 31-40 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकत्रिंशत्</div>
+<div class="number-digit">31</div>
+<div class="number-bangla">একত্রিশ</div>
+<div class="number-english">Ekatriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्वात्रिंशत्</div>
+<div class="number-digit">32</div>
+<div class="number-bangla">বত্রিশ</div>
+<div class="number-english">Dvatriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रयस्त्रिंशत्</div>
+<div class="number-digit">33</div>
+<div class="number-bangla">তেত্রিশ</div>
+<div class="number-english">Trayastriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुस्त्रिंशत्</div>
+<div class="number-digit">34</div>
+<div class="number-bangla">চৌত্রিশ</div>
+<div class="number-english">Chatustriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चत्रिंशत्</div>
+<div class="number-digit">35</div>
+<div class="number-bangla">পঁয়ত্রিশ</div>
+<div class="number-english">Panchatriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षट्त्रिंशत्</div>
+<div class="number-digit">36</div>
+<div class="number-bangla">ছত্রিশ</div>
+<div class="number-english">Shattriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तत्रिंशत्</div>
+<div class="number-digit">37</div>
+<div class="number-bangla">সাঁইত্রিশ</div>
+<div class="number-english">Saptatriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टात्रिंशत्</div>
+<div class="number-digit">38</div>
+<div class="number-bangla">আটত্রিশ</div>
+<div class="number-english">Ashtatriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवत्रिंशत्</div>
+<div class="number-digit">39</div>
+<div class="number-bangla">ঊনচল্লিশ</div>
+<div class="number-english">Navatriṃshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चत्वारिंशत्</div>
+<div class="number-digit">40</div>
+<div class="number-bangla">চল্লিশ</div>
+<div class="number-english">Chatvarimshat</div>
+</div>
+
+
+<!-- 41-50 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकचत्वारिंशत्</div>
+<div class="number-digit">41</div>
+<div class="number-bangla">একচল্লিশ</div>
+<div class="number-english">Ekachatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्विचत्वारिंशत्</div>
+<div class="number-digit">42</div>
+<div class="number-bangla">বিয়াল্লিশ</div>
+<div class="number-english">Dvichatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रिचत्वारिंशत्</div>
+<div class="number-digit">43</div>
+<div class="number-bangla">তেতাল্লিশ</div>
+<div class="number-english">Trichatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुश्चत्वारिंशत्</div>
+<div class="number-digit">44</div>
+<div class="number-bangla">চুয়াল্লিশ</div>
+<div class="number-english">Chatushchatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चचत्वारिंशत्</div>
+<div class="number-digit">45</div>
+<div class="number-bangla">পঁয়তাল্লিশ</div>
+<div class="number-english">Panchachatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षट्चत्वारिंशत्</div>
+<div class="number-digit">46</div>
+<div class="number-bangla">ছেচল্লিশ</div>
+<div class="number-english">Shatchatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तचत्वारिंशत्</div>
+<div class="number-digit">47</div>
+<div class="number-bangla">সাতচল্লিশ</div>
+<div class="number-english">Saptachatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टचत्वारिंशत्</div>
+<div class="number-digit">48</div>
+<div class="number-bangla">আটচল্লিশ</div>
+<div class="number-english">Ashtachatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवचत्वारिंशत्</div>
+<div class="number-digit">49</div>
+<div class="number-bangla">ঊনপঞ্চাশ</div>
+<div class="number-english">Navachatvarimshat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चाशत्</div>
+<div class="number-digit">50</div>
+<div class="number-bangla">পঞ্চাশ</div>
+<div class="number-english">Panchashat</div>
+</div>
+
+
+<!-- 51-60 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकपञ्चाशत्</div>
+<div class="number-digit">51</div>
+<div class="number-bangla">একান্ন</div>
+<div class="number-english">Ekapanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्विपञ्चाशत्</div>
+<div class="number-digit">52</div>
+<div class="number-bangla">বাহান্ন</div>
+<div class="number-english">Dvipanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रिपञ्चाशत्</div>
+<div class="number-digit">53</div>
+<div class="number-bangla">তিপ্পান্ন</div>
+<div class="number-english">Tripanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुःपञ्चाशत्</div>
+<div class="number-digit">54</div>
+<div class="number-bangla">চুয়ান্ন</div>
+<div class="number-english">Chatuhpanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चपञ्चाशत्</div>
+<div class="number-digit">55</div>
+<div class="number-bangla">পঞ্চান্ন</div>
+<div class="number-english">Panchapanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षट्पञ्चाशत्</div>
+<div class="number-digit">56</div>
+<div class="number-bangla">ছাপ্পান্ন</div>
+<div class="number-english">Shatpanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तपञ्चाशत्</div>
+<div class="number-digit">57</div>
+<div class="number-bangla">সাতান্ন</div>
+<div class="number-english">Saptapanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टपञ्चाशत्</div>
+<div class="number-digit">58</div>
+<div class="number-bangla">আটান্ন</div>
+<div class="number-english">Ashtapanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवपञ्चाशत्</div>
+<div class="number-digit">59</div>
+<div class="number-bangla">ঊনষাট</div>
+<div class="number-english">Navapanchashat</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षष्टिः</div>
+<div class="number-digit">60</div>
+<div class="number-bangla">ষাট</div>
+<div class="number-english">Shashtih</div>
+</div>
+
+
+<!-- 61-70 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकषष्टिः</div>
+<div class="number-digit">61</div>
+<div class="number-bangla">একষট্টি</div>
+<div class="number-english">Ekashashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्विषष्टिः</div>
+<div class="number-digit">62</div>
+<div class="number-bangla">বাষট্টি</div>
+<div class="number-english">Dvishashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रिषष्टिः</div>
+<div class="number-digit">63</div>
+<div class="number-bangla">তেষট্টি</div>
+<div class="number-english">Trishashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुःषष्टिः</div>
+<div class="number-digit">64</div>
+<div class="number-bangla">চৌষট্টি</div>
+<div class="number-english">Chatuhshashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चषष्टिः</div>
+<div class="number-digit">65</div>
+<div class="number-bangla">পঁয়ষট্টি</div>
+<div class="number-english">Panchashashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षट्षष्टिः</div>
+<div class="number-digit">66</div>
+<div class="number-bangla">ছেষট্টি</div>
+<div class="number-english">Shatshashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तषष्टिः</div>
+<div class="number-digit">67</div>
+<div class="number-bangla">সাতষট্টি</div>
+<div class="number-english">Saptashashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टषष्टिः</div>
+<div class="number-digit">68</div>
+<div class="number-bangla">আটষট্টি</div>
+<div class="number-english">Ashtashashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवषष्टिः</div>
+<div class="number-digit">69</div>
+<div class="number-bangla">ঊনসত্তর</div>
+<div class="number-english">Navashashtih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्ततिः</div>
+<div class="number-digit">70</div>
+<div class="number-bangla">সত্তর</div>
+<div class="number-english">Saptatih</div>
+</div>
+
+
+<!-- 71-80 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकसप्ततिः</div>
+<div class="number-digit">71</div>
+<div class="number-bangla">একাত্তর</div>
+<div class="number-english">Ekasaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्विसप्ततिः</div>
+<div class="number-digit">72</div>
+<div class="number-bangla">বাহাত্তর</div>
+<div class="number-english">Dvisaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रिसप्ततिः</div>
+<div class="number-digit">73</div>
+<div class="number-bangla">তিয়াত্তর</div>
+<div class="number-english">Trisaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुःसप्ततिः</div>
+<div class="number-digit">74</div>
+<div class="number-bangla">চুয়াত্তর</div>
+<div class="number-english">Chatuhsaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चसप्ततिः</div>
+<div class="number-digit">75</div>
+<div class="number-bangla">পঁচাত্তর</div>
+<div class="number-english">Panchasaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षट्सप्ततिः</div>
+<div class="number-digit">76</div>
+<div class="number-bangla">ছিয়াত্তর</div>
+<div class="number-english">Shatsaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तसप्ततिः</div>
+<div class="number-digit">77</div>
+<div class="number-bangla">সাতাত্তর</div>
+<div class="number-english">Saptasaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टसप्ततिः</div>
+<div class="number-digit">78</div>
+<div class="number-bangla">আটাত্তর</div>
+<div class="number-english">Ashtasaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवसप्ततिः</div>
+<div class="number-digit">79</div>
+<div class="number-bangla">ঊনআশি</div>
+<div class="number-english">Navasaptatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अशीतिः</div>
+<div class="number-digit">80</div>
+<div class="number-bangla">আশি</div>
+<div class="number-english">Ashitih</div>
+</div>
+
+
+<!-- 81-90 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकाशीतिः</div>
+<div class="number-digit">81</div>
+<div class="number-bangla">একাশি</div>
+<div class="number-english">Ekashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्व्यशीतिः</div>
+<div class="number-digit">82</div>
+<div class="number-bangla">বিরাশি</div>
+<div class="number-english">Dvyashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्र्यशीतिः</div>
+<div class="number-digit">83</div>
+<div class="number-bangla">তিরাশি</div>
+<div class="number-english">Tryashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुरशीतिः</div>
+<div class="number-digit">84</div>
+<div class="number-bangla">চুরাশি</div>
+<div class="number-english">Chaturashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चाशीतिः</div>
+<div class="number-digit">85</div>
+<div class="number-bangla">পঁচাশি</div>
+<div class="number-english">Panchashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षडशीतिः</div>
+<div class="number-digit">86</div>
+<div class="number-bangla">ছিয়াশি</div>
+<div class="number-english">Shadashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्ताशीतिः</div>
+<div class="number-digit">87</div>
+<div class="number-bangla">সাতাশি</div>
+<div class="number-english">Saptashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टाशीतिः</div>
+<div class="number-digit">88</div>
+<div class="number-bangla">আটাশি</div>
+<div class="number-english">Ashtashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवाशीतिः</div>
+<div class="number-digit">89</div>
+<div class="number-bangla">ঊননব্বই</div>
+<div class="number-english">Navashitih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवतिः</div>
+<div class="number-digit">90</div>
+<div class="number-bangla">নব্বই</div>
+<div class="number-english">Navatih</div>
+</div>
+
+
+<!-- 91-100 -->
+
+<div class="number-card">
+<div class="number-sanskrit">एकनवतिः</div>
+<div class="number-digit">91</div>
+<div class="number-bangla">একানব্বই</div>
+<div class="number-english">Ekanavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">द्विनवतिः</div>
+<div class="number-digit">92</div>
+<div class="number-bangla">বিরানব্বই</div>
+<div class="number-english">Dvinavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">त्रिनवतिः</div>
+<div class="number-digit">93</div>
+<div class="number-bangla">তিরানব্বই</div>
+<div class="number-english">Trinavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">चतुर्नवतिः</div>
+<div class="number-digit">94</div>
+<div class="number-bangla">চুরানব্বই</div>
+<div class="number-english">Chaturnavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">पञ्चनवतिः</div>
+<div class="number-digit">95</div>
+<div class="number-bangla">পঁচানব্বই</div>
+<div class="number-english">Panchanavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">षण्णवतिः</div>
+<div class="number-digit">96</div>
+<div class="number-bangla">ছিয়ানব্বই</div>
+<div class="number-english">Shannanavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">सप्तनवतिः</div>
+<div class="number-digit">97</div>
+<div class="number-bangla">সাতানব্বই</div>
+<div class="number-english">Saptanavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">अष्टनवतिः</div>
+<div class="number-digit">98</div>
+<div class="number-bangla">আটানব্বই</div>
+<div class="number-english">Ashtanavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">नवनवतिः</div>
+<div class="number-digit">99</div>
+<div class="number-bangla">নিরানব্বই</div>
+<div class="number-english">Navanavatih</div>
+</div>
+
+<div class="number-card">
+<div class="number-sanskrit">शतम्</div>
+<div class="number-digit">100</div>
+<div class="number-bangla">একশ</div>
+<div class="number-english">Shatam</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <div class="footer">
 
-🪔 The Sanatan Hindu Gurukul
+    🪔 The Sanatan Hindu Gurukul
+
+    <br>
+
+    ज्ञान • संस्कृतिः • धर्मः • मूल्याः
 
 </div>
 
