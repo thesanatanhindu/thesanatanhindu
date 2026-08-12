@@ -2,290 +2,145 @@
 <html lang="en">
 
 <head>
-<meta name="google-site-verification" content="atSf2ci_RP427mDKgcZzVLACisCtSF4wyU2mtaAD26E" />
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="atSf2ci_RP427mDKgcZzVLACisCtSF4wyU2mtaAD26E">
 
-    <title>The Sanatan Hindu</title>
+<meta charset="UTF-8">
 
-    <style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* ===== GENERAL ===== */
+<title>The Sanatan Hindu</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
+    color: #3d2415;
+
     background:
-        linear-gradient(rgba(255,248,235,0.90), rgba(255,248,235,0.90)),
-        url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=80");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #333;
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(255, 210, 120, 0.40),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #fff3d6 0%,
+            #f8dfb0 50%,
+            #f3c982 100%
+        );
+
+    min-height: 100vh;
 }
 
 
-        /* ===== HEADER ===== */
+/* =========================
+   HEADER
+========================= */
 
-        header {
-            background-color: white;
-            padding: 18px 40px;
+header {
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            #fff8e8,
+            #ffe5b5,
+            #fff8e8
+        );
 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-
-        /* ===== LOGO ===== */
-
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-        }
-
-
-        /* ===== NAVIGATION ===== */
-
-        nav a {
-            text-decoration: none;
-
-            color: #333;
-
-            margin: 0 10px;
-
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: #d35400;
-        }
-
-
-        /* ===== LANGUAGE BUTTON ===== */
-
-        .language-buttons button {
-
-            padding: 8px 14px;
-
-            margin-left: 5px;
-
-            border: 1px solid #ddd;
-
-            background-color: white;
-
-            cursor: pointer;
-
-            border-radius: 5px;
-        }
-
-
-        /* ===== HERO ===== */
-
-        .hero {
-
-            text-align: center;
-
-            padding: 80px 20px;
-
-            background-color: #fff;
-        }
-
-        .hero h1 {
-
-            font-size: 42px;
-
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-
-            font-size: 18px;
-
-            color: #666;
-
-            max-width: 700px;
-
-            margin: auto;
-        }
-/* ===== SEARCH BOX ===== */
-
-.search-box {
-
-    margin-top: 30px;
+    padding: 18px 40px;
 
     display: flex;
 
-    justify-content: center;
+    justify-content: space-between;
 
-    gap: 10px;
+    align-items: center;
+
+    box-shadow:
+        0 2px 15px rgba(100,50,0,0.20);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    color: #8b3f00;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav a {
+
+    text-decoration: none;
+
+    color: #4a2a18;
+
+    margin: 0 8px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+nav a:hover {
+
+    color: #b44d00;
 
 }
 
 
-.search-box input {
+/* =========================
+   LANGUAGE BUTTON
+========================= */
 
-    width: 400px;
+.language-buttons button {
 
-    padding: 14px;
+    padding: 8px 14px;
 
-    border: 1px solid #ddd;
+    margin-left: 5px;
 
-    border-radius: 5px;
+    border: 1px solid #d6a85c;
 
-    font-size: 16px;
+    background: #fffaf0;
 
-}
-
-
-.search-box button {
-
-    padding: 14px 25px;
-
-    border: none;
-
-    border-radius: 5px;
+    color: #633512;
 
     cursor: pointer;
 
-}
-
-
-#searchResult {
-
-    margin-top: 20px;
-
-    font-size: 18px;
+    border-radius: 5px;
 
 }
 
-        /* ===== TODAY INFO ===== */
 
-        .section {
-
-            padding: 50px 30px;
-
-            max-width: 1200px;
-
-            margin: auto;
-        }
-
-        .section-title {
-
-            text-align: center;
-
-            margin-bottom: 30px;
-
-            font-size: 28px;
-        }
-
-
-        /* ===== CARDS ===== */
-
-        .cards {
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-
-        .card {
-
-            background-color: white;
-
-            padding: 30px;
-
-            text-align: center;
-
-            border-radius: 10px;
-
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
-
-
-        .card h3 {
-
-            margin-bottom: 10px;
-
-            font-size: 20px;
-        }
-
-
-        .card p {
-
-            color: #666;
-
-        }
-
-
-        /* ===== QUICK ACCESS ===== */
-
-        .quick-access {
-
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 20px;
-        }
-
-
-        .quick-card {
-
-            background-color: white;
-
-            padding: 30px;
-
-            text-align: center;
-
-            border-radius: 10px;
-
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-
-            cursor: pointer;
-        }
-
-
-        .quick-card:hover {
-
-            transform: translateY(-5px);
-
-            transition: 0.3s;
-        }
-
-
-        /* ===== FOOTER ===== */
-
-        footer {
-
-            background-color: #222;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 30px;
-
-            margin-top: 50px;
-        }
-
-
-/* ===== MENU BUTTON ===== */
+/* =========================
+   MOBILE MENU
+========================= */
 
 .menu-toggle {
 
@@ -300,7 +155,365 @@ body {
     cursor: pointer;
 
 }
-/* ===== MOBILE RESPONSIVE ===== */
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 95px 20px 120px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at center bottom,
+            rgba(255,194,82,0.85),
+            transparent 60%
+        ),
+
+        linear-gradient(
+            rgba(120,45,0,0.12),
+            rgba(255,180,60,0.10)
+        );
+}
+
+
+/* Temple symbol */
+
+.hero::before {
+
+    content: "🛕";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 5px;
+
+    transform: translateX(-50%);
+
+    font-size: 180px;
+
+    opacity: 0.14;
+
+    filter: sepia(1);
+
+    pointer-events: none;
+}
+
+
+/* Lamps */
+
+.hero::after {
+
+    content: "🪔   🪔   🪔   🪔   🪔";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 8px;
+
+    transform: translateX(-50%);
+
+    font-size: 25px;
+
+    letter-spacing: 12px;
+
+    opacity: 0.40;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+
+/* OM */
+
+.hero h1::before {
+
+    content: "ॐ";
+
+    display: block;
+
+    font-size: 65px;
+
+    margin-bottom: 12px;
+
+    color: #a64b00;
+}
+
+
+.hero h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+
+    color: #7a3500;
+
+    text-shadow:
+        1px 1px 0 white,
+        0 2px 6px rgba(80,35,0,0.15);
+}
+
+
+.hero p {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 18px;
+
+    color: #5c3a25;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.search-box input {
+
+    width: 400px;
+
+    padding: 14px;
+
+    border: 1px solid #d6a85c;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    background: #fffdf8;
+}
+
+
+.search-box button {
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    background: #a64b00;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+.search-box button:hover {
+
+    background: #7a3500;
+}
+
+
+#searchResult {
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+
+    padding: 50px 30px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-size: 28px;
+
+    color: #713600;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #fff3d7
+        );
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5c17b;
+
+    box-shadow:
+        0 5px 15px rgba(90,45,0,0.10);
+}
+
+
+.card h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+
+    color: #813d00;
+}
+
+
+.card p {
+
+    color: #66503e;
+
+}
+
+
+/* =========================
+   QUICK ACCESS
+========================= */
+
+.quick-access {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.quick-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #fff0cf
+        );
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5c17b;
+
+    box-shadow:
+        0 5px 15px rgba(90,45,0,0.10);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.quick-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 25px rgba(90,45,0,0.18);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background:
+        linear-gradient(
+            90deg,
+            #542000,
+            #7a3500,
+            #542000
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    margin-top: 50px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
@@ -308,6 +521,7 @@ body {
 
         flex-wrap: wrap;
 
+        padding: 15px 20px;
     }
 
 
@@ -315,6 +529,7 @@ body {
 
         display: block;
 
+        color: #7a3500;
     }
 
 
@@ -327,14 +542,12 @@ body {
         flex-direction: column;
 
         text-align: center;
-
     }
 
 
     nav.active {
 
         display: flex;
-
     }
 
 
@@ -343,7 +556,6 @@ body {
         padding: 12px;
 
         display: block;
-
     }
 
 
@@ -353,32 +565,63 @@ body {
 
         text-align: center;
 
+        margin-top: 10px;
     }
 
 
     .cards {
 
         grid-template-columns: 1fr;
-
     }
 
 
     .quick-access {
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
+    }
 
+
+    .hero {
+
+        padding: 70px 15px 100px;
     }
 
 
     .hero h1 {
 
         font-size: 32px;
+    }
 
+
+    .hero h1::before {
+
+        font-size: 50px;
+    }
+
+
+    .hero::before {
+
+        font-size: 120px;
+    }
+
+
+    .search-box {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .search-box input {
+
+        width: 90%;
     }
 
 }
 
-    </style>
+</style>
 
 </head>
 
@@ -386,437 +629,626 @@ body {
 <body>
 
 
-    <!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-    <header>
-
-        <div class="logo">
-
-            The Sanatan Hindu
-
-        </div>
+<header>
 
 
-<button class="menu-toggle" onclick="toggleMenu()">
+<div class="logo">
+
+    The Sanatan Hindu
+
+</div>
+
+
+<button
+    class="menu-toggle"
+    onclick="toggleMenu()">
+
     ☰
+
 </button>
+
 
 <nav id="main-nav">
 
-    <a href="index.html">Home</a>
+    <a href="index.html">
+        Home
+    </a>
 
-    <a href="calendar.html">Calendar</a>
+    <a href="calendar.html">
+        Calendar
+    </a>
 
-    <a href="festival.html">Festivals</a>
+    <a href="festival.html">
+        Festivals
+    </a>
 
-    <a href="#">Deities</a>
+    <a href="#">
+        Deities
+    </a>
 
-    <a href="#">Puja</a>
+    <a href="#">
+        Puja
+    </a>
 
-    <a href="gurukul.html">Knowledge</a>
+    <a href="gurukul.html">
+        Knowledge
+    </a>
 
-    <a href="compass.html">🧭 Compass</a>
+    <a href="compass.html">
+        🧭 Compass
+    </a>
 
 </nav>
 
 
 <div class="language-buttons">
 
-    <button onclick="showBangla()">বাংলা</button>
+    <button onclick="showBangla()">
+        বাংলা
+    </button>
 
-    <button onclick="showEnglish()">English</button>
-
-</div>
-
-    </header>
-
-
-
-    <!-- HERO SECTION -->
-
-    <section class="hero">
-
-        <h1>
-
-            Welcome to The Sanatan Hindu
-
-        </h1>
-
-
-        <p>
-
-            Explore Hindu religious information,
-
-            festivals, calendar,
-
-            traditions and knowledge
-
-            in one simple platform.
-
-        </p>
-<div class="search-box">
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search Hindu religious information..."
-    >
-
-    <button onclick="searchWebsite()">
-        Search
+    <button onclick="showEnglish()">
+        English
     </button>
 
 </div>
 
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+<h1>
+    Welcome to The Sanatan Hindu
+</h1>
+
+
+<p>
+
+    Explore Hindu religious information,
+    festivals, calendar,
+    traditions and knowledge
+    in one simple platform.
+
+</p>
+
+
+<div class="search-box">
+
+
+<input
+    type="text"
+    id="searchInput"
+    placeholder="Search Hindu religious information..."
+>
+
+
+<button onclick="searchWebsite()">
+
+    Search
+
+</button>
+
+
+</div>
+
+
 <p id="searchResult"></p>
 
-    </section>
-
-
-
-    <!-- TODAY INFORMATION -->
-
-    <section class="section">
-
-    <h2 class="section-title">
-        Today's Information
-    </h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>📅 তারিখ / Date</h3>
-            <p id="today-date">Loading...</p>
-        </div>
-
-        <div class="card">
-            <h3>🌙 তিথি / Tithi</h3>
-            <p id="today-tithi">তথ্য শীঘ্রই আসছে</p>
-        </div>
-
-        <div class="card">
-            <h3>⭐ নক্ষত্র / Nakshatra</h3>
-            <p id="today-nakshatra">তথ্য শীঘ্রই আসছে</p>
-        </div>
-
-    </div>
 
 </section>
 
 
 
-    <!-- UPCOMING FESTIVAL -->
+<!-- =========================
+     TODAY INFORMATION
+========================= -->
 
 <section class="section">
 
-    <h2 class="section-title">
-        Upcoming Festival
-    </h2>
 
-    <div class="card">
+<h2 class="section-title">
 
-<h3>Durga Puja — Maha Shashthi</h3>
+    Today's Information
 
-<p>Festival Date: 16 October 2026</p>
-
-<h2 id="countdown">
-    Loading Countdown...
 </h2>
 
-    </div>
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+    📅 তারিখ / Date
+</h3>
+
+<p id="today-date">
+    Loading...
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+    🌙 তিথি / Tithi
+</h3>
+
+<p>
+    তথ্য শীঘ্রই আসছে
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+    ⭐ নক্ষত্র / Nakshatra
+</h3>
+
+<p>
+    তথ্য শীঘ্রই আসছে
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 
-    <!-- QUICK ACCESS -->
+<!-- =========================
+     UPCOMING FESTIVAL
+========================= -->
 
-    <section class="section">
-
-        <h2 class="section-title">
-
-            Explore The Sanatan Hindu
-
-        </h2>
+<section class="section">
 
 
-        <div class="quick-access">
+<h2 class="section-title">
+
+    Upcoming Festival
+
+</h2>
 
 
-            <div class="quick-card">
-
-                <h3>📅</h3>
-
-                <p>Hindu Calendar</p>
-
-            </div>
+<div class="card">
 
 
-
-            <div class="quick-card">
-
-                <h3>🪔</h3>
-
-                <p>Festivals</p>
-
-            </div>
+<h3>
+    Durga Puja — Maha Shashthi
+</h3>
 
 
+<p>
+    Festival Date: 16 October 2026
+</p>
 
-            <div class="quick-card">
 
-                <h3>🔱</h3>
+<h2 id="countdown">
 
-                <p>Deities</p>
+    Loading Countdown...
 
-            </div>
+</h2>
+
+
+</div>
+
+
+</section>
 
 
 
-            <div class="quick-card">
+<!-- =========================
+     QUICK ACCESS
+========================= -->
 
-                <h3>📚</h3>
-
-                <p>Hindu Knowledge</p>
-
-            </div>
+<section class="section">
 
 
-        </div>
+<h2 class="section-title">
 
-    </section>
+    Explore The Sanatan Hindu
+
+</h2>
+
+
+<div class="quick-access">
+
+
+<div
+    class="quick-card"
+    onclick="location.href='calendar.html'">
+
+    <h3>📅</h3>
+
+    <p>
+        Hindu Calendar
+    </p>
+
+</div>
+
+
+<div
+    class="quick-card"
+    onclick="location.href='festival.html'">
+
+    <h3>🪔</h3>
+
+    <p>
+        Festivals
+    </p>
+
+</div>
+
+
+<div
+    class="quick-card"
+    onclick="location.href='deities.html'">
+
+    <h3>🔱</h3>
+
+    <p>
+        Deities
+    </p>
+
+</div>
+
+
+<div
+    class="quick-card"
+    onclick="location.href='gurukul.html'">
+
+    <h3>📚</h3>
+
+    <p>
+        Hindu Knowledge
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
 
 
 
-    <!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-    <footer>
+<footer>
 
-        <p>
+<p>
 
-            © 2026 The Sanatan Hindu
+    © 2026 The Sanatan Hindu
 
-        </p>
+</p>
 
-    </footer>
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 
 <script>
 
-    const today = new Date();
+/* DATE */
 
-    const options = {
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-    };
+const today = new Date();
 
-    const formattedDate = today.toLocaleDateString("en-US", options);
+const options = {
 
-    document.getElementById("today-date").textContent = formattedDate;
+    year: "numeric",
+
+    month: "long",
+
+    day: "numeric"
+
+};
+
+document.getElementById("today-date")
+.textContent =
+today.toLocaleDateString(
+    "en-US",
+    options
+);
+
+
+/* COUNTDOWN */
+
+const festivalDate =
+new Date(
+    "October 16, 2026 00:00:00"
+).getTime();
+
+
+const countdown =
+setInterval(function() {
+
+
+const now =
+new Date().getTime();
+
+
+const distance =
+festivalDate - now;
+
+
+const days =
+Math.floor(
+    distance /
+    (1000 * 60 * 60 * 24)
+);
+
+
+const hours =
+Math.floor(
+    (distance %
+    (1000 * 60 * 60 * 24))
+    /
+    (1000 * 60 * 60)
+);
+
+
+const minutes =
+Math.floor(
+    (distance %
+    (1000 * 60 * 60))
+    /
+    (1000 * 60)
+);
+
+
+const seconds =
+Math.floor(
+    (distance %
+    (1000 * 60))
+    /
+    1000
+);
+
+
+if (distance > 0) {
+
+document.getElementById(
+    "countdown"
+).innerHTML =
+
+days + " Days " +
+hours + " Hours " +
+minutes + " Minutes " +
+seconds + " Seconds";
+
+}
+
+else {
+
+clearInterval(countdown);
+
+document.getElementById(
+    "countdown"
+).innerHTML =
+"Festival Started!";
+
+}
+
+}, 1000);
+
+
+/* MOBILE MENU */
+
+function toggleMenu() {
+
+const menu =
+document.getElementById(
+    "main-nav"
+);
+
+menu.classList.toggle(
+    "active"
+);
+
+}
+
+
+/* SEARCH */
+
+function searchWebsite() {
+
+
+const searchText =
+
+document.getElementById(
+    "searchInput"
+)
+.value
+.toLowerCase();
+
+
+const result =
+
+document.getElementById(
+    "searchResult"
+);
+
+
+if (searchText === "") {
+
+result.textContent =
+"Please enter something to search.";
+
+return;
+
+}
+
+
+if (
+    searchText.includes("durga") ||
+    searchText.includes("দুর্গা")
+) {
+
+result.textContent =
+"Durga Puja information is available.";
+
+}
+
+
+else if (
+    searchText.includes("krishna") ||
+    searchText.includes("কৃষ্ণ")
+) {
+
+result.textContent =
+"Krishna information will be available soon.";
+
+}
+
+
+else if (
+    searchText.includes("shiva") ||
+    searchText.includes("শিব")
+) {
+
+result.textContent =
+"Shiva information will be available soon.";
+
+}
+
+
+else if (
+    searchText.includes("compass") ||
+    searchText.includes("দিক")
+) {
+
+result.textContent =
+"Opening Hindu Compass...";
+
+setTimeout(function() {
+
+location.href =
+"compass.html";
+
+}, 800);
+
+}
+
+
+else {
+
+result.textContent =
+"No information found. More content will be added soon.";
+
+}
+
+}
+
+
+/* BANGLA */
+
+function showBangla() {
+
+document.querySelector(".logo")
+.textContent =
+"সনাতন হিন্দু";
+
+
+const links =
+document.querySelectorAll(
+    "nav a"
+);
+
+
+links[0].textContent =
+"হোম";
+
+links[1].textContent =
+"ক্যালেন্ডার";
+
+links[2].textContent =
+"উৎসব";
+
+links[3].textContent =
+"দেব-দেবী";
+
+links[4].textContent =
+"পূজা";
+
+links[5].textContent =
+"জ্ঞান";
+
+links[6].textContent =
+"🧭 দিক";
+
+
+document.querySelector(
+    ".hero h1"
+).textContent =
+"সনাতন হিন্দুতে আপনাকে স্বাগতম";
+
+
+document.querySelector(
+    ".hero p"
+).textContent =
+"একটি সহজ প্ল্যাটফর্মে হিন্দু ধর্মীয় তথ্য, উৎসব, ক্যালেন্ডার, ঐতিহ্য ও জ্ঞান অন্বেষণ করুন।";
+
+
+document.querySelectorAll(
+    ".section-title"
+)[0].textContent =
+"আজকের তথ্য";
+
+
+document.querySelectorAll(
+    ".section-title"
+)[1].textContent =
+"আসন্ন উৎসব";
+
+
+document.querySelectorAll(
+    ".section-title"
+)[2].textContent =
+"সনাতন হিন্দু সম্পর্কে জানুন";
+
+
+document.querySelector(
+    "footer p"
+).textContent =
+"© ২০২৬ সনাতন হিন্দু";
+
+}
+
+
+/* ENGLISH */
+
+function showEnglish() {
+
+location.reload();
+
+}
 
 </script>
-<script>
 
-    const festivalDate = new Date("October 16, 2026 00:00:00").getTime();
 
-    const countdown = setInterval(function() {
-
-        const now = new Date().getTime();
-
-        const distance = festivalDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-        const hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24))
-            / (1000 * 60 * 60)
-        );
-
-        const minutes = Math.floor(
-            (distance % (1000 * 60 * 60))
-            / (1000 * 60)
-        );
-
-        const seconds = Math.floor(
-            (distance % (1000 * 60))
-            / 1000
-        );
-
-        document.getElementById("countdown").innerHTML =
-            days + " Days " +
-            hours + " Hours " +
-            minutes + " Minutes " +
-            seconds + " Seconds";
-
-        if (distance < 0) {
-
-            clearInterval(countdown);
-
-            document.getElementById("countdown").innerHTML =
-                "Festival Started!";
-
-        }
-
-    }, 1000);
-
-</script>
-<script>
-
-    function showBangla() {
-
-        document.querySelector(".logo").textContent =
-            "সনাতন হিন্দু";
-
-
-        document.querySelector("nav a:nth-child(1)").textContent =
-            "হোম";
-
-        document.querySelector("nav a:nth-child(2)").textContent =
-            "ক্যালেন্ডার";
-
-        document.querySelector("nav a:nth-child(3)").textContent =
-            "উৎসব";
-
-        document.querySelector("nav a:nth-child(4)").textContent =
-            "দেব-দেবী";
-
-        document.querySelector("nav a:nth-child(5)").textContent =
-            "পূজা";
-
-        document.querySelector("nav a:nth-child(6)").textContent =
-            "জ্ঞান";
-
-
-        document.querySelector(".hero h1").textContent =
-            "সনাতন হিন্দুতে আপনাকে স্বাগতম";
-
-
-        document.querySelector(".hero p").textContent =
-            "একটি সহজ প্ল্যাটফর্মে হিন্দু ধর্মীয় তথ্য, উৎসব, ক্যালেন্ডার, ঐতিহ্য ও জ্ঞান অন্বেষণ করুন।";
-
-
-        document.querySelectorAll(".section-title")[0].textContent =
-            "আজকের তথ্য";
-
-
-        document.querySelectorAll(".section-title")[1].textContent =
-            "আসন্ন উৎসব";
-
-
-        document.querySelectorAll(".section-title")[2].textContent =
-            "সনাতন হিন্দু সম্পর্কে জানুন";
-
-
-        document.querySelectorAll(".card h3")[0].textContent =
-            "তারিখ";
-
-
-        document.querySelectorAll(".card h3")[1].textContent =
-            "তিথি";
-
-
-        document.querySelectorAll(".card h3")[2].textContent =
-            "নক্ষত্র";
-
-
-        document.querySelector(".card h3:nth-of-type(1)").textContent =
-            "দুর্গাপূজা — মহাষষ্ঠী";
-
-
-        document.querySelector(".card p:nth-of-type(1)").textContent =
-            "উৎসবের তারিখ: ১৬ অক্টোবর ২০২৬";
-
-
-        document.querySelector("footer p").textContent =
-            "© ২০২৬ সনাতন হিন্দু";
-
-    }
-
-
-
-    function showEnglish() {
-
-        location.reload();
-
-    }
-
-</script>
-<script>
-
-    function toggleMenu() {
-
-        const menu = document.getElementById("main-nav");
-
-        menu.classList.toggle("active");
-
-    }
-
-</script>
-<script>
-
-    function searchWebsite() {
-
-        const searchText =
-            document.getElementById("searchInput").value
-            .toLowerCase();
-
-        const result =
-            document.getElementById("searchResult");
-
-
-        if (searchText === "") {
-
-            result.textContent =
-                "Please enter something to search.";
-
-            return;
-
-        }
-
-
-        if (
-            searchText.includes("durga") ||
-            searchText.includes("দুর্গা")
-        ) {
-
-            result.textContent =
-                "Durga Puja information will be available soon.";
-
-        }
-
-
-        else if (
-            searchText.includes("krishna") ||
-            searchText.includes("কৃষ্ণ")
-        ) {
-
-            result.textContent =
-                "Krishna information will be available soon.";
-
-        }
-
-
-        else if (
-            searchText.includes("shiva") ||
-            searchText.includes("শিব")
-        ) {
-
-            result.textContent =
-                "Shiva information will be available soon.";
-
-        }
-
-
-        else {
-
-            result.textContent =
-                "No information found. More content will be added soon.";
-
-        }
-
-    }
-
-</script>
 </body>
 
 </html>
