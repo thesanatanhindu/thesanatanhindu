@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hindu Compass - The Sanatan Hindu</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#fff7e6;
+    color:#333;
+    text-align:center;
+}
+
+/* HEADER */
+
+header{
+    background:white;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    margin:0 10px;
+}
+
+/* MAIN */
+
+.container{
+    max-width:700px;
+    margin:40px auto;
+    padding:20px;
+}
+
+h1{
+    color:#8b4513;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:25px;
+}
+
+/* COMPASS */
+
+.compass-box{
+    position:relative;
+    width:330px;
+    height:330px;
+    margin:30px auto;
+}
+
+.compass{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:8px solid #c78b30;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    transition:transform .2s linear;
+}
+
+/* CENTER */
+
+.center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#fff3cd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    z-index:5;
+}
+
+/* DIRECTIONS */
+
+.direction{
+    position:absolute;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.n{
+    top:12px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.ne{
+    top:60px;
+    right:45px;
+}
+
+.e{
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.se{
+    bottom:60px;
+    right:40px;
+}
+
+.s{
+    bottom:12px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.sw{
+    bottom:60px;
+    left:35px;
+}
+
+.w{
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.nw{
+    top:60px;
+    left:35px;
+}
+
+/* BUTTON */
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#d35400;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#a04000;
+}
+
+/* INFO */
+
+.info{
+    margin-top:25px;
+    padding:20px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+}
+
+#currentDirection{
+    font-size:25px;
+    font-weight:bold;
+    color:#8b4513;
+    margin-top:10px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    padding:25px;
+    background:#222;
+    color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    .compass-box{
+        width:290px;
+        height:290px;
+    }
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+The Sanatan Hindu
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="calendar.html">Calendar</a>
+
+</nav>
+
+</header>
+
+
+<div class="container">
+
+<h1>🧭 Hindu Compass</h1>
+
+<p class="subtitle">
+দিক ও হিন্দু দিকপাল সম্পর্কে জানুন
+</p>
+
+
+<button onclick="startCompass()">
+Start Compass
+</button>
+
+
+<div class="compass-box">
+
+<div class="compass" id="compass">
+
+<div class="direction n">
+উত্তর<br>
+कुबेर
+</div>
+
+<div class="direction ne">
+ঈশান<br>
+ঈশান
+</div>
+
+<div class="direction e">
+পূর্ব<br>
+ইন্দ্র
+</div>
+
+<div class="direction se">
+দক্ষিণ-পূর্ব<br>
+অগ্নি
+</div>
+
+<div class="direction s">
+দক্ষিণ<br>
+যম
+</div>
+
+<div class="direction sw">
+দক্ষিণ-পশ্চিম<br>
+নৈঋতি
+</div>
+
+<div class="direction w">
+পশ্চিম<br>
+বরুণ
+</div>
+
+<div class="direction nw">
+উত্তর-পশ্চিম<br>
+বায়ু
+</div>
+
+</div>
+
+<div class="center">
+🕉️
+</div>
+
+</div>
+
+
+<div class="info">
+
+<h2>
+বর্তমান দিক
+</h2>
+
+<p id="currentDirection">
+Compass চালু করুন
+</p>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 The Sanatan Hindu
+
+</footer>
+
+
+<script>
+
+let currentHeading = 0;
+
+
+/* START COMPASS */
+
+function startCompass(){
+
+    if(
+        typeof DeviceOrientationEvent !== "undefined" &&
+        typeof DeviceOrientationEvent.requestPermission === "function"
+    ){
+
+        DeviceOrientationEvent
+        .requestPermission()
+        .then(function(permission){
+
+            if(permission === "granted"){
+
+                window.addEventListener(
+                    "deviceorientation",
+                    handleOrientation,
+                    true
+                );
+
+            }else{
+
+                alert("Compass permission দিতে হবে.");
+
+            }
+
+        })
+        .catch(function(){
+
+            alert("Compass চালু করা যায়নি.");
+
+        });
+
+    }else{
+
+        window.addEventListener(
+            "deviceorientationabsolute",
+            handleOrientation,
+            true
+        );
+
+        window.addEventListener(
+            "deviceorientation",
+            handleOrientation,
+            true
+        );
+
+    }
+
+}
+
+
+/* DEVICE ORIENTATION */
+
+function handleOrientation(event){
+
+    let heading;
+
+
+    /*
+    iPhone / Safari
+    */
+
+    if(event.webkitCompassHeading){
+
+        heading = event.webkitCompassHeading;
+
+    }
+
+    /*
+    Android
+    */
+
+    else if(event.alpha !== null){
+
+        heading = 360 - event.alpha;
+
+    }
+
+    else{
+
+        return;
+
+    }
+
+
+    currentHeading = heading;
+
+
+    /*
+    Rotate compass
+    */
+
+    document.getElementById("compass").style.transform =
+        "rotate(" + (-heading) + "deg)";
+
+
+    /*
+    Show direction
+    */
+
+    let direction =
+        getDirection(heading);
+
+
+    document.getElementById(
+        "currentDirection"
+    ).textContent = direction;
+
+}
+
+
+/* DIRECTION CALCULATOR */
+
+function getDirection(degree){
+
+    if(degree >= 337.5 || degree < 22.5){
+
+        return "উত্তর — কুবের";
+
+    }
+
+    else if(degree >= 22.5 && degree < 67.5){
+
+        return "উত্তর-পূর্ব — ঈশান";
+
+    }
+
+    else if(degree >= 67.5 && degree < 112.5){
+
+        return "পূর্ব — ইন্দ্র";
+
+    }
+
+    else if(degree >= 112.5 && degree < 157.5){
+
+        return "দক্ষিণ-পূর্ব — অগ্নি";
+
+    }
+
+    else if(degree >= 157.5 && degree < 202.5){
+
+        return "দক্ষিণ — যম";
+
+    }
+
+    else if(degree >= 202.5 && degree < 247.5){
+
+        return "দক্ষিণ-পশ্চিম — নৈঋতি";
+
+    }
+
+    else if(degree >= 247.5 && degree < 292.5){
+
+        return "পশ্চিম — বরুণ";
+
+    }
+
+    else{
+
+        return "উত্তর-পশ্চিম — বায়ু";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
