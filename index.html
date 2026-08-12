@@ -620,7 +620,166 @@ footer {
     }
 
 }
+/* ===== REALISTIC HINDU TEMPLE HOME BACKGROUND ===== */
 
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 560px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255, 183, 77, 0.25),
+            rgba(62, 24, 5, 0.65)
+        ),
+        radial-gradient(
+            circle at 50% 35%,
+            #ffe3a3 0%,
+            #e8a04b 35%,
+            #9b4d18 68%,
+            #351307 100%
+        );
+
+    isolation: isolate;
+}
+
+
+/* Temple structure */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: min(850px, 95%);
+    height: 390px;
+
+    background:
+        linear-gradient(
+            to top,
+            #160704 0%,
+            #2b0d05 55%,
+            #481807 100%
+        );
+
+    clip-path: polygon(
+        0 100%,
+        8% 76%,
+        18% 76%,
+        18% 60%,
+        27% 60%,
+        27% 46%,
+        35% 46%,
+        35% 30%,
+        43% 30%,
+        50% 0,
+        57% 30%,
+        65% 30%,
+        65% 46%,
+        73% 46%,
+        73% 60%,
+        82% 60%,
+        82% 76%,
+        92% 76%,
+        100% 100%
+    );
+
+    opacity: 0.95;
+
+    filter:
+        drop-shadow(
+            0 -12px 25px rgba(0,0,0,0.35)
+        );
+
+    z-index: -2;
+}
+
+
+/* Temple entrance */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 125px;
+    height: 185px;
+
+    background:
+        linear-gradient(
+            to right,
+            #0b0301,
+            #2b0d05,
+            #0b0301
+        );
+
+    border-radius:
+        65px 65px 0 0;
+
+    box-shadow:
+        0 0 0 8px rgba(126, 61, 15, 0.55),
+        0 0 35px rgba(0,0,0,0.55);
+
+    z-index: -1;
+}
+
+
+/* Hero text stays above temple */
+
+.hero h1,
+.hero p,
+.hero .search-box,
+.hero #searchResult {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Golden spiritual glow */
+
+.hero h1 {
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.45);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 520px;
+        padding: 60px 15px;
+    }
+
+    .hero::before {
+        width: 700px;
+        height: 330px;
+    }
+
+    .hero::after {
+        width: 95px;
+        height: 145px;
+    }
+}
 </style>
 
 </head>
