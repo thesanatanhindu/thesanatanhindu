@@ -11,12 +11,12 @@
 
 <title>The Sanatan Hindu</title>
 
-
 <style>
 
-/* =========================
-   GENERAL
-========================= */
+/* =====================================================
+   THE SANATAN HINDU
+   NEW HOME PAGE DESIGN
+===================================================== */
 
 * {
     margin: 0;
@@ -24,57 +24,42 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
-    color: #3d2415;
-
-    background:
-        radial-gradient(
-            circle at 50% 15%,
-            rgba(255, 210, 120, 0.40),
-            transparent 30%
-        ),
-        linear-gradient(
-            180deg,
-            #fff3d6 0%,
-            #f8dfb0 50%,
-            #f3c982 100%
-        );
-
-    min-height: 100vh;
+    color: #3b2114;
+    background: #fffaf2;
+    overflow-x: hidden;
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header {
 
-    background:
-        linear-gradient(
-            90deg,
-            #fff8e8,
-            #ffe5b5,
-            #fff8e8
-        );
-
-    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
+    padding: 15px 5%;
+
+    background: rgba(47, 20, 7, 0.96);
+
+    border-bottom: 1px solid rgba(255, 190, 80, 0.35);
 
     box-shadow:
-        0 2px 15px rgba(100,50,0,0.20);
+        0 5px 25px rgba(0,0,0,0.18);
 
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 
@@ -82,292 +67,490 @@ header {
 
 .logo {
 
-    font-size: 26px;
+    color: #ffd166;
 
-    font-weight: bold;
+    font-size: 24px;
 
-    color: #8b3f00;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+}
 
 nav a {
 
-    text-decoration: none;
+    color: #fff4dc;
 
-    color: #4a2a18;
+    text-decoration: none;
 
     margin: 0 8px;
 
-    font-size: 15px;
+    padding: 8px 7px;
+
+    font-size: 14px;
 
     font-weight: 600;
 
+    transition: 0.3s;
 }
 
 nav a:hover {
 
-    color: #b44d00;
-
+    color: #ffd166;
 }
 
 
-/* =========================
-   LANGUAGE BUTTON
-========================= */
+/* LANGUAGE */
 
 .language-buttons button {
 
-    padding: 8px 14px;
+    padding: 7px 12px;
 
-    margin-left: 5px;
+    margin-left: 4px;
 
-    border: 1px solid #d6a85c;
+    border-radius: 20px;
 
-    background: #fffaf0;
+    border: 1px solid #d69b3a;
 
-    color: #633512;
+    background: transparent;
+
+    color: #ffe5ad;
 
     cursor: pointer;
 
-    border-radius: 5px;
+    transition: 0.3s;
+}
 
+.language-buttons button:hover {
+
+    background: #ffd166;
+
+    color: #3b1704;
 }
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MENU BUTTON */
 
 .menu-toggle {
 
     display: none;
 
-    font-size: 25px;
+    border: none;
 
     background: none;
 
-    border: none;
+    color: #ffd166;
+
+    font-size: 28px;
 
     cursor: pointer;
-
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
 
     position: relative;
 
+    min-height: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
     text-align: center;
 
-    padding: 95px 20px 120px;
+    padding: 90px 20px;
 
     overflow: hidden;
+
+    isolation: isolate;
 
     background:
 
         radial-gradient(
-            ellipse at center bottom,
-            rgba(255,194,82,0.85),
+            circle at 50% 25%,
+            rgba(255,220,140,0.95),
+            rgba(220,130,45,0.45) 32%,
             transparent 60%
         ),
 
         linear-gradient(
-            rgba(120,45,0,0.12),
-            rgba(255,180,60,0.10)
+            180deg,
+            #f3a846 0%,
+            #a64d19 55%,
+            #321107 100%
         );
 }
 
 
-/* Temple symbol */
+/* SUN */
+
+.hero .sun {
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(255,224,146,0.55);
+
+    filter: blur(3px);
+
+    top: 80px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: -4;
+}
+
+
+/* TEMPLE SILHOUETTE */
 
 .hero::before {
 
-    content: "🛕";
+    content: "";
 
     position: absolute;
 
     left: 50%;
 
-    bottom: 5px;
+    bottom: -10px;
 
     transform: translateX(-50%);
 
-    font-size: 180px;
+    width: min(1000px, 110%);
 
-    opacity: 0.14;
+    height: 410px;
 
-    filter: sepia(1);
+    background:
 
-    pointer-events: none;
+        linear-gradient(
+            to top,
+            #120604,
+            #261007 55%,
+            #3c1708
+        );
+
+    clip-path: polygon(
+
+        0 100%,
+
+        8% 80%,
+
+        17% 80%,
+
+        17% 66%,
+
+        26% 66%,
+
+        26% 53%,
+
+        34% 53%,
+
+        34% 38%,
+
+        42% 38%,
+
+        50% 0,
+
+        58% 38%,
+
+        66% 38%,
+
+        66% 53%,
+
+        74% 53%,
+
+        74% 66%,
+
+        83% 66%,
+
+        83% 80%,
+
+        92% 80%,
+
+        100% 100%
+
+    );
+
+    opacity: 0.95;
+
+    z-index: -3;
 }
 
 
-/* Lamps */
+/* TEMPLE DOOR */
 
 .hero::after {
 
-    content: "🪔   🪔   🪔   🪔   🪔";
+    content: "";
 
     position: absolute;
 
-    left: 50%;
+    bottom: 0;
 
-    bottom: 8px;
+    left: 50%;
 
     transform: translateX(-50%);
 
-    font-size: 25px;
+    width: 125px;
 
-    letter-spacing: 12px;
+    height: 190px;
 
-    opacity: 0.40;
+    border-radius: 65px 65px 0 0;
 
-    white-space: nowrap;
+    background:
 
-    pointer-events: none;
+        linear-gradient(
+            90deg,
+            #080202,
+            #351107,
+            #080202
+        );
+
+    box-shadow:
+
+        0 0 0 7px rgba(146,74,20,0.65),
+
+        0 0 40px rgba(0,0,0,0.5);
+
+    z-index: -2;
 }
 
 
-/* OM */
+/* HERO CONTENT */
 
-.hero h1::before {
-
-    content: "ॐ";
-
-    display: block;
-
-    font-size: 65px;
-
-    margin-bottom: 12px;
-
-    color: #a64b00;
-}
-
-
-.hero h1 {
-
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 42px;
-
-    margin-bottom: 20px;
-
-    color: #7a3500;
-
-    text-shadow:
-        1px 1px 0 white,
-        0 2px 6px rgba(80,35,0,0.15);
-}
-
-
-.hero p {
-
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 18px;
-
-    color: #5c3a25;
-
-    max-width: 700px;
-
-    margin: auto;
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-.search-box {
+.hero-content {
 
     position: relative;
 
     z-index: 5;
 
+    max-width: 850px;
+}
+
+
+.om {
+
+    font-size: 75px;
+
+    color: #fff0a8;
+
+    text-shadow:
+
+        0 0 20px rgba(255,210,80,0.7),
+
+        0 3px 10px rgba(0,0,0,0.4);
+
+    margin-bottom: 10px;
+}
+
+
+.hero h1 {
+
+    color: white;
+
+    font-size: clamp(38px, 6vw, 62px);
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+
+        0 4px 15px rgba(0,0,0,0.5);
+}
+
+
+.hero p {
+
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #fff0d2;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+
     margin-top: 30px;
+}
+
+
+.hero-btn {
+
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    margin: 6px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.primary-btn {
+
+    background: #ffd166;
+
+    color: #351405;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.2);
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-3px);
+
+    background: #ffe29a;
+}
+
+
+.secondary-btn {
+
+    color: white;
+
+    border: 1px solid #ffe09a;
+
+    background: rgba(255,255,255,0.08);
+}
+
+
+.secondary-btn:hover {
+
+    background: rgba(255,255,255,0.18);
+
+    transform: translateY(-3px);
+}
+
+
+/* SEARCH */
+
+.search-box {
+
+    position: relative;
+
+    z-index: 10;
 
     display: flex;
 
     justify-content: center;
 
-    gap: 10px;
+    gap: 8px;
+
+    margin-top: 28px;
 }
 
 
 .search-box input {
 
-    width: 400px;
+    width: min(420px, 75vw);
 
-    padding: 14px;
+    padding: 14px 17px;
 
-    border: 1px solid #d6a85c;
+    border: none;
 
-    border-radius: 7px;
+    border-radius: 30px;
 
-    font-size: 16px;
+    outline: none;
 
-    background: #fffdf8;
+    font-size: 15px;
+
+    background: rgba(255,255,255,0.96);
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.15);
 }
 
 
 .search-box button {
 
-    padding: 14px 25px;
+    padding: 13px 23px;
 
     border: none;
 
-    border-radius: 7px;
+    border-radius: 30px;
 
-    cursor: pointer;
-
-    background: #a64b00;
+    background: #7c2f08;
 
     color: white;
 
     font-weight: bold;
+
+    cursor: pointer;
 }
 
 
 .search-box button:hover {
 
-    background: #7a3500;
+    background: #5a2005;
 }
 
 
 #searchResult {
 
-    margin-top: 20px;
+    position: relative;
 
-    font-size: 18px;
+    z-index: 10;
 
+    margin-top: 15px;
+
+    color: #fff3d7;
+
+    font-weight: 600;
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* =====================================================
+   COMMON SECTION
+===================================================== */
 
 .section {
-
-    padding: 50px 30px;
 
     max-width: 1200px;
 
     margin: auto;
+
+    padding: 80px 5%;
 }
 
 
@@ -375,73 +558,280 @@ nav a:hover {
 
     text-align: center;
 
-    margin-bottom: 30px;
-
-    font-size: 28px;
-
-    color: #713600;
+    margin-bottom: 45px;
 }
 
 
-/* =========================
-   CARDS
-========================= */
+.section-title .small-title {
 
-.cards {
+    color: #c16a16;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.section-title h2 {
+
+    font-size: clamp(28px, 4vw, 38px);
+
+    color: #51200a;
+
+    margin-bottom: 10px;
+}
+
+
+.section-title p {
+
+    color: #765c4a;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   TODAY INFORMATION
+===================================================== */
+
+.today-section {
+
+    background: #fffaf2;
+}
+
+
+.info-grid {
 
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 22px;
 }
 
 
-.card {
+.info-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 32px 25px;
+
+    border-radius: 22px;
+
+    background: white;
+
+    border: 1px solid #f0d7af;
+
+    box-shadow:
+        0 10px 30px rgba(91,42,5,0.08);
+
+    transition: 0.3s;
+}
+
+
+.info-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(91,42,5,0.14);
+}
+
+
+.info-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+
+.info-card h3 {
+
+    color: #662706;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+
+.info-card p {
+
+    color: #765d4a;
+
+    line-height: 1.7;
+}
+
+
+.info-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #fff0cc;
+
+    right: -35px;
+
+    top: -35px;
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   FESTIVAL
+===================================================== */
+
+.festival-section {
 
     background:
-        linear-gradient(
-            145deg,
-            #fffdf8,
-            #fff3d7
-        );
 
-    padding: 30px;
+        linear-gradient(
+            135deg,
+            #fff1d4,
+            #ffe0a6
+        );
+}
+
+
+.festival-box {
+
+    position: relative;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    border-radius: 28px;
 
     text-align: center;
 
-    border-radius: 12px;
+    background:
 
-    border: 1px solid #e5c17b;
+        linear-gradient(
+            135deg,
+            #7d2e08,
+            #b44e0b
+        );
+
+    color: white;
 
     box-shadow:
-        0 5px 15px rgba(90,45,0,0.10);
+        0 15px 40px rgba(95,38,5,0.25);
+
+    overflow: hidden;
 }
 
 
-.card h3 {
+.festival-box::before {
 
-    margin-bottom: 10px;
+    content: "🪔";
 
-    font-size: 20px;
+    position: absolute;
 
-    color: #813d00;
+    font-size: 130px;
+
+    right: -15px;
+
+    bottom: -45px;
+
+    opacity: 0.12;
 }
 
 
-.card p {
+.festival-box h3 {
 
-    color: #66503e;
+    color: #ffd166;
 
+    font-size: 28px;
+
+    margin-bottom: 15px;
 }
 
 
-/* =========================
-   QUICK ACCESS
-========================= */
+.festival-box p {
 
-.quick-access {
+    color: #ffe9c7;
+
+    line-height: 1.8;
+}
+
+
+.countdown {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    max-width: 600px;
+
+    margin: 30px auto 0;
+}
+
+
+.time-box {
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 15px;
+
+    padding: 15px 8px;
+}
+
+
+.time-box strong {
+
+    display: block;
+
+    font-size: 25px;
+
+    color: #ffd166;
+}
+
+
+.time-box span {
+
+    font-size: 12px;
+
+    color: #ffe8c2;
+}
+
+
+/* =====================================================
+   EXPLORE CARDS
+===================================================== */
+
+.explore-section {
+
+    background: #fffaf2;
+}
+
+
+.explore-grid {
 
     display: grid;
 
@@ -452,68 +842,339 @@ nav a:hover {
 }
 
 
-.quick-card {
+.explore-card {
 
-    background:
-        linear-gradient(
-            145deg,
-            #fffdf8,
-            #fff0cf
-        );
+    position: relative;
 
-    padding: 30px;
+    padding: 30px 22px;
 
-    text-align: center;
+    min-height: 190px;
 
-    border-radius: 12px;
+    border-radius: 22px;
 
-    border: 1px solid #e5c17b;
+    text-decoration: none;
+
+    background: white;
+
+    border: 1px solid #efd5a8;
 
     box-shadow:
-        0 5px 15px rgba(90,45,0,0.10);
+        0 8px 25px rgba(80,35,5,0.08);
 
-    cursor: pointer;
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+
+.explore-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #dda044;
+
+    box-shadow:
+        0 15px 35px rgba(80,35,5,0.14);
+}
+
+
+.explore-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 18px;
+}
+
+
+.explore-card h3 {
+
+    color: #642604;
+
+    margin-bottom: 8px;
+}
+
+
+.explore-card p {
+
+    color: #765d4b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.explore-arrow {
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 18px;
+
+    color: #c4670e;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   TEMPLE
+===================================================== */
+
+.temple-section {
+
+    position: relative;
+
+    padding: 90px 5%;
+
+    background:
+
+        linear-gradient(
+            rgba(38,12,3,0.82),
+            rgba(38,12,3,0.92)
+        ),
+
+        radial-gradient(
+            circle at center,
+            #b86119,
+            #321006
+        );
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+.temple-section::before {
+
+    content: "🛕";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 300px;
+
+    opacity: 0.06;
+}
+
+
+.temple-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.temple-inner .small-title {
+
+    color: #ffd166;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.temple-inner h2 {
+
+    color: #ffd166;
+
+    font-size: 40px;
+
+    margin: 10px 0 15px;
+}
+
+
+.temple-inner p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #ffe9c9;
+
+    line-height: 1.8;
+}
+
+
+.temple-button {
+
+    display: inline-block;
+
+    margin-top: 28px;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    background: #ffd166;
+
+    color: #351304;
+
+    text-decoration: none;
+
+    font-weight: 800;
 
     transition: 0.3s;
 }
 
 
-.quick-card:hover {
+.temple-button:hover {
 
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 
-    box-shadow:
-        0 10px 25px rgba(90,45,0,0.18);
+    background: #ffe49a;
 }
 
 
-/* =========================
+/* =====================================================
+   KNOWLEDGE
+===================================================== */
+
+.knowledge-section {
+
+    background: #fff2d9;
+}
+
+
+.knowledge-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+}
+
+
+.knowledge-card {
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background: white;
+
+    border: 1px solid #edd2a3;
+
+    box-shadow:
+        0 10px 30px rgba(75,32,5,0.08);
+}
+
+
+.knowledge-card h3 {
+
+    color: #632507;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+.knowledge-card p {
+
+    color: #725846;
+
+    line-height: 1.8;
+}
+
+
+.knowledge-card a {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #bd5d0b;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
 
-    background:
-        linear-gradient(
-            90deg,
-            #542000,
-            #7a3500,
-            #542000
-        );
-
-    color: white;
+    padding: 45px 20px;
 
     text-align: center;
 
-    padding: 30px;
+    color: #ead4bd;
 
-    margin-top: 50px;
+    background:
+
+        linear-gradient(
+            135deg,
+            #2c0c03,
+            #521a05,
+            #2c0c03
+        );
 }
 
 
-/* =========================
+.footer-logo {
+
+    color: #ffd166;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+
+footer p {
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
+
+@media (max-width: 950px) {
+
+    nav a {
+
+        margin: 0 3px;
+
+        font-size: 13px;
+    }
+
+    .explore-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
 
 @media (max-width: 768px) {
 
@@ -521,15 +1182,13 @@ footer {
 
         flex-wrap: wrap;
 
-        padding: 15px 20px;
+        padding: 14px 20px;
     }
 
 
     .menu-toggle {
 
         display: block;
-
-        color: #7a3500;
     }
 
 
@@ -541,7 +1200,13 @@ footer {
 
         flex-direction: column;
 
-        text-align: center;
+        margin-top: 12px;
+
+        background: #3b1607;
+
+        border-radius: 12px;
+
+        padding: 10px;
     }
 
 
@@ -553,9 +1218,11 @@ footer {
 
     nav a {
 
+        width: 100%;
+
         padding: 12px;
 
-        display: block;
+        text-align: center;
     }
 
 
@@ -569,40 +1236,79 @@ footer {
     }
 
 
-    .cards {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .quick-access {
-
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-
     .hero {
 
-        padding: 70px 15px 100px;
-    }
+        min-height: 600px;
 
-
-    .hero h1 {
-
-        font-size: 32px;
-    }
-
-
-    .hero h1::before {
-
-        font-size: 50px;
+        padding: 70px 15px;
     }
 
 
     .hero::before {
 
-        font-size: 120px;
+        width: 750px;
+
+        height: 330px;
+    }
+
+
+    .hero::after {
+
+        width: 100px;
+
+        height: 145px;
+    }
+
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .explore-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .knowledge-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .section {
+
+        padding: 65px 5%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .logo {
+
+        font-size: 19px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 35px;
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+    }
+
+
+    .om {
+
+        font-size: 60px;
     }
 
 
@@ -616,170 +1322,42 @@ footer {
 
     .search-box input {
 
-        width: 90%;
+        width: 90vw;
+    }
+
+
+    .search-box button {
+
+        width: 130px;
+    }
+
+
+    .explore-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .countdown {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .festival-box {
+
+        padding: 30px 18px;
+    }
+
+
+    .temple-inner h2 {
+
+        font-size: 31px;
     }
 
 }
-/* ===== REALISTIC HINDU TEMPLE HOME BACKGROUND ===== */
 
-.hero {
-    position: relative;
-    overflow: hidden;
-
-    min-height: 560px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(255, 183, 77, 0.25),
-            rgba(62, 24, 5, 0.65)
-        ),
-        radial-gradient(
-            circle at 50% 35%,
-            #ffe3a3 0%,
-            #e8a04b 35%,
-            #9b4d18 68%,
-            #351307 100%
-        );
-
-    isolation: isolate;
-}
-
-
-/* Temple structure */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 0;
-
-    transform: translateX(-50%);
-
-    width: min(850px, 95%);
-    height: 390px;
-
-    background:
-        linear-gradient(
-            to top,
-            #160704 0%,
-            #2b0d05 55%,
-            #481807 100%
-        );
-
-    clip-path: polygon(
-        0 100%,
-        8% 76%,
-        18% 76%,
-        18% 60%,
-        27% 60%,
-        27% 46%,
-        35% 46%,
-        35% 30%,
-        43% 30%,
-        50% 0,
-        57% 30%,
-        65% 30%,
-        65% 46%,
-        73% 46%,
-        73% 60%,
-        82% 60%,
-        82% 76%,
-        92% 76%,
-        100% 100%
-    );
-
-    opacity: 0.95;
-
-    filter:
-        drop-shadow(
-            0 -12px 25px rgba(0,0,0,0.35)
-        );
-
-    z-index: -2;
-}
-
-
-/* Temple entrance */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 0;
-
-    transform: translateX(-50%);
-
-    width: 125px;
-    height: 185px;
-
-    background:
-        linear-gradient(
-            to right,
-            #0b0301,
-            #2b0d05,
-            #0b0301
-        );
-
-    border-radius:
-        65px 65px 0 0;
-
-    box-shadow:
-        0 0 0 8px rgba(126, 61, 15, 0.55),
-        0 0 35px rgba(0,0,0,0.55);
-
-    z-index: -1;
-}
-
-
-/* Hero text stays above temple */
-
-.hero h1,
-.hero p,
-.hero .search-box,
-.hero #searchResult {
-    position: relative;
-    z-index: 5;
-}
-
-
-/* Golden spiritual glow */
-
-.hero h1 {
-    text-shadow:
-        0 3px 12px rgba(0,0,0,0.45);
-}
-
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-    .hero {
-        min-height: 520px;
-        padding: 60px 15px;
-    }
-
-    .hero::before {
-        width: 700px;
-        height: 330px;
-    }
-
-    .hero::after {
-        width: 95px;
-        height: 145px;
-    }
-}
 </style>
 
 </head>
@@ -788,17 +1366,14 @@ footer {
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
-
 <div class="logo">
-
-    The Sanatan Hindu
-
+    ॐ The Sanatan Hindu
 </div>
 
 
@@ -825,12 +1400,12 @@ footer {
         Festivals
     </a>
 
-    <a href="#">
+    <a href="deities.html">
         Deities
     </a>
 
-    <a href="#">
-        Puja
+    <a href="temples.html">
+        Temples
     </a>
 
     <a href="gurukul.html">
@@ -856,35 +1431,61 @@ footer {
 
 </div>
 
-
 </header>
 
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero">
 
+<div class="sun"></div>
+
+
+<div class="hero-content">
+
+<div class="om">
+    ॐ
+</div>
+
 
 <h1>
-    Welcome to The Sanatan Hindu
+    The Sanatan Hindu
 </h1>
 
 
 <p>
-
-    Explore Hindu religious information,
-    festivals, calendar,
-    traditions and knowledge
-    in one simple platform.
-
+    Discover Sanatana Dharma, Hindu festivals,
+    sacred traditions, temples, deities and
+    timeless spiritual knowledge — all in one place.
 </p>
 
 
-<div class="search-box">
+<div class="hero-buttons">
 
+<a
+    href="calendar.html"
+    class="hero-btn primary-btn">
+
+    📅 Explore Calendar
+
+</a>
+
+
+<a
+    href="deities.html"
+    class="hero-btn secondary-btn">
+
+    🔱 Explore Deities
+
+</a>
+
+</div>
+
+
+<div class="search-box">
 
 <input
     type="text"
@@ -899,38 +1500,51 @@ footer {
 
 </button>
 
-
 </div>
 
 
 <p id="searchResult"></p>
 
+</div>
 
 </section>
 
 
 
-<!-- =========================
-     TODAY INFORMATION
-========================= -->
+<!-- =====================================================
+     TODAY
+===================================================== -->
 
-<section class="section">
+<section class="section today-section">
 
+<div class="section-title">
 
-<h2 class="section-title">
+<div class="small-title">
+    DAILY DHARMA
+</div>
 
+<h2>
     Today's Information
-
 </h2>
 
+<p>
+    আজকের গুরুত্বপূর্ণ ধর্মীয় তথ্য এক নজরে
+</p>
 
-<div class="cards">
+</div>
 
 
-<div class="card">
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<div class="info-icon">
+    📅
+</div>
 
 <h3>
-    📅 তারিখ / Date
+    Date / তারিখ
 </h3>
 
 <p id="today-date">
@@ -940,27 +1554,35 @@ footer {
 </div>
 
 
-<div class="card">
+<div class="info-card">
+
+<div class="info-icon">
+    🌙
+</div>
 
 <h3>
-    🌙 তিথি / Tithi
+    Tithi / তিথি
 </h3>
 
 <p>
-    তথ্য শীঘ্রই আসছে
+    তিথির তথ্য শীঘ্রই যুক্ত করা হবে।
 </p>
 
 </div>
 
 
-<div class="card">
+<div class="info-card">
+
+<div class="info-icon">
+    ⭐
+</div>
 
 <h3>
-    ⭐ নক্ষত্র / Nakshatra
+    Nakshatra / নক্ষত্র
 </h3>
 
 <p>
-    তথ্য শীঘ্রই আসছে
+    নক্ষত্রের তথ্য শীঘ্রই যুক্ত করা হবে।
 </p>
 
 </div>
@@ -972,25 +1594,33 @@ footer {
 
 
 
-<!-- =========================
-     UPCOMING FESTIVAL
-========================= -->
+<!-- =====================================================
+     FESTIVAL
+===================================================== -->
 
-<section class="section">
+<section class="section festival-section">
 
+<div class="section-title">
 
-<h2 class="section-title">
+<div class="small-title">
+    FESTIVAL
+</div>
 
+<h2>
     Upcoming Festival
-
 </h2>
 
+<p>
+    সামনে আসছে গুরুত্বপূর্ণ হিন্দু উৎসব
+</p>
 
-<div class="card">
+</div>
 
+
+<div class="festival-box">
 
 <h3>
-    Durga Puja — Maha Shashthi
+    🪔 Durga Puja — Maha Shashthi
 </h3>
 
 
@@ -999,88 +1629,62 @@ footer {
 </p>
 
 
-<h2 id="countdown">
-
-    Loading Countdown...
-
-</h2>
+<div class="countdown">
 
 
-</div>
+<div class="time-box">
 
+<strong id="days">
+    0
+</strong>
 
-</section>
-
-
-
-<!-- =========================
-     QUICK ACCESS
-========================= -->
-
-<section class="section">
-
-
-<h2 class="section-title">
-
-    Explore The Sanatan Hindu
-
-</h2>
-
-
-<div class="quick-access">
-
-
-<div
-    class="quick-card"
-    onclick="location.href='calendar.html'">
-
-    <h3>📅</h3>
-
-    <p>
-        Hindu Calendar
-    </p>
+<span>
+    Days
+</span>
 
 </div>
 
 
-<div
-    class="quick-card"
-    onclick="location.href='festival.html'">
+<div class="time-box">
 
-    <h3>🪔</h3>
+<strong id="hours">
+    0
+</strong>
 
-    <p>
-        Festivals
-    </p>
-
-</div>
-
-
-<div
-    class="quick-card"
-    onclick="location.href='deities.html'">
-
-    <h3>🔱</h3>
-
-    <p>
-        Deities
-    </p>
+<span>
+    Hours
+</span>
 
 </div>
 
 
-<div
-    class="quick-card"
-    onclick="location.href='gurukul.html'">
+<div class="time-box">
 
-    <h3>📚</h3>
+<strong id="minutes">
+    0
+</strong>
 
-    <p>
-        Hindu Knowledge
-    </p>
+<span>
+    Minutes
+</span>
 
 </div>
 
+
+<div class="time-box">
+
+<strong id="seconds">
+    0
+</strong>
+
+<span>
+    Seconds
+</span>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -1088,32 +1692,376 @@ footer {
 
 
 
-<!-- =========================
+<!-- =====================================================
+     EXPLORE
+===================================================== -->
+
+<section class="section explore-section">
+
+<div class="section-title">
+
+<div class="small-title">
+    EXPLORE
+</div>
+
+<h2>
+    Discover Sanatana Dharma
+</h2>
+
+<p>
+    সনাতন ধর্মের বিভিন্ন বিষয় সহজভাবে জানুন
+</p>
+
+</div>
+
+
+<div class="explore-grid">
+
+
+<a
+    href="calendar.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    📅
+</div>
+
+<h3>
+    Hindu Calendar
+</h3>
+
+<p>
+    তিথি, নক্ষত্র, উৎসব ও ধর্মীয় দিনের তথ্য।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<a
+    href="festival.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    🪔
+</div>
+
+<h3>
+    Festivals
+</h3>
+
+<p>
+    হিন্দু ধর্মের বিভিন্ন গুরুত্বপূর্ণ উৎসব সম্পর্কে জানুন।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<a
+    href="deities.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    🔱
+</div>
+
+<h3>
+    Deities
+</h3>
+
+<p>
+    দেব-দেবীর পরিচয়, কাহিনি ও ধর্মীয় গুরুত্ব।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<a
+    href="temples.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    🛕
+</div>
+
+<h3>
+    Temples
+</h3>
+
+<p>
+    বিভিন্ন হিন্দু মন্দিরের তথ্য ও directory।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<a
+    href="gurukul.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    📚
+</div>
+
+<h3>
+    Gurukul
+</h3>
+
+<p>
+    প্রাচীন ভারতীয় শিক্ষা ও সনাতন জ্ঞান।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<a
+    href="Japa.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    📿
+</div>
+
+<h3>
+    Mantra & Japa
+</h3>
+
+<p>
+    মন্ত্র ও জপের মাধ্যমে আধ্যাত্মিক অনুশীলন।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<a
+    href="hindu-names.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    🔤
+</div>
+
+<h3>
+    Hindu Names
+</h3>
+
+<p>
+    অর্থসহ বিভিন্ন সুন্দর হিন্দু নামের সংগ্রহ।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<a
+    href="compass.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    🧭
+</div>
+
+<h3>
+    Hindu Compass
+</h3>
+
+<p>
+    দিক ও হিন্দু ধর্মীয় ধারণার সঙ্গে compass ব্যবহার করুন।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TEMPLE
+===================================================== -->
+
+<section class="temple-section">
+
+<div class="temple-inner">
+
+<div class="small-title">
+    SACRED PLACES
+</div>
+
+
+<h2>
+    🛕 Hindu Temples
+</h2>
+
+
+<p>
+    বাংলাদেশ ও বিশ্বের বিভিন্ন হিন্দু মন্দির সম্পর্কে
+    তথ্য খুঁজে দেখুন। মন্দিরের নাম, অবস্থান এবং
+    প্রয়োজনীয় যোগাযোগের তথ্য ধীরে ধীরে এখানে যুক্ত করা হবে।
+</p>
+
+
+<a
+    href="temples.html"
+    class="temple-button">
+
+    Explore Temple Directory →
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     KNOWLEDGE
+===================================================== -->
+
+<section class="section knowledge-section">
+
+<div class="section-title">
+
+<div class="small-title">
+    KNOWLEDGE
+</div>
+
+<h2>
+    Learn & Practice
+</h2>
+
+<p>
+    জ্ঞান, সংস্কৃতি ও আধ্যাত্মিকতার পথে এগিয়ে চলুন
+</p>
+
+</div>
+
+
+<div class="knowledge-grid">
+
+
+<div class="knowledge-card">
+
+<h3>
+    📖 Hindu Knowledge
+</h3>
+
+<p>
+    সনাতন ধর্মের ইতিহাস, দর্শন, সংস্কৃতি,
+    শাস্ত্র ও ঐতিহ্য সম্পর্কে সহজ ভাষায় জানুন।
+</p>
+
+
+<a href="gurukul.html">
+    Learn More →
+</a>
+
+</div>
+
+
+
+<div class="knowledge-card">
+
+<h3>
+    📿 Mantra & Japa
+</h3>
+
+<p>
+    মন্ত্র, জপ এবং ১০৮ মালার মাধ্যমে
+    আধ্যাত্মিক অনুশীলনের একটি interactive অভিজ্ঞতা।
+</p>
+
+
+<a href="Japa.html">
+    Start Japa →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
+<div class="footer-logo">
+    ॐ The Sanatan Hindu
+</div>
+
+
 <p>
+    Knowledge • Dharma • Culture • Spirituality
+</p>
 
-    © 2026 The Sanatan Hindu
 
+<p>
+    © 2026 The Sanatan Hindu — All Rights Reserved
 </p>
 
 </footer>
 
 
 
-<!-- =========================
+<!-- =====================================================
      JAVASCRIPT
-========================= -->
-
+===================================================== -->
 
 <script>
 
-/* DATE */
+
+/* =====================================================
+   DATE
+===================================================== */
 
 const today = new Date();
+
 
 const options = {
 
@@ -1125,15 +2073,20 @@ const options = {
 
 };
 
-document.getElementById("today-date")
-.textContent =
+
+document.getElementById(
+    "today-date"
+).textContent =
 today.toLocaleDateString(
     "en-US",
     options
 );
 
 
-/* COUNTDOWN */
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
 
 const festivalDate =
 new Date(
@@ -1141,8 +2094,7 @@ new Date(
 ).getTime();
 
 
-const countdown =
-setInterval(function() {
+function updateCountdown() {
 
 
 const now =
@@ -1151,6 +2103,25 @@ new Date().getTime();
 
 const distance =
 festivalDate - now;
+
+
+if (distance <= 0) {
+
+document.getElementById("days")
+.textContent = "0";
+
+document.getElementById("hours")
+.textContent = "0";
+
+document.getElementById("minutes")
+.textContent = "0";
+
+document.getElementById("seconds")
+.textContent = "0";
+
+return;
+
+}
 
 
 const days =
@@ -1187,34 +2158,37 @@ Math.floor(
 );
 
 
-if (distance > 0) {
+document.getElementById("days")
+.textContent = days;
 
-document.getElementById(
-    "countdown"
-).innerHTML =
 
-days + " Days " +
-hours + " Hours " +
-minutes + " Minutes " +
-seconds + " Seconds";
+document.getElementById("hours")
+.textContent = hours;
 
-}
 
-else {
+document.getElementById("minutes")
+.textContent = minutes;
 
-clearInterval(countdown);
 
-document.getElementById(
-    "countdown"
-).innerHTML =
-"Festival Started!";
+document.getElementById("seconds")
+.textContent = seconds;
 
 }
 
-}, 1000);
+
+updateCountdown();
 
 
-/* MOBILE MENU */
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
 function toggleMenu() {
 
@@ -1230,7 +2204,10 @@ menu.classList.toggle(
 }
 
 
-/* SEARCH */
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 function searchWebsite() {
 
@@ -1241,7 +2218,8 @@ document.getElementById(
     "searchInput"
 )
 .value
-.toLowerCase();
+.toLowerCase()
+.trim();
 
 
 const result =
@@ -1261,6 +2239,8 @@ return;
 }
 
 
+/* DURGA */
+
 if (
     searchText.includes("durga") ||
     searchText.includes("দুর্গা")
@@ -1269,10 +2249,14 @@ if (
 result.textContent =
 "Durga Puja information is available.";
 
+return;
+
 }
 
 
-else if (
+/* KRISHNA */
+
+if (
     searchText.includes("krishna") ||
     searchText.includes("কৃষ্ণ")
 ) {
@@ -1280,10 +2264,14 @@ else if (
 result.textContent =
 "Krishna information will be available soon.";
 
+return;
+
 }
 
 
-else if (
+/* SHIVA */
+
+if (
     searchText.includes("shiva") ||
     searchText.includes("শিব")
 ) {
@@ -1291,10 +2279,105 @@ else if (
 result.textContent =
 "Shiva information will be available soon.";
 
+return;
+
 }
 
 
-else if (
+/* TEMPLE */
+
+if (
+    searchText.includes("temple") ||
+    searchText.includes("মন্দির")
+) {
+
+result.textContent =
+"Opening Hindu Temple Directory...";
+
+setTimeout(function() {
+
+location.href =
+"temples.html";
+
+}, 700);
+
+return;
+
+}
+
+
+/* CALENDAR */
+
+if (
+    searchText.includes("calendar") ||
+    searchText.includes("ক্যালেন্ডার")
+) {
+
+result.textContent =
+"Opening Hindu Calendar...";
+
+setTimeout(function() {
+
+location.href =
+"calendar.html";
+
+}, 700);
+
+return;
+
+}
+
+
+/* FESTIVAL */
+
+if (
+    searchText.includes("festival") ||
+    searchText.includes("উৎসব") ||
+    searchText.includes("পূজা")
+) {
+
+result.textContent =
+"Opening Hindu Festivals...";
+
+setTimeout(function() {
+
+location.href =
+"festival.html";
+
+}, 700);
+
+return;
+
+}
+
+
+/* DEITIES */
+
+if (
+    searchText.includes("deity") ||
+    searchText.includes("deities") ||
+    searchText.includes("দেবতা") ||
+    searchText.includes("দেবী")
+) {
+
+result.textContent =
+"Opening Deities...";
+
+setTimeout(function() {
+
+location.href =
+"deities.html";
+
+}, 700);
+
+return;
+
+}
+
+
+/* COMPASS */
+
+if (
     searchText.includes("compass") ||
     searchText.includes("দিক")
 ) {
@@ -1307,28 +2390,56 @@ setTimeout(function() {
 location.href =
 "compass.html";
 
-}, 800);
+}, 700);
+
+return;
 
 }
 
 
-else {
+/* NOTHING */
 
 result.textContent =
 "No information found. More content will be added soon.";
 
 }
 
-}
 
 
-/* BANGLA */
+/* =====================================================
+   ENTER KEY SEARCH
+===================================================== */
+
+document.getElementById(
+    "searchInput"
+).addEventListener(
+    "keypress",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            searchWebsite();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   BANGLA
+===================================================== */
 
 function showBangla() {
 
-document.querySelector(".logo")
-.textContent =
-"সনাতন হিন্দু";
+
+document.querySelector(
+    ".logo"
+).textContent =
+"ॐ সনাতন হিন্দু";
 
 
 const links =
@@ -1350,7 +2461,7 @@ links[3].textContent =
 "দেব-দেবী";
 
 links[4].textContent =
-"পূজা";
+"মন্দির";
 
 links[5].textContent =
 "জ্ঞান";
@@ -1366,38 +2477,89 @@ document.querySelector(
 
 
 document.querySelector(
-    ".hero p"
+    ".hero-content > p"
 ).textContent =
-"একটি সহজ প্ল্যাটফর্মে হিন্দু ধর্মীয় তথ্য, উৎসব, ক্যালেন্ডার, ঐতিহ্য ও জ্ঞান অন্বেষণ করুন।";
+"হিন্দু ধর্ম, উৎসব, মন্দির, দেব-দেবী, ঐতিহ্য ও চিরন্তন জ্ঞান এক জায়গায় আবিষ্কার করুন।";
+
+
+document.querySelector(
+    ".primary-btn"
+).textContent =
+"📅 ক্যালেন্ডার দেখুন";
+
+
+document.querySelector(
+    ".secondary-btn"
+).textContent =
+"🔱 দেব-দেবী দেখুন";
+
+
+document.querySelector(
+    "#searchInput"
+).placeholder =
+"হিন্দু ধর্মীয় তথ্য খুঁজুন...";
+
+
+document.querySelector(
+    ".search-box button"
+).textContent =
+"খুঁজুন";
 
 
 document.querySelectorAll(
-    ".section-title"
+    ".section-title h2"
 )[0].textContent =
 "আজকের তথ্য";
 
 
 document.querySelectorAll(
-    ".section-title"
+    ".section-title p"
+)[0].textContent =
+"আজকের গুরুত্বপূর্ণ ধর্মীয় তথ্য এক নজরে";
+
+
+document.querySelectorAll(
+    ".section-title h2"
 )[1].textContent =
 "আসন্ন উৎসব";
 
 
 document.querySelectorAll(
-    ".section-title"
+    ".section-title h2"
 )[2].textContent =
-"সনাতন হিন্দু সম্পর্কে জানুন";
+"সনাতন ধর্ম আবিষ্কার করুন";
+
+
+document.querySelectorAll(
+    ".section-title h2"
+)[3].textContent =
+"শিখুন ও অনুশীলন করুন";
 
 
 document.querySelector(
-    "footer p"
+    ".temple-inner h2"
 ).textContent =
-"© ২০২৬ সনাতন হিন্দু";
+"🛕 হিন্দু মন্দির";
+
+
+document.querySelector(
+    ".temple-button"
+).textContent =
+"মন্দির Directory দেখুন →";
+
+
+document.querySelector(
+    ".footer-logo"
+).textContent =
+"ॐ সনাতন হিন্দু";
 
 }
 
 
-/* ENGLISH */
+
+/* =====================================================
+   ENGLISH
+===================================================== */
 
 function showEnglish() {
 
