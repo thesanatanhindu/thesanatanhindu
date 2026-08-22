@@ -15,7 +15,7 @@
 
 /* =====================================================
    THE SANATAN HINDU
-   NEW HOME PAGE DESIGN
+   HOME PAGE
 ===================================================== */
 
 * {
@@ -1408,6 +1408,12 @@ footer p {
         Temples
     </a>
 
+    <!-- PRANI JAGAT ADDED -->
+
+    <a href="prani%20jagat.html">
+        Prani Jagat
+    </a>
+
     <a href="gurukul.html">
         Knowledge
     </a>
@@ -1494,7 +1500,7 @@ footer p {
 >
 
 
-<button onclick="searchWebsite()">
+<button onclick="searchWebsite">
 
     Search
 
@@ -1876,6 +1882,35 @@ footer p {
 
 <p>
     অর্থসহ বিভিন্ন সুন্দর হিন্দু নামের সংগ্রহ।
+</p>
+
+<div class="explore-arrow">
+    →
+</div>
+
+</a>
+
+
+
+<!-- =====================================================
+     PRANI JAGAT
+===================================================== -->
+
+<a
+    href="prani%20jagat.html"
+    class="explore-card">
+
+<div class="explore-icon">
+    🐘
+</div>
+
+<h3>
+    Prani Jagat
+</h3>
+
+<p>
+    হিন্দু ধর্ম, পুরাণ ও শাস্ত্রে উল্লেখিত
+    প্রাণী, পাখি, কীটপতঙ্গ ও জলজ প্রাণী সম্পর্কে জানুন।
 </p>
 
 <div class="explore-arrow">
@@ -2375,6 +2410,39 @@ return;
 }
 
 
+/* PRANI JAGAT */
+
+if (
+    searchText.includes("prani") ||
+    searchText.includes("prani jagat") ||
+    searchText.includes("animal") ||
+    searchText.includes("animals") ||
+    searchText.includes("bird") ||
+    searchText.includes("birds") ||
+    searchText.includes("fish") ||
+    searchText.includes("insect") ||
+    searchText.includes("প্রাণী") ||
+    searchText.includes("প্রাণী জগত") ||
+    searchText.includes("পাখি") ||
+    searchText.includes("মাছ") ||
+    searchText.includes("কীটপতঙ্গ")
+) {
+
+result.textContent =
+"Opening Prani Jagat...";
+
+setTimeout(function() {
+
+location.href =
+"prani%20jagat.html";
+
+}, 700);
+
+return;
+
+}
+
+
 /* COMPASS */
 
 if (
@@ -2464,9 +2532,12 @@ links[4].textContent =
 "মন্দির";
 
 links[5].textContent =
-"জ্ঞান";
+"প্রাণী জগত";
 
 links[6].textContent =
+"জ্ঞান";
+
+links[7].textContent =
 "🧭 দিক";
 
 
