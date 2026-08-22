@@ -1,1263 +1,1206 @@
 <!DOCTYPE html>
-<html lang="bn">
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>প্রাণীজগৎ - Gurukul | The Sanatan Hindu</title>
+<title>Prani Jagat | The Sanatan Hindu</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description"
+content="Prani Jagat — an educational catalogue of animals, birds, insects and aquatic life found in Hindu scriptures, mythology, Indian traditions and the natural world.">
+
+<meta name="keywords"
+content="Hindu animals, Hindu birds, Hindu mythology animals, Hindu scriptures animals, Prani Jagat, Sanatan Hindu, Indian animals, Hindu symbolism">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
+:root{
+    --bg:#0d0b09;
+    --bg2:#15110d;
+    --card:#1b1510;
+    --card2:#211912;
+    --gold:#d9a441;
+    --gold2:#f1c766;
+    --cream:#f5ead2;
+    --muted:#b9ab91;
+    --border:rgba(217,164,65,.22);
+    --shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-
-    font-family:"Noto Sans Bengali",sans-serif;
-
-    background:linear-gradient(
-        135deg,
-        #f7f0df,
-        #e8f3e5
-    );
-
-    color:#3d2b1f;
-
-    padding:20px;
-
-}
-
-.container{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:25px;
-
-    box-shadow:
-    0 10px 35px rgba(0,0,0,.15);
-
-}
-
-.header{
-
-    text-align:center;
-
-    margin-bottom:35px;
-
-}
-
-.header h1{
-
-    font-size:38px;
-
-    color:#6b3e12;
-
-    margin-bottom:10px;
-
-}
-
-.header p{
-
-    color:#666;
-
-    font-size:17px;
-
-    line-height:1.8;
-
-}
-
-
-/* Category */
-
-.category-title{
-
-    text-align:center;
-
-    color:#8b4513;
-
-    margin:30px 0 20px;
-
-    font-size:28px;
-
-}
-
-
-/* Grid */
-
-.animal-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-
-}
-
-
-/* Card */
-
-.animal-card{
-
-    background:#fffaf0;
-
-    border:2px solid #dfc27d;
-
-    border-radius:20px;
-
-    padding:25px;
-
-    text-align:center;
-
-    transition:.3s;
-
-}
-
-.animal-card:hover{
-
-    transform:translateY(-7px);
-
-    box-shadow:
-    0 10px 20px rgba(0,0,0,.12);
-
-}
-
-
-.animal-icon{
-
-    font-size:55px;
-
-    margin-bottom:10px;
-
-}
-
-
-.bangla-name{
-
-    font-size:25px;
-
-    font-weight:bold;
-
-    color:#7b3f00;
-
-}
-
-
-.sanskrit-name{
-
-    font-size:23px;
-
-    color:#a0522d;
-
-    margin-top:5px;
-
-}
-
-
-.pronunciation{
-
-    color:#555;
-
-    margin-top:5px;
-
-}
-
-
-.english-name{
-
-    font-family:Arial,sans-serif;
-
-    color:#666;
-
-    margin-top:5px;
-
-}
-
-
-.description{
-
-    margin-top:15px;
-
-    padding-top:12px;
-
-    border-top:1px solid #ead9b5;
-
-    color:#555;
-
+    background:
+        radial-gradient(circle at 20% 10%,rgba(217,164,65,.08),transparent 28%),
+        radial-gradient(circle at 80% 70%,rgba(180,80,20,.06),transparent 30%),
+        var(--bg);
+    color:var(--cream);
+    font-family:"Noto Sans Bengali",Arial,sans-serif;
     line-height:1.7;
-
 }
 
+/* ================= NAVBAR ================= */
 
-/* Details Button */
-
-.details-btn{
-
-    margin-top:18px;
-
-    padding:10px 20px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#8b4513;
-
-    color:white;
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-    transition:.3s;
-
-}
-
-.details-btn:hover{
-
-    background:#5c2e0b;
-
-    transform:scale(1.05);
-
-}
-
-
-/* Modal Background */
-
-.modal{
-
-    display:none;
-
-    position:fixed;
-
-    z-index:1000;
-
-    left:0;
-
+.navbar{
+    position:sticky;
     top:0;
+    z-index:1000;
+    backdrop-filter:blur(14px);
+    background:rgba(13,11,9,.88);
+    border-bottom:1px solid var(--border);
+}
 
-    width:100%;
-
-    height:100%;
-
-    background:rgba(0,0,0,.65);
-
-    justify-content:center;
-
+.nav-inner{
+    max-width:1250px;
+    margin:auto;
+    min-height:70px;
+    display:flex;
     align-items:center;
-
-    padding:20px;
-
+    justify-content:space-between;
+    padding:0 22px;
 }
 
+.brand{
+    text-decoration:none;
+    color:var(--gold2);
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    font-weight:800;
+}
 
-/* Modal Box */
+.nav-links{
+    display:flex;
+    gap:22px;
+    list-style:none;
+}
 
-.modal-content{
+.nav-links a{
+    color:#e8dbc1;
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s;
+}
 
-    background:#fffaf0;
+.nav-links a:hover{
+    color:var(--gold2);
+}
 
-    max-width:650px;
+/* ================= HERO ================= */
 
-    width:100%;
-
-    max-height:90vh;
-
-    overflow-y:auto;
-
-    padding:30px;
-
-    border-radius:25px;
-
+.hero{
+    min-height:560px;
     position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
 
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.3);
-
-    animation:modalOpen .3s ease;
-
+    background:
+    linear-gradient(
+        90deg,
+        rgba(5,4,3,.94) 0%,
+        rgba(5,4,3,.76) 45%,
+        rgba(5,4,3,.32) 100%
+    ),
+    url("https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2200&q=85")
+    center/cover no-repeat;
 }
 
-
-@keyframes modalOpen{
-
-    from{
-
-        transform:scale(.7);
-
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:scale(1);
-
-        opacity:1;
-
-    }
-
+.hero-content{
+    width:min(1250px,92%);
+    margin:auto;
+    padding:100px 0;
 }
 
-
-/* Close */
-
-.close{
-
-    position:absolute;
-
-    top:12px;
-
-    right:20px;
-
-    font-size:30px;
-
-    cursor:pointer;
-
-    color:#8b4513;
-
+.eyebrow{
+    color:var(--gold2);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
 }
 
+.hero h1{
+    max-width:800px;
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,7vw,86px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
 
-.modal-icon{
+.hero h1 span{
+    color:var(--gold2);
+}
 
+.hero p{
+    max-width:750px;
+    color:#ded0b5;
+    font-size:18px;
+}
+
+.hero-note{
+    margin-top:30px;
+    display:inline-block;
+    padding:10px 18px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    color:#ead7b2;
+    background:rgba(0,0,0,.25);
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    max-width:1100px;
+    margin:70px auto 35px;
+    padding:0 22px;
     text-align:center;
-
-    font-size:70px;
-
-    margin-bottom:10px;
-
 }
 
-
-.modal-title{
-
-    text-align:center;
-
-    color:#7b3f00;
-
-    font-size:30px;
-
-    margin-bottom:20px;
-
+.intro h2{
+    font-family:"Playfair Display",serif;
+    font-size:38px;
+    color:var(--gold2);
+    margin-bottom:15px;
 }
 
+.intro p{
+    color:var(--muted);
+    max-width:850px;
+    margin:auto;
+}
 
-.info-box{
+/* ================= CONTROLS ================= */
 
-    background:white;
+.controls{
+    max-width:1250px;
+    margin:45px auto 25px;
+    padding:0 22px;
+}
 
-    padding:15px;
+.search-box{
+    position:relative;
+    margin-bottom:22px;
+}
 
+.search-box input{
+    width:100%;
+    padding:17px 20px;
     border-radius:12px;
-
-    margin-top:15px;
-
-    border-left:5px solid #c58b45;
-
+    border:1px solid var(--border);
+    background:#17120e;
+    color:white;
+    font-size:16px;
+    outline:none;
 }
 
+.search-box input:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(217,164,65,.08);
+}
 
-.info-box h3{
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
 
-    color:#8b4513;
+.filter{
+    padding:9px 16px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    background:transparent;
+    color:#d9ccb3;
+    cursor:pointer;
+    transition:.25s;
+}
 
+.filter:hover,
+.filter.active{
+    background:var(--gold);
+    color:#17110a;
+    border-color:var(--gold);
+}
+
+.stats{
+    margin-top:20px;
+    color:#9f917a;
+    font-size:14px;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+    max-width:1250px;
+    margin:30px auto 100px;
+    padding:0 22px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.card{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.008)
+        ),
+        var(--card);
+    border:1px solid var(--border);
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(217,164,65,.55);
+    box-shadow:var(--shadow);
+}
+
+.card-image{
+    height:190px;
+    background:#100d09;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.05);
+}
+
+.card-body{
+    padding:18px;
+}
+
+.badge{
+    display:inline-block;
+    color:var(--gold2);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
     margin-bottom:7px;
-
 }
 
-
-.info-box p{
-
-    line-height:1.8;
-
-    color:#444;
-
+.card h3{
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+    margin-bottom:4px;
 }
 
+.card .bengali{
+    color:#e1c995;
+    font-size:15px;
+    margin-bottom:7px;
+}
 
-/* Footer */
+.card p{
+    color:#a99b84;
+    font-size:13px;
+}
 
-.footer{
-
+.no-results{
+    grid-column:1/-1;
     text-align:center;
-
-    margin-top:40px;
-
-    padding-top:20px;
-
-    border-top:1px solid #eee;
-
-    color:#777;
-
+    padding:70px 20px;
+    color:#a99b84;
 }
 
+/* ================= FOOTER ================= */
 
-/* Mobile */
+footer{
+    border-top:1px solid var(--border);
+    padding:50px 22px;
+    text-align:center;
+    color:#91846f;
+    background:#090806;
+}
 
-@media(max-width:600px){
+footer strong{
+    color:var(--gold2);
+    font-family:"Playfair Display",serif;
+    font-size:20px;
+}
 
-    body{
+/* ================= RESPONSIVE ================= */
 
-        padding:10px;
+@media(max-width:1000px){
+    .grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
 
+@media(max-width:720px){
+
+    .nav-links{
+        display:none;
     }
 
-    .container{
-
-        padding:20px;
-
+    .hero{
+        min-height:500px;
     }
 
-    .header h1{
-
-        font-size:30px;
-
+    .hero h1{
+        font-size:50px;
     }
 
-    .animal-grid{
+    .hero p{
+        font-size:15px;
+    }
 
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .card-image{
+        height:150px;
+    }
+}
+
+@media(max-width:480px){
+
+    .grid{
         grid-template-columns:1fr;
-
     }
 
+    .hero h1{
+        font-size:43px;
+    }
+
+    .intro h2{
+        font-size:30px;
+    }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
 
-<div class="container">
+<nav class="navbar">
+<div class="nav-inner">
+
+<a href="index.html" class="brand">
+The Sanatan Hindu
+</a>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="deities.html">Deities</a></li>
+<li><a href="festival.html">Festivals</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="temples.html">Temples</a></li>
+</ul>
+
+</div>
+</nav>
 
 
-<div class="header">
+<!-- ================= HERO ================= -->
 
-<h1>🐾 প্রাণীজগৎ</h1>
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+The Living World of Sanatana Tradition
+</div>
+
+<h1>
+Prani <span>Jagat</span>
+</h1>
 
 <p>
-
-Gurukul Learning
-
-<br>
-
-বর্তমান বাংলা নাম ও সংস্কৃত নামের পরিচয়
-
-<br>
-
-<strong>Animals in Bangla & Sanskrit</strong>
-
+Animals, birds, insects and aquatic life in Hindu scriptures,
+mythology, symbolism, Indian traditions and the natural world.
 </p>
 
+<div class="hero-note">
+A scholarly catalogue — not every species listed is considered sacred.
 </div>
-
-
-
-<!-- LAND ANIMALS -->
-
-
-<h2 class="category-title">
-
-🌿 স্থলচর প্রাণী
-
-</h2>
-
-
-<div class="animal-grid">
-
-
-
-<!-- Elephant -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🐘</div>
-
-<div class="bangla-name">হাতি</div>
-
-<div class="sanskrit-name">गज</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: গজ
 
 </div>
 
-<div class="english-name">
+</section>
 
-Elephant
 
-</div>
+<!-- ================= INTRO ================= -->
 
-<div class="description">
+<section class="intro">
 
-সংস্কৃতে হাতির একটি প্রচলিত নাম হলো "গজ"।
+<h2>জীবজগত ও সনাতন ঐতিহ্য</h2>
 
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🐘',
-
-'হাতি',
-
-'গজ (Gaja)',
-
-'Elephant',
-
-'গজ শব্দটি সংস্কৃত ভাষায় হাতিকে বোঝাতে ব্যবহৃত হয়। ভারতীয় ঐতিহ্যে হাতি শক্তি, প্রজ্ঞা ও মর্যাদার প্রতীক হিসেবে পরিচিত। হিন্দু ধর্মীয় ঐতিহ্যে গণেশদেবের হাতির মস্তক বিশেষ তাৎপর্য বহন করে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Horse -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🐎</div>
-
-<div class="bangla-name">ঘোড়া</div>
-
-<div class="sanskrit-name">अश्व</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: অশ্ব
-
-</div>
-
-<div class="english-name">
-
-Horse
-
-</div>
-
-<div class="description">
-
-অশ্ব শব্দটি সংস্কৃত সাহিত্যে ঘোড়াকে বোঝাতে ব্যবহৃত হয়েছে।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🐎',
-
-'ঘোড়া',
-
-'অশ্ব (Aśva)',
-
-'Horse',
-
-'অশ্ব সংস্কৃত ভাষায় ঘোড়ার একটি প্রাচীন ও বহুল ব্যবহৃত নাম। বৈদিক সাহিত্যে অশ্বের উল্লেখ পাওয়া যায় এবং অশ্বমেধ যজ্ঞের সঙ্গে এর ঐতিহাসিক ও ধর্মীয় সম্পর্ক রয়েছে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Cow -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🐄</div>
-
-<div class="bangla-name">গরু</div>
-
-<div class="sanskrit-name">गो</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: গো
-
-</div>
-
-<div class="english-name">
-
-Cow
-
-</div>
-
-<div class="description">
-
-"গো" শব্দটি সংস্কৃত ভাষায় গরুর জন্য বহুল ব্যবহৃত একটি শব্দ।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🐄',
-
-'গরু',
-
-'গো (Go)',
-
-'Cow',
-
-'সংস্কৃত গো শব্দটি গরুকে বোঝায়। সনাতন ধর্মীয় ঐতিহ্যে গরুকে পবিত্র ও শ্রদ্ধার প্রাণী হিসেবে দেখা হয় এবং কৃষি ও গ্রামীণ জীবনে এর গুরুত্বপূর্ণ ভূমিকা রয়েছে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Lion -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🦁</div>
-
-<div class="bangla-name">সিংহ</div>
-
-<div class="sanskrit-name">सिंह</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: সিংহ
-
-</div>
-
-<div class="english-name">
-
-Lion
-
-</div>
-
-<div class="description">
-
-সিংহকে শক্তি, সাহস ও রাজকীয়তার প্রতীক হিসেবে দেখা হয়।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🦁',
-
-'সিংহ',
-
-'সিংহ (Siṃha)',
-
-'Lion',
-
-'সিংহ সংস্কৃত সাহিত্যে শক্তি ও সাহসের প্রতীক। হিন্দু ঐতিহ্যে নৃসিংহ অবতার এবং দেবী দুর্গার সিংহবাহনের সঙ্গে সিংহের বিশেষ ধর্মীয় সম্পর্ক রয়েছে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Tiger -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🐅</div>
-
-<div class="bangla-name">বাঘ</div>
-
-<div class="sanskrit-name">व्याघ्र</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: ব্যাঘ্র
-
-</div>
-
-<div class="english-name">
-
-Tiger
-
-</div>
-
-<div class="description">
-
-"ব্যাঘ্র" সংস্কৃত ভাষায় বাঘের একটি প্রচলিত নাম।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🐅',
-
-'বাঘ',
-
-'ব্যাঘ্র (Vyāghra)',
-
-'Tiger',
-
-'ব্যাঘ্র সংস্কৃত ভাষায় বাঘের একটি নাম। ভারতীয় সংস্কৃতিতে বাঘ শক্তি, সাহস ও বন্য প্রকৃতির প্রতীক হিসেবে পরিচিত।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Deer -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🦌</div>
-
-<div class="bangla-name">হরিণ</div>
-
-<div class="sanskrit-name">हरिण</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: হরিণ
-
-</div>
-
-<div class="english-name">
-
-Deer
-
-</div>
-
-<div class="description">
-
-হরিণকে সংস্কৃত সাহিত্যে "হরিণ" নামে উল্লেখ করা হয়েছে।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🦌',
-
-'হরিণ',
-
-'হরিণ (Hariṇa)',
-
-'Deer',
-
-'হরিণ ভারতীয় সাহিত্য ও সংস্কৃতিতে কোমলতা ও সৌন্দর্যের প্রতীক। রামায়ণে অরণ্যপর্বের ঘটনায় স্বর্ণমৃগের কাহিনি বিশেষভাবে উল্লেখযোগ্য।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Monkey -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🐒</div>
-
-<div class="bangla-name">বানর</div>
-
-<div class="sanskrit-name">वानर</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: বানর
-
-</div>
-
-<div class="english-name">
-
-Monkey
-
-</div>
-
-<div class="description">
-
-রামায়ণে বানরদের গুরুত্বপূর্ণ ভূমিকা রয়েছে।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🐒',
-
-'বানর',
-
-'বানর (Vānara)',
-
-'Monkey',
-
-'রামায়ণে বানরদের গুরুত্বপূর্ণ ভূমিকা রয়েছে। হনুমান ও সুগ্রীবের মতো চরিত্রগুলি রামায়ণের কাহিনিতে বিশেষ স্থান অধিকার করে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Snake -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🐍</div>
-
-<div class="bangla-name">সাপ</div>
-
-<div class="sanskrit-name">सर्प</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: সর্প
-
-</div>
-
-<div class="english-name">
-
-Snake
-
-</div>
-
-<div class="description">
-
-"সর্প" সংস্কৃত ভাষায় সাপের একটি প্রচলিত নাম।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🐍',
-
-'সাপ',
-
-'সর্প (Sarpa)',
-
-'Snake',
-
-'সর্প সংস্কৃত ভাষায় সাপ বা নাগজাতীয় প্রাণীকে বোঝাতে ব্যবহৃত হয়। হিন্দু ঐতিহ্যে অনন্তনাগ ও বাসুকির মতো নাগ চরিত্রের বিশেষ ধর্মীয় গুরুত্ব রয়েছে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-</div>
-
-
-
-<!-- BIRDS -->
-
-
-<h2 class="category-title">
-
-🕊️ পাখি
-
-</h2>
-
-
-<div class="animal-grid">
-
-
-
-<!-- Peacock -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🦚</div>
-
-<div class="bangla-name">ময়ূর</div>
-
-<div class="sanskrit-name">मयूर</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: ময়ূর
-
-</div>
-
-<div class="english-name">
-
-Peacock
-
-</div>
-
-<div class="description">
-
-ময়ূর ভারতীয় সংস্কৃতিতে সৌন্দর্য ও গৌরবের প্রতীক।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🦚',
-
-'ময়ূর',
-
-'ময়ূর (Mayūra)',
-
-'Peacock',
-
-'ময়ূর ভারতীয় সংস্কৃতিতে সৌন্দর্যের প্রতীক। কৃষ্ণের মুকুটের ময়ূরপুচ্ছ এবং কার্তিকেয়ের বাহন হিসেবে ময়ূরের সাংস্কৃতিক ও ধর্মীয় গুরুত্ব রয়েছে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Owl -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🦉</div>
-
-<div class="bangla-name">পেঁচা</div>
-
-<div class="sanskrit-name">उलूक</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: উলূক
-
-</div>
-
-<div class="english-name">
-
-Owl
-
-</div>
-
-<div class="description">
-
-উলূক সংস্কৃত ভাষায় পেঁচার একটি নাম।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🦉',
-
-'পেঁচা',
-
-'উলূক (Ulūka)',
-
-'Owl',
-
-'উলূক সংস্কৃত ভাষায় পেঁচার একটি নাম। হিন্দু ঐতিহ্যে পেঁচাকে লক্ষ্মীদেবীর বাহন হিসেবে পরিচিত করা হয়।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-<!-- Swan -->
-
-<div class="animal-card">
-
-<div class="animal-icon">🦢</div>
-
-<div class="bangla-name">হংস</div>
-
-<div class="sanskrit-name">हंस</div>
-
-<div class="pronunciation">
-
-বাংলা উচ্চারণ: হংস
-
-</div>
-
-<div class="english-name">
-
-Swan
-
-</div>
-
-<div class="description">
-
-হংস ভারতীয় আধ্যাত্মিক ঐতিহ্যে জ্ঞান ও বিবেকের প্রতীক।
-
-</div>
-
-<button class="details-btn"
-
-onclick="showDetails(
-
-'🦢',
-
-'হংস',
-
-'হংস (Haṃsa)',
-
-'Swan',
-
-'হংস ভারতীয় আধ্যাত্মিক ও সাংস্কৃতিক ঐতিহ্যে জ্ঞান ও বিবেকের প্রতীক। দেবী সরস্বতীর বাহন হিসেবে হংসের বিশেষ গুরুত্ব রয়েছে।'
-
-)">
-
-বিস্তারিত দেখুন
-
-</button>
-
-</div>
-
-
-
-</div>
-
-
-
-<!-- MODAL -->
-
-
-<div class="modal" id="detailsModal">
-
-
-<div class="modal-content">
-
-
-<span class="close" onclick="closeDetails()">
-
-&times;
-
-</span>
-
-
-<div class="modal-icon" id="modalIcon">
-
-🐘
-
-</div>
-
-
-<h2 class="modal-title" id="modalTitle">
-
-হাতি
-
-</h2>
-
-
-
-<div class="info-box">
-
-<h3>
-
-🕉️ সংস্কৃত নাম
-
-</h3>
-
-<p id="modalSanskrit">
-
-গজ
-
+<p>
+হিন্দু ধর্মগ্রন্থ, মহাকাব্য, পুরাণ, লোকাচার ও ভারতীয় সাংস্কৃতিক
+ঐতিহ্যে অসংখ্য প্রাণীর উল্লেখ পাওয়া যায়। কোনো প্রাণী দেবতার
+বাহন, কোনোটি পৌরাণিক প্রতীক, আবার কোনোটি প্রাচীন ভারতীয়
+প্রকৃতি ও জীবনের অংশ হিসেবে এসেছে।
 </p>
 
+</section>
+
+
+<!-- ================= CONTROLS ================= -->
+
+<section class="controls">
+
+<div class="search-box">
+
+<input
+type="search"
+id="search"
+placeholder="Search animal, bird, insect or fish..."
+aria-label="Search Prani Jagat">
+
 </div>
 
+<div class="filters">
+
+<button class="filter active" data-category="all">
+All
+</button>
+
+<button class="filter" data-category="animal">
+Animals
+</button>
+
+<button class="filter" data-category="bird">
+Birds
+</button>
+
+<button class="filter" data-category="insect">
+Insects & Arthropods
+</button>
+
+<button class="filter" data-category="fish">
+Fish & Aquatic Life
+</button>
+
+</div>
+
+<div class="stats" id="stats">
+Showing 400 entries
+</div>
+
+</section>
 
 
-<div class="info-box">
+<!-- ================= DATA GRID ================= -->
 
-<h3>
+<main class="grid" id="grid"></main>
 
-🇬🇧 English Name
 
-</h3>
+<!-- ================= FOOTER ================= -->
 
-<p id="modalEnglish">
+<footer>
 
-Elephant
+<strong>The Sanatan Hindu</strong>
 
+<p>
+History • Religion • Philosophy • Culture • Civilisation
 </p>
 
-</div>
-
-
-
-<div class="info-box">
-
-<h3>
-
-📖 পরিচয় ও সাংস্কৃতিক গুরুত্ব
-
-</h3>
-
-<p id="modalDescription">
-
-তথ্য
-
+<p>
+© 2026 The Sanatan Hindu
 </p>
 
-</div>
-
-
-
-</div>
-
-</div>
-
-
-
-<!-- FOOTER -->
-
-
-<div class="footer">
-
-🪔 Gurukul | The Sanatan Hindu
-
-<br>
-
-জ্ঞান • ধর্ম • সংস্কৃতি • প্রকৃতি
-
-</div>
-
-
-</div>
-
+</footer>
 
 
 <script>
 
+/*
+==========================================================
+PRANI JAGAT DATABASE
+==========================================================
 
-function showDetails(
+Important editorial note:
 
-icon,
+The catalogue combines:
+1. Animals known from Hindu scriptures and mythology
+2. Animals associated with Hindu deities and symbolism
+3. Species known from ancient Indian cultural context
+4. South Asian fauna relevant to the historical environment
 
-title,
-
-sanskrit,
-
-english,
-
-description
-
-){
-
-
-document.getElementById("modalIcon").innerHTML = icon;
-
-
-document.getElementById("modalTitle").innerHTML = title;
+Not every species below is "sacred".
+The site deliberately avoids making that claim.
+==========================================================
+*/
 
 
-document.getElementById("modalSanskrit").innerHTML = sanskrit;
+const animals = [
+
+["Lion","সিংহ"],
+["Tiger","বাঘ"],
+["Elephant","হাতি"],
+["Cow","গরু"],
+["Bull","ষাঁড়"],
+["Ox","বলদ"],
+["Buffalo","মহিষ"],
+["Horse","ঘোড়া"],
+["Donkey","গাধা"],
+["Camel","উট"],
+["Goat","ছাগল"],
+["Sheep","ভেড়া"],
+["Ram","মেষ"],
+["Deer","হরিণ"],
+["Blackbuck","কৃষ্ণসার"],
+["Antelope","হরিণজাতীয় প্রাণী"],
+["Gazelle","গ্যাজেল"],
+["Nilgai","নীলগাই"],
+["Wild Boar","বন্য শূকর"],
+["Boar","বরাহ"],
+["Pig","শূকর"],
+["Rhinoceros","গণ্ডার"],
+["Gaur","গৌর"],
+["Bison","বাইসন"],
+["Wild Buffalo","বন্য মহিষ"],
+["Yak","চমরী গাই"],
+["Musk Deer","কস্তুরী হরিণ"],
+["Sambar","সম্বর"],
+["Spotted Deer","চিতল"],
+["Hog Deer","শূকর হরিণ"],
+["Swamp Deer","বারাসিংহা"],
+["Barking Deer","মায়া হরিণ"],
+["Four-horned Antelope","চার শিংওয়ালা হরিণ"],
+["Wild Goat","বন্য ছাগল"],
+["Markhor","মারখোর"],
+["Tahr","তাহর"],
+["Himalayan Takin","হিমালয়ান টাকিন"],
+["Monkey","বানর"],
+["Langur","হনুমানজাতীয় বানর"],
+["Rhesus Macaque","রেসাস বানর"],
+["Hanuman Langur","হনুমান ল্যাঙ্গুর"],
+["Lion-tailed Macaque","সিংহলেজ বানর"],
+["Macaque","ম্যাকাক"],
+["Gorilla","গরিলা"],
+["Chimpanzee","শিম্পাঞ্জি"],
+["Orangutan","ওরাংওটাং"],
+["Gibbon","গিবন"],
+["Sloth Bear","ভালুক"],
+["Brown Bear","বাদামি ভালুক"],
+["Himalayan Black Bear","হিমালয়ান কালো ভালুক"],
+["Polar Bear","মেরু ভালুক"],
+["Panda","পান্ডা"],
+["Wolf","নেকড়ে"],
+["Jackal","শিয়াল"],
+["Fox","খেঁকশিয়াল"],
+["Dhole","বন্য কুকুর"],
+["Dog","কুকুর"],
+["Domestic Cat","বিড়াল"],
+["Leopard","চিতাবাঘ"],
+["Snow Leopard","তুষার চিতা"],
+["Cheetah","চিতা"],
+["Clouded Leopard","মেঘলা চিতা"],
+["Fishing Cat","মেছোবাঘ"],
+["Jungle Cat","বনবিড়াল"],
+["Rusty-spotted Cat","মরচে-দাগা বিড়াল"],
+["Hyena","হায়না"],
+["Otter","উদবিড়াল"],
+["Mongoose","বেজি"],
+["Civet","গন্ধগোকুল"],
+["Palm Civet","খাটাশ"],
+["Hare","খরগোশ"],
+["Rabbit","খরগোশ"],
+["Porcupine","সজারু"],
+["Squirrel","কাঠবিড়ালি"],
+["Rat","ইঁদুর"],
+["Mouse","ছুঁচো ইঁদুর"],
+["Mole","ছুঁচো"],
+["Bat","বাদুড়"],
+["Flying Fox","উড়ন্ত শেয়াল"],
+["Dolphin","ডলফিন"],
+["Whale","তিমি"],
+["Blue Whale","নীল তিমি"],
+["Sperm Whale","শুক্রাণু তিমি"],
+["Porpoise","শুশুকজাতীয় জলজ প্রাণী"],
+["Seal","সিল"],
+["Sea Lion","সমুদ্র সিংহ"],
+["Turtle","কচ্ছপ"],
+["Tortoise","স্থল কচ্ছপ"],
+["Monitor Lizard","গুইসাপ"],
+["Chameleon","গিরগিটি"],
+["Iguana","ইগুয়ানা"],
+["Gecko","টিকটিকি"],
+["Salamander","স্যালামান্ডার"],
+["Frog","ব্যাঙ"],
+["Toad","ভেক"],
+["Crocodile","কুমির"],
+["Alligator","অ্যালিগেটর"],
+["Gharial","ঘড়িয়াল"],
+["Python","অজগর"],
+["King Cobra","গোখরা"],
+["Cobra","কেউটে"],
+["Rat Snake","দাঁড়াশ"],
+["Viper","গোখরা/বিষধর সাপ"],
+["Krait","কালাচ"],
+["Sea Snake","সামুদ্রিক সাপ"]
+
+];
 
 
-document.getElementById("modalEnglish").innerHTML = english;
+const birds = [
+
+["Peacock","ময়ূর"],
+["Peahen","ময়ূরী"],
+["Swan","রাজহাঁস"],
+["Goose","হংস"],
+["Duck","হাঁস"],
+["Wild Duck","বুনো হাঁস"],
+["Sarus Crane","সারস"],
+["Crane","বকজাতীয় সারস"],
+["Heron","বক"],
+["Egret","সাদা বক"],
+["Stork","স্টর্ক"],
+["Painted Stork","রাঙা মানিকজোড়"],
+["Openbill Stork","শামুকখোল"],
+["Black-necked Stork","কালোমাথা মানিকজোড়"],
+["Pelican","পেলিক্যান"],
+["Cormorant","পানকৌড়ি"],
+["Darter","সাপপাখি"],
+["Kingfisher","মাছরাঙা"],
+["Common Kingfisher","সাধারণ মাছরাঙা"],
+["Pied Kingfisher","কালোমাথা মাছরাঙা"],
+["Eagle","ঈগল"],
+["Golden Eagle","সোনালি ঈগল"],
+["Bald Eagle","শ্বেতমস্তক ঈগল"],
+["Hawk","বাজ"],
+["Falcon","বাজপাখি"],
+["Peregrine Falcon","শাহীন"],
+["Kite","চিল"],
+["Black Kite","কালো চিল"],
+["Brahminy Kite","ব্রাহ্মণী চিল"],
+["Vulture","শকুন"],
+["King Vulture","রাজ শকুন"],
+["White-rumped Vulture","সাদা-পিঠ শকুন"],
+["Owl","পেঁচা"],
+["Barn Owl","লক্ষ্মীপেঁচা"],
+["Eagle Owl","ঈগল পেঁচা"],
+["Spotted Owlet","খেঁকশিয়াল পেঁচা"],
+["Parrot","টিয়া"],
+["Rose-ringed Parakeet","সবুজ টিয়া"],
+["Alexandrine Parakeet","চন্দনা"],
+["Koel","কোকিল"],
+["Cuckoo","কোকিল"],
+["Crow","কাক"],
+["House Crow","পাতি কাক"],
+["Jungle Crow","দাঁড়কাক"],
+["Raven","দাঁড়কাকজাতীয় পাখি"],
+["Sparrow","চড়ুই"],
+["House Sparrow","চড়ুই"],
+["Myna","শালিক"],
+["Common Myna","শালিক"],
+["Jungle Myna","বন শালিক"],
+["Starling","স্টারলিং"],
+["Bulbul","বুলবুলি"],
+["Red-vented Bulbul","কালো বুলবুলি"],
+["Robin","রবিন"],
+["Magpie Robin","দোয়েল"],
+["Wagtail","খঞ্জনা"],
+["Drongo","ফিঙে"],
+["Black Drongo","কালো ফিঙে"],
+["Bee-eater","সোনামুখী"],
+["Hornbill","ধনেশ"],
+["Great Hornbill","বড় ধনেশ"],
+["Indian Grey Hornbill","ভারতীয় ধূসর ধনেশ"],
+["Flamingo","ফ্লেমিঙ্গো"],
+["Greater Flamingo","বড় ফ্লেমিঙ্গো"],
+["Quail","বটের"],
+["Partridge","তিতির"],
+["Pheasant","ময়ূরজাতীয় বনপাখি"],
+["Junglefowl","বনমোরগ"],
+["Red Junglefowl","লাল বনমোরগ"],
+["Chicken","মুরগি"],
+["Rooster","মোরগ"],
+["Turkey","টার্কি"],
+["Pigeon","কবুতর"],
+["Rock Dove","পায়রা"],
+["Dove","ঘুঘু"],
+["Turtle Dove","ঘুঘু"],
+["Laughing Dove","হাসি ঘুঘু"],
+["Woodpecker","কাঠঠোকরা"],
+["Barbet","বসন্তবৌরি"],
+["Coppersmith Barbet","বসন্তবৌরি"],
+["Bee-eater","মৌমাছিখেকো পাখি"],
+["Sunbird","মধুপায়ী পাখি"],
+["Tailorbird","টুনটুনি"],
+["Weaver Bird","বাবুই"],
+["Baya Weaver","বাবুই পাখি"],
+["Swallow","আবাবিল"],
+["Swift","শঙ্খচিলজাতীয় দ্রুতগামী পাখি"],
+["Nightjar","নাইটজার"],
+["Hoopoe","হুদহুদ"],
+["Woodcock","উডকক"],
+["Sandpiper","বালিহাঁসজাতীয় পাখি"],
+["Lapwing","জলপিপি"],
+["Ibis","আইবিস"],
+["Black-headed Ibis","কালোমাথা কাস্তেচরা"],
+["Bittern","বগলা জাতীয় পাখি"],
+["Osprey","মাছখেকো ঈগল"],
+["Kestrel","ছোট বাজ"],
+["Harrier","হ্যারিয়ার"],
+["Crake","জলমুরগি"],
+["Moorhen","জলমুরগি"],
+["Coot","কালিম"],
+["Jacana","জলপিপি"],
+["Asian Paradise Flycatcher","দুধরাজ"],
+["Indian Roller","নীলকণ্ঠ"],
+["Common Hawk-Cuckoo","চাতকজাতীয় কোকিল"]
+
+];
 
 
-document.getElementById("modalDescription").innerHTML = description;
+const insects = [
+
+["Honey Bee","মৌমাছি"],
+["Giant Honey Bee","বড় মৌমাছি"],
+["Dwarf Honey Bee","ছোট মৌমাছি"],
+["Indian Honey Bee","ভারতীয় মৌমাছি"],
+["Bumblebee","ভোমরা"],
+["Carpenter Bee","কাঠমৌমাছি"],
+["Wasp","বোলতা"],
+["Hornet","ভীমরুল"],
+["Ant","পিঁপড়া"],
+["Red Ant","লাল পিঁপড়া"],
+["Black Ant","কালো পিঁপড়া"],
+["Termite","উইপোকা"],
+["Butterfly","প্রজাপতি"],
+["Common Mormon","সাধারণ মরমন"],
+["Common Lime Butterfly","লেবু প্রজাপতি"],
+["Common Rose","লাল গোলাপি প্রজাপতি"],
+["Blue Mormon","নীল মরমন"],
+["Plain Tiger","সাধারণ টাইগার প্রজাপতি"],
+["Monarch Butterfly","মনার্ক প্রজাপতি"],
+["Swallowtail","সোয়ালো-টেইল"],
+["Moth","মথ"],
+["Silkworm Moth","রেশম মথ"],
+["Atlas Moth","অ্যাটলাস মথ"],
+["Luna Moth","লুনা মথ"],
+["Beetle","গুবরে পোকা"],
+["Dung Beetle","গোবর পোকা"],
+["Rhinoceros Beetle","গণ্ডার পোকা"],
+["Stag Beetle","স্ট্যাগ বিটল"],
+["Ladybird","লেডিবার্ড"],
+["Firefly","জোনাকি"],
+["Jewel Beetle","রত্ন পোকা"],
+["Longhorn Beetle","লংহর্ন বিটল"],
+["Weevil","উইভিল"],
+["Click Beetle","ক্লিক বিটল"],
+["Blister Beetle","ব্লিস্টার বিটল"],
+["Cockroach","তেলাপোকা"],
+["Grasshopper","ঘাসফড়িং"],
+["Locust","পঙ্গপাল"],
+["Cricket","ঝিঁঝিঁ পোকা"],
+["Katydid","পাতা ঘাসফড়িং"],
+["Mantis","প্রার্থনাকারী ম্যান্টিস"],
+["Stick Insect","লাঠি পোকা"],
+["Leaf Insect","পাতা পোকা"],
+["Cicada","ঝিঁঝিঁ/সিকাডা"],
+["Aphid","জাবপোকা"],
+["Whitefly","সাদা মাছি"],
+["Mealybug","মিলিবাগ"],
+["Scale Insect","স্কেল পোকা"],
+["Louse","উকুন"],
+["Flea","পিশু/ফ্লি"],
+["Bed Bug","ছারপোকা"],
+["Mosquito","মশা"],
+["Housefly","মাছি"],
+["Horsefly","ঘোড়ামাছি"],
+["Deer Fly","হরিণমাছি"],
+["Sandfly","বালিমাছি"],
+["Dragonfly","ফড়িং"],
+["Damselfly","জলফড়িং"],
+["Mayfly","মে-ফ্লাই"],
+["Stonefly","স্টোনফ্লাই"],
+["Caddisfly","ক্যাডিসফ্লাই"],
+["Earwig","কানের পোকা"],
+["Silverfish","সিলভারফিশ পোকা"],
+["Booklouse","বই পোকা"],
+["Thrips","থ্রিপস"],
+["Leafhopper","পাতাফড়িং"],
+["Treehopper","গাছফড়িং"],
+["Planthopper","প্ল্যান্টহপার"],
+["Shield Bug","শিল্ড বাগ"],
+["Stink Bug","দুর্গন্ধ পোকা"],
+["Assassin Bug","অ্যাসাসিন বাগ"],
+["Water Strider","জলচর পোকা"],
+["Giant Water Bug","জলবাগ"],
+["Water Boatman","জলচালক পোকা"],
+["Diving Beetle","ডুবুরি বিটল"],
+["Whirligig Beetle","ঘূর্ণি পোকা"],
+["Scorpion","বিচ্ছু"],
+["Whip Scorpion","হুইপ স্করপিয়ন"],
+["Pseudoscorpion","ছদ্ম বিচ্ছু"],
+["Spider","মাকড়সা"],
+["Tarantula","টারান্টুলা"],
+["Orb Weaver Spider","জাল বোনা মাকড়সা"],
+["Wolf Spider","নেকড়ে মাকড়সা"],
+["Jumping Spider","লাফানো মাকড়সা"],
+["House Spider","ঘরোয়া মাকড়সা"],
+["Harvestman","হার্ভেস্টম্যান"],
+["Tick","আঁঠালো মাইট"],
+["Mite","মাইট"],
+["Centipede","শতপদী"],
+["Millipede","সহস্রপদী"],
+["Earthworm","কেঁচো"],
+["Leech","জোঁক"],
+["Silkworm","রেশমকীট"],
+["Mealworm","মিলওয়ার্ম"],
+["Wax Moth","মোম মথ"],
+["Rice Weevil","ধানের পোকা"],
+["Cotton Bollworm","কটন বোলওয়ার্ম"],
+["Cabbage Butterfly","বাঁধাকপি প্রজাপতি"],
+["Tussar Silkworm","তসর রেশমকীট"],
+["Eri Silkworm","এরি রেশমকীট"],
+["Muga Silkworm","মুগা রেশমকীট"],
+["Glowworm","আলোকপোকা"],
+["Walking Stick","লাঠিপোকা"]
+
+];
 
 
-document.getElementById("detailsModal").style.display = "flex";
+const fish = [
 
+["Rohu","রুই"],
+["Catla","কাতলা"],
+["Mrigal","মৃগেল"],
+["Hilsa","ইলিশ"],
+["Mahseer","মহাশোল"],
+["Golden Mahseer","সোনালি মহাশোল"],
+["Giant Freshwater Stingray","বড় মিঠাপানির স্টিংরে"],
+["Ganges River Dolphin","গঙ্গার শুশুক"],
+["River Gharial","ঘড়িয়াল"],
+["Ganges Shark","গাঙ্গেয় হাঙর"],
+["Bull Shark","ষাঁড় হাঙর"],
+["Whale Shark","তিমি হাঙর"],
+["Tiger Shark","বাঘ হাঙর"],
+["Hammerhead Shark","হ্যামারহেড হাঙর"],
+["Sawfish","করাত মাছ"],
+["Eel","বাইন"],
+["Moray Eel","মোরে ঈল"],
+["Conger Eel","কঙ্গার ঈল"],
+["Snakehead","শোলজাতীয় মাছ"],
+["Great Snakehead","শোল"],
+["Walking Catfish","মাগুর"],
+["Climbing Perch","কই"],
+["Stinging Catfish","শিং"],
+["Singhi","শিং মাছ"],
+["Tengra","টেংরা"],
+["Pabda","পাবদা"],
+["Bata","বাটা"],
+["Mola","মলা"],
+["Punti","পুঁটি"],
+["Taki","টাকি"],
+["Chital Fish","চিতল"],
+["Boal","বোয়াল"],
+["Pangas","পাঙ্গাশ"],
+["Wallago Catfish","বোয়ালজাতীয় মাছ"],
+["Magur","মাগুর"],
+["Koi","কৈ"],
+["Shol","শোল"],
+["Gajar","গজার"],
+["Tengra Catfish","টেংরা"],
+["Kalibaus","কালিবাউস"],
+["Mrigan","মৃগেল"],
+["Silver Carp","সিলভার কার্প"],
+["Grass Carp","গ্রাস কার্প"],
+["Common Carp","কার্প"],
+["Bighead Carp","বিগহেড কার্প"],
+["Black Carp","ব্ল্যাক কার্প"],
+["Roach","রোচ"],
+["Barbel","বারবেল"],
+["Minnow","ছোট কার্পজাতীয় মাছ"],
+["Guppy","গাপ্পি"],
+["Gourami","গৌরামি"],
+["Three-spot Gourami","থ্রি-স্পট গৌরামি"],
+["Kissing Gourami","কিসিং গৌরামি"],
+["Betta","বেটা মাছ"],
+["Climbing Perch","কই"],
+["Glass Fish","কাচকি"],
+["Kachki","কাচকি"],
+["Loach","লোচ"],
+["Zebra Loach","জেব্রা লোচ"],
+["Botiya","বটিয়া"],
+["Butterfish","বাটারফিশ"],
+["Pomfret","পমফ্রেট"],
+["Silver Pomfret","রূপচাঁদা"],
+["Black Pomfret","কালো রূপচাঁদা"],
+["Indian Mackerel","চাপিলা/ম্যাকারেল"],
+["Mackerel","ম্যাকারেল"],
+["Tuna","টুনা"],
+["Skipjack Tuna","স্কিপজ্যাক টুনা"],
+["Sardine","সার্ডিন"],
+["Anchovy","অ্যানচোভি"],
+["Seabass","কোরালজাতীয় মাছ"],
+["Barramundi","ভেটকি"],
+["Grouper","গ্রুপার"],
+["Snapper","স্ন্যাপার"],
+["Trevally","ট্রেভ্যালি"],
+["Kingfish","কিংফিশ"],
+["Milkfish","মিল্কফিশ"],
+["Mullet","মুলেট"],
+["Flying Fish","উড়ন্ত মাছ"],
+["Needlefish","সুঁচ মাছ"],
+["Garfish","গারফিশ"],
+["Swordfish","সোর্ডফিশ"],
+["Marlin","মার্লিন"],
+["Sailfish","সেইলফিশ"],
+["Stingray","স্টিংরে"],
+["Electric Ray","বৈদ্যুতিক রে"],
+["Skate","স্কেট"],
+["Pufferfish","পাফারফিশ"],
+["Porcupinefish","কাঁটাযুক্ত পাফারফিশ"],
+["Lionfish","লায়নফিশ"],
+["Clownfish","ক্লাউনফিশ"],
+["Seahorse","সিহর্স"],
+["Pipefish","পাইপফিশ"],
+["Sea Turtle","সামুদ্রিক কচ্ছপ"],
+["Green Sea Turtle","সবুজ সামুদ্রিক কচ্ছপ"],
+["Olive Ridley Turtle","অলিভ রিডলি"],
+["Leatherback Turtle","লেদারব্যাক"],
+["Hawksbill Turtle","হকসবিল"],
+["Starfish","তারামাছ"],
+["Sea Cucumber","সামুদ্রিক শসা"],
+["Octopus","অক্টোপাস"],
+["Squid","স্কুইড"],
+["Cuttlefish","কাটলফিশ"],
+["Crab","কাঁকড়া"],
+["Prawn","চিংড়ি"],
+["Shrimp","চিংড়ি"],
+["Lobster","লবস্টার"]
+
+];
+
+
+/* ======================================================
+   COMBINE DATABASE
+====================================================== */
+
+const database = [
+
+...animals.map(x => ({
+    name:x[0],
+    bn:x[1],
+    category:"animal"
+})),
+
+...birds.map(x => ({
+    name:x[0],
+    bn:x[1],
+    category:"bird"
+})),
+
+...insects.map(x => ({
+    name:x[0],
+    bn:x[1],
+    category:"insect"
+})),
+
+...fish.map(x => ({
+    name:x[0],
+    bn:x[1],
+    category:"fish"
+}))
+
+];
+
+
+/* ======================================================
+   IMAGE SYSTEM
+======================================================
+
+   Uses Unsplash Source-style remote images based on
+   search keywords.
+
+   If an image cannot be loaded, a dark fallback is used.
+====================================================== */
+
+function imageURL(name){
+
+    const query=encodeURIComponent(
+        name.toLowerCase()+" wildlife nature photography"
+    );
+
+    return `https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=900&q=80`;
+}
+
+
+/* ======================================================
+   CATEGORY LABEL
+====================================================== */
+
+function categoryName(category){
+
+    const names={
+        animal:"Animal",
+        bird:"Bird",
+        insect:"Insect / Arthropod",
+        fish:"Fish / Aquatic"
+    };
+
+    return names[category] || category;
+}
+
+
+/* ======================================================
+   RENDER
+====================================================== */
+
+const grid=document.getElementById("grid");
+const search=document.getElementById("search");
+const stats=document.getElementById("stats");
+
+let currentCategory="all";
+
+
+function render(){
+
+    const keyword=search.value.toLowerCase().trim();
+
+    const filtered=database.filter(item=>{
+
+        const categoryMatch=
+            currentCategory==="all" ||
+            item.category===currentCategory;
+
+        const textMatch=
+            item.name.toLowerCase().includes(keyword) ||
+            item.bn.toLowerCase().includes(keyword);
+
+        return categoryMatch && textMatch;
+
+    });
+
+    grid.innerHTML="";
+
+    if(filtered.length===0){
+
+        grid.innerHTML=`
+        <div class="no-results">
+            <h2>No result found</h2>
+            <p>Try another animal, bird, insect or fish name.</p>
+        </div>
+        `;
+
+        stats.textContent="No entries found";
+        return;
+    }
+
+
+    filtered.forEach((item,index)=>{
+
+        const card=document.createElement("article");
+
+        card.className="card";
+
+        const image=imageURL(item.name);
+
+        card.innerHTML=`
+
+        <div class="card-image">
+
+            <img
+            src="${image}"
+            alt="${item.name}"
+            loading="lazy"
+            onerror="this.style.display='none';"
+            >
+
+        </div>
+
+        <div class="card-body">
+
+            <span class="badge">
+                ${categoryName(item.category)}
+            </span>
+
+            <h3>
+                ${item.name}
+            </h3>
+
+            <div class="bengali">
+                ${item.bn}
+            </div>
+
+            <p>
+                Recorded in the Prani Jagat educational
+                catalogue of The Sanatan Hindu.
+            </p>
+
+        </div>
+
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+
+    stats.textContent=
+        `Showing ${filtered.length} of ${database.length} entries`;
 
 }
 
 
+/* ======================================================
+   FILTER BUTTONS
+====================================================== */
 
-function closeDetails(){
+document.querySelectorAll(".filter").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        document
+        .querySelectorAll(".filter")
+        .forEach(btn=>btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        currentCategory=button.dataset.category;
+
+        render();
+
+    });
+
+});
 
 
-document.getElementById("detailsModal").style.display = "none";
+/* ======================================================
+   SEARCH
+====================================================== */
+
+search.addEventListener("input",render);
 
 
-}
+/* INITIAL LOAD */
 
-
-
-window.onclick = function(event){
-
-
-let modal = document.getElementById("detailsModal");
-
-
-if(event.target === modal){
-
-    modal.style.display = "none";
-
-}
-
-
-}
-
+render();
 
 </script>
 
-
 </body>
-
 </html>
