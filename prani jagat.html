@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,540 +18,1100 @@ content="Hindu animals, Hindu birds, Hindu mythology animals, Hindu scriptures a
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
+
 <style>
 
+/* ======================================================
+   ROOT
+====================================================== */
+
 :root{
+
     --bg:#0d0b09;
     --bg2:#15110d;
+
     --card:#1b1510;
     --card2:#211912;
+
     --gold:#d9a441;
     --gold2:#f1c766;
+
     --cream:#f5ead2;
     --muted:#b9ab91;
+
     --border:rgba(217,164,65,.22);
-    --shadow:0 15px 40px rgba(0,0,0,.35);
+
+    --shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
 }
+
+
+/* ======================================================
+   RESET
+====================================================== */
 
 *{
+
     box-sizing:border-box;
+
     margin:0;
     padding:0;
+
 }
+
 
 html{
+
     scroll-behavior:smooth;
+
 }
+
 
 body{
+
     background:
-        radial-gradient(circle at 20% 10%,rgba(217,164,65,.08),transparent 28%),
-        radial-gradient(circle at 80% 70%,rgba(180,80,20,.06),transparent 30%),
+
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(217,164,65,.08),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(180,80,20,.06),
+            transparent 30%
+        ),
+
         var(--bg);
+
     color:var(--cream);
-    font-family:"Noto Sans Bengali",Arial,sans-serif;
+
+    font-family:
+        "Noto Sans Bengali",
+        Arial,
+        sans-serif;
+
     line-height:1.7;
+
 }
 
-/* ================= NAVBAR ================= */
+
+/* ======================================================
+   NAVBAR
+====================================================== */
 
 .navbar{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
+
     backdrop-filter:blur(14px);
-    background:rgba(13,11,9,.88);
-    border-bottom:1px solid var(--border);
+
+    background:
+        rgba(13,11,9,.90);
+
+    border-bottom:
+        1px solid var(--border);
+
 }
+
 
 .nav-inner{
+
     max-width:1250px;
+
     margin:auto;
+
     min-height:70px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     padding:0 22px;
+
 }
+
 
 .brand{
+
     text-decoration:none;
+
     color:var(--gold2);
-    font-family:"Playfair Display",serif;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
     font-size:25px;
+
     font-weight:800;
+
 }
+
 
 .nav-links{
+
     display:flex;
+
     gap:22px;
+
     list-style:none;
+
 }
+
 
 .nav-links a{
+
     color:#e8dbc1;
+
     text-decoration:none;
+
     font-size:14px;
+
     transition:.25s;
+
 }
+
 
 .nav-links a:hover{
+
     color:var(--gold2);
+
 }
 
-/* ================= HERO ================= */
+
+/* ======================================================
+   HERO
+====================================================== */
 
 .hero{
+
     min-height:560px;
+
     position:relative;
+
     display:flex;
+
     align-items:center;
+
     overflow:hidden;
 
     background:
-    linear-gradient(
-        90deg,
-        rgba(5,4,3,.94) 0%,
-        rgba(5,4,3,.76) 45%,
-        rgba(5,4,3,.32) 100%
-    ),
-    url("https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2200&q=85")
-    center/cover no-repeat;
+
+        linear-gradient(
+            90deg,
+            rgba(5,4,3,.94) 0%,
+            rgba(5,4,3,.76) 45%,
+            rgba(5,4,3,.32) 100%
+        ),
+
+        url("https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2200&q=85")
+
+        center/cover no-repeat;
+
 }
+
 
 .hero-content{
+
     width:min(1250px,92%);
+
     margin:auto;
+
     padding:100px 0;
+
 }
+
 
 .eyebrow{
+
     color:var(--gold2);
+
     text-transform:uppercase;
+
     letter-spacing:3px;
+
     font-size:13px;
+
     font-weight:700;
+
     margin-bottom:15px;
+
 }
+
 
 .hero h1{
+
     max-width:800px;
-    font-family:"Playfair Display",serif;
-    font-size:clamp(48px,7vw,86px);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(48px,7vw,86px);
+
     line-height:1.05;
+
     margin-bottom:25px;
+
 }
+
 
 .hero h1 span{
+
     color:var(--gold2);
+
 }
+
 
 .hero p{
+
     max-width:750px;
+
     color:#ded0b5;
+
     font-size:18px;
+
 }
+
 
 .hero-note{
+
     margin-top:30px;
+
     display:inline-block;
+
     padding:10px 18px;
+
     border:1px solid var(--border);
+
     border-radius:30px;
+
     color:#ead7b2;
+
     background:rgba(0,0,0,.25);
+
 }
 
-/* ================= INTRO ================= */
+
+/* ======================================================
+   INTRO
+====================================================== */
 
 .intro{
+
     max-width:1100px;
+
     margin:70px auto 35px;
+
     padding:0 22px;
+
     text-align:center;
+
 }
+
 
 .intro h2{
-    font-family:"Playfair Display",serif;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
     font-size:38px;
+
     color:var(--gold2);
+
     margin-bottom:15px;
+
 }
+
 
 .intro p{
+
     color:var(--muted);
+
     max-width:850px;
+
     margin:auto;
+
 }
 
-/* ================= CONTROLS ================= */
+
+/* ======================================================
+   CONTROLS
+====================================================== */
 
 .controls{
+
     max-width:1250px;
+
     margin:45px auto 25px;
+
     padding:0 22px;
+
 }
+
 
 .search-box{
+
     position:relative;
+
     margin-bottom:22px;
+
 }
+
 
 .search-box input{
+
     width:100%;
+
     padding:17px 20px;
+
     border-radius:12px;
+
     border:1px solid var(--border);
+
     background:#17120e;
+
     color:white;
+
     font-size:16px;
+
     outline:none;
+
 }
+
+
+.search-box input::placeholder{
+
+    color:#857762;
+
+}
+
 
 .search-box input:focus{
+
     border-color:var(--gold);
-    box-shadow:0 0 0 3px rgba(217,164,65,.08);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(217,164,65,.08);
+
 }
+
 
 .filters{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:10px;
+
 }
 
+
 .filter{
+
     padding:9px 16px;
+
     border:1px solid var(--border);
+
     border-radius:30px;
+
     background:transparent;
+
     color:#d9ccb3;
+
     cursor:pointer;
+
     transition:.25s;
+
+    font-family:inherit;
+
 }
+
 
 .filter:hover,
 .filter.active{
+
     background:var(--gold);
+
     color:#17110a;
+
     border-color:var(--gold);
+
 }
+
 
 .stats{
+
     margin-top:20px;
+
     color:#9f917a;
+
     font-size:14px;
+
 }
 
-/* ================= GRID ================= */
+
+/* ======================================================
+   GRID
+====================================================== */
 
 .grid{
+
     max-width:1250px;
+
     margin:30px auto 100px;
+
     padding:0 22px;
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:18px;
+
 }
 
+
+/* ======================================================
+   CARD
+====================================================== */
+
 .card{
+
     background:
+
         linear-gradient(
             145deg,
             rgba(255,255,255,.035),
             rgba(255,255,255,.008)
         ),
+
         var(--card);
-    border:1px solid var(--border);
+
+    border:
+        1px solid var(--border);
+
     border-radius:15px;
+
     overflow:hidden;
+
     transition:.3s;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.15);
+
 }
+
 
 .card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(217,164,65,.55);
-    box-shadow:var(--shadow);
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(217,164,65,.55);
+
+    box-shadow:
+        var(--shadow);
+
 }
+
+
+/* ======================================================
+   CARD IMAGE
+====================================================== */
 
 .card-image{
+
     height:190px;
+
     background:#100d09;
+
     overflow:hidden;
+
+    position:relative;
+
 }
+
 
 .card-image img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
-    transition:.5s;
+
+    display:block;
+
+    transition:
+        transform .5s ease,
+        filter .3s ease;
+
 }
 
-.card:hover img{
-    transform:scale(1.05);
+
+.card:hover .card-image img{
+
+    transform:scale(1.06);
+
+    filter:brightness(1.08);
+
 }
+
+
+/* ======================================================
+   IMAGE LOADING
+====================================================== */
+
+.image-loading{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    color:#9f917a;
+
+    font-size:12px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(217,164,65,.08),
+            transparent 65%
+        ),
+
+        #100d09;
+
+}
+
+
+.loader{
+
+    width:28px;
+
+    height:28px;
+
+    border:
+        3px solid
+        rgba(217,164,65,.15);
+
+    border-top-color:
+        var(--gold);
+
+    border-radius:50%;
+
+    animation:
+        spin .8s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* ======================================================
+   CARD BODY
+====================================================== */
 
 .card-body{
+
     padding:18px;
+
 }
+
 
 .badge{
+
     display:inline-block;
+
     color:var(--gold2);
+
     font-size:11px;
+
     text-transform:uppercase;
+
     letter-spacing:1.2px;
+
     margin-bottom:7px;
+
 }
+
 
 .card h3{
-    font-family:"Playfair Display",serif;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
     font-size:21px;
+
     margin-bottom:4px;
+
 }
+
 
 .card .bengali{
+
     color:#e1c995;
+
     font-size:15px;
+
     margin-bottom:7px;
+
 }
+
 
 .card p{
+
     color:#a99b84;
+
     font-size:13px;
+
 }
+
+
+/* ======================================================
+   NO RESULTS
+====================================================== */
 
 .no-results{
+
     grid-column:1/-1;
+
     text-align:center;
+
     padding:70px 20px;
+
     color:#a99b84;
+
 }
 
-/* ================= FOOTER ================= */
+
+.no-results h2{
+
+    color:var(--gold2);
+
+    margin-bottom:10px;
+
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
 
 footer{
-    border-top:1px solid var(--border);
+
+    border-top:
+        1px solid var(--border);
+
     padding:50px 22px;
+
     text-align:center;
+
     color:#91846f;
+
     background:#090806;
+
 }
+
 
 footer strong{
+
     color:var(--gold2);
-    font-family:"Playfair Display",serif;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
     font-size:20px;
+
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
 
 @media(max-width:1000px){
+
     .grid{
-        grid-template-columns:repeat(3,1fr);
+
+        grid-template-columns:
+            repeat(3,1fr);
+
     }
+
 }
+
 
 @media(max-width:720px){
 
     .nav-links{
+
         display:none;
+
     }
+
 
     .hero{
+
         min-height:500px;
+
     }
+
 
     .hero h1{
+
         font-size:50px;
+
     }
+
 
     .hero p{
+
         font-size:15px;
+
     }
+
 
     .grid{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
         gap:12px;
+
     }
 
+
     .card-image{
+
         height:150px;
+
     }
+
 }
+
 
 @media(max-width:480px){
 
     .grid{
+
         grid-template-columns:1fr;
+
     }
+
 
     .hero h1{
+
         font-size:43px;
+
     }
 
+
     .intro h2{
+
         font-size:30px;
+
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <nav class="navbar">
-<div class="nav-inner">
 
-<a href="index.html" class="brand">
-The Sanatan Hindu
-</a>
+    <div class="nav-inner">
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="deities.html">Deities</a></li>
-<li><a href="festival.html">Festivals</a></li>
-<li><a href="calendar.html">Calendar</a></li>
-<li><a href="temples.html">Temples</a></li>
-</ul>
+        <a
+            href="index.html"
+            class="brand">
 
-</div>
+            The Sanatan Hindu
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="deities.html">
+                    Deities
+                </a>
+            </li>
+
+            <li>
+                <a href="festival.html">
+                    Festivals
+                </a>
+            </li>
+
+            <li>
+                <a href="calendar.html">
+                    Calendar
+                </a>
+            </li>
+
+            <li>
+                <a href="temples.html">
+                    Temples
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="eyebrow">
-The Living World of Sanatana Tradition
-</div>
+        <div class="eyebrow">
 
-<h1>
-Prani <span>Jagat</span>
-</h1>
+            The Living World of Sanatana Tradition
 
-<p>
-Animals, birds, insects and aquatic life in Hindu scriptures,
-mythology, symbolism, Indian traditions and the natural world.
-</p>
+        </div>
 
-<div class="hero-note">
-A scholarly catalogue — not every species listed is considered sacred.
-</div>
 
-</div>
+        <h1>
+
+            Prani
+            <span>Jagat</span>
+
+        </h1>
+
+
+        <p>
+
+            Animals, birds, insects and aquatic life
+            in Hindu scriptures, mythology, symbolism,
+            Indian traditions and the natural world.
+
+        </p>
+
+
+        <div class="hero-note">
+
+            A scholarly catalogue — not every species
+            listed is considered sacred.
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- ================= INTRO ================= -->
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
 <section class="intro">
 
-<h2>জীবজগত ও সনাতন ঐতিহ্য</h2>
+    <h2>
+        জীবজগত ও সনাতন ঐতিহ্য
+    </h2>
 
-<p>
-হিন্দু ধর্মগ্রন্থ, মহাকাব্য, পুরাণ, লোকাচার ও ভারতীয় সাংস্কৃতিক
-ঐতিহ্যে অসংখ্য প্রাণীর উল্লেখ পাওয়া যায়। কোনো প্রাণী দেবতার
-বাহন, কোনোটি পৌরাণিক প্রতীক, আবার কোনোটি প্রাচীন ভারতীয়
-প্রকৃতি ও জীবনের অংশ হিসেবে এসেছে।
-</p>
+
+    <p>
+
+        হিন্দু ধর্মগ্রন্থ, মহাকাব্য, পুরাণ, লোকাচার
+        ও ভারতীয় সাংস্কৃতিক ঐতিহ্যে অসংখ্য প্রাণীর
+        উল্লেখ পাওয়া যায়। কোনো প্রাণী দেবতার বাহন,
+        কোনোটি পৌরাণিক প্রতীক, আবার কোনোটি প্রাচীন
+        ভারতীয় প্রকৃতি ও জীবনের অংশ হিসেবে এসেছে।
+
+    </p>
 
 </section>
 
 
-<!-- ================= CONTROLS ================= -->
+<!-- =====================================================
+     CONTROLS
+===================================================== -->
 
 <section class="controls">
 
-<div class="search-box">
+    <div class="search-box">
 
-<input
-type="search"
-id="search"
-placeholder="Search animal, bird, insect or fish..."
-aria-label="Search Prani Jagat">
+        <input
+            type="search"
+            id="search"
+            placeholder="Search animal, bird, insect or fish..."
+            aria-label="Search Prani Jagat">
 
-</div>
+    </div>
 
-<div class="filters">
 
-<button class="filter active" data-category="all">
-All
-</button>
+    <div class="filters">
 
-<button class="filter" data-category="animal">
-Animals
-</button>
+        <button
+            class="filter active"
+            data-category="all">
 
-<button class="filter" data-category="bird">
-Birds
-</button>
+            All
 
-<button class="filter" data-category="insect">
-Insects & Arthropods
-</button>
+        </button>
 
-<button class="filter" data-category="fish">
-Fish & Aquatic Life
-</button>
 
-</div>
+        <button
+            class="filter"
+            data-category="animal">
 
-<div class="stats" id="stats">
-Showing 400 entries
-</div>
+            Animals
+
+        </button>
+
+
+        <button
+            class="filter"
+            data-category="bird">
+
+            Birds
+
+        </button>
+
+
+        <button
+            class="filter"
+            data-category="insect">
+
+            Insects & Arthropods
+
+        </button>
+
+
+        <button
+            class="filter"
+            data-category="fish">
+
+            Fish & Aquatic Life
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="stats"
+        id="stats">
+
+        Loading entries...
+
+    </div>
 
 </section>
 
 
-<!-- ================= DATA GRID ================= -->
+<!-- =====================================================
+     DATABASE GRID
+===================================================== -->
 
-<main class="grid" id="grid"></main>
+<main
+    class="grid"
+    id="grid">
+
+</main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-<strong>The Sanatan Hindu</strong>
+    <strong>
+        The Sanatan Hindu
+    </strong>
 
-<p>
-History • Religion • Philosophy • Culture • Civilisation
-</p>
 
-<p>
-© 2026 The Sanatan Hindu
-</p>
+    <p>
+
+        History • Religion • Philosophy • Culture • Civilisation
+
+    </p>
+
+
+    <p>
+
+        © 2026 The Sanatan Hindu
+
+    </p>
 
 </footer>
 
 
+
 <script>
 
-/*
-==========================================================
-PRANI JAGAT DATABASE
-==========================================================
+/* ======================================================
+   PRANI JAGAT DATABASE
+====================================================== */
 
-Important editorial note:
 
-The catalogue combines:
-1. Animals known from Hindu scriptures and mythology
-2. Animals associated with Hindu deities and symbolism
-3. Species known from ancient Indian cultural context
-4. South Asian fauna relevant to the historical environment
-
-Not every species below is "sacred".
-The site deliberately avoids making that claim.
-==========================================================
-*/
-
+/* ======================================================
+   ANIMALS
+====================================================== */
 
 const animals = [
 
@@ -663,6 +1224,10 @@ const animals = [
 ];
 
 
+/* ======================================================
+   BIRDS
+====================================================== */
+
 const birds = [
 
 ["Peacock","ময়ূর"],
@@ -745,13 +1310,12 @@ const birds = [
 ["Woodpecker","কাঠঠোকরা"],
 ["Barbet","বসন্তবৌরি"],
 ["Coppersmith Barbet","বসন্তবৌরি"],
-["Bee-eater","মৌমাছিখেকো পাখি"],
 ["Sunbird","মধুপায়ী পাখি"],
 ["Tailorbird","টুনটুনি"],
 ["Weaver Bird","বাবুই"],
 ["Baya Weaver","বাবুই পাখি"],
 ["Swallow","আবাবিল"],
-["Swift","শঙ্খচিলজাতীয় দ্রুতগামী পাখি"],
+["Swift","দ্রুতগামী পাখি"],
 ["Nightjar","নাইটজার"],
 ["Hoopoe","হুদহুদ"],
 ["Woodcock","উডকক"],
@@ -773,6 +1337,10 @@ const birds = [
 
 ];
 
+
+/* ======================================================
+   INSECTS & ARTHROPODS
+====================================================== */
 
 const insects = [
 
@@ -819,7 +1387,7 @@ const insects = [
 ["Mantis","প্রার্থনাকারী ম্যান্টিস"],
 ["Stick Insect","লাঠি পোকা"],
 ["Leaf Insect","পাতা পোকা"],
-["Cicada","ঝিঁঝিঁ/সিকাডা"],
+["Cicada","সিকাডা"],
 ["Aphid","জাবপোকা"],
 ["Whitefly","সাদা মাছি"],
 ["Mealybug","মিলিবাগ"],
@@ -883,6 +1451,10 @@ const insects = [
 ];
 
 
+/* ======================================================
+   FISH & AQUATIC LIFE
+====================================================== */
+
 const fish = [
 
 ["Rohu","রুই"],
@@ -939,7 +1511,6 @@ const fish = [
 ["Three-spot Gourami","থ্রি-স্পট গৌরামি"],
 ["Kissing Gourami","কিসিং গৌরামি"],
 ["Betta","বেটা মাছ"],
-["Climbing Perch","কই"],
 ["Glass Fish","কাচকি"],
 ["Kachki","কাচকি"],
 ["Loach","লোচ"],
@@ -1002,166 +1573,557 @@ const fish = [
 
 const database = [
 
-...animals.map(x => ({
-    name:x[0],
-    bn:x[1],
-    category:"animal"
-})),
+    ...animals.map(x => ({
+        name:x[0],
+        bn:x[1],
+        category:"animal"
+    })),
 
-...birds.map(x => ({
-    name:x[0],
-    bn:x[1],
-    category:"bird"
-})),
+    ...birds.map(x => ({
+        name:x[0],
+        bn:x[1],
+        category:"bird"
+    })),
 
-...insects.map(x => ({
-    name:x[0],
-    bn:x[1],
-    category:"insect"
-})),
+    ...insects.map(x => ({
+        name:x[0],
+        bn:x[1],
+        category:"insect"
+    })),
 
-...fish.map(x => ({
-    name:x[0],
-    bn:x[1],
-    category:"fish"
-}))
+    ...fish.map(x => ({
+        name:x[0],
+        bn:x[1],
+        category:"fish"
+    }))
 
 ];
 
 
 /* ======================================================
-   IMAGE SYSTEM
-======================================================
-
-   Uses Unsplash Source-style remote images based on
-   search keywords.
-
-   If an image cannot be loaded, a dark fallback is used.
+   WIKIPEDIA IMAGE SYSTEM
 ====================================================== */
 
-function imageURL(name){
+const imageCache = new Map();
 
-    const query=encodeURIComponent(
-        name.toLowerCase()+" wildlife nature photography"
-    );
 
-    return `https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=900&q=80`;
+/* Correct some Wikipedia search names */
+
+const wikiNames = {
+
+    "Blackbuck":
+        "Blackbuck",
+
+    "Brahminy Kite":
+        "Brahminy kite",
+
+    "Hanuman Langur":
+        "Gray langur",
+
+    "Lion-tailed Macaque":
+        "Lion-tailed macaque",
+
+    "Fishing Cat":
+        "Fishing cat",
+
+    "Jungle Cat":
+        "Jungle cat",
+
+    "Rusty-spotted Cat":
+        "Rusty-spotted cat",
+
+    "Flying Fox":
+        "Indian flying fox",
+
+    "Ganges River Dolphin":
+        "Ganges river dolphin",
+
+    "Ganges Shark":
+        "Ganges shark",
+
+    "Indian Roller":
+        "Indian roller",
+
+    "Asian Paradise Flycatcher":
+        "Indian paradise flycatcher",
+
+    "Rose-ringed Parakeet":
+        "Rose-ringed parakeet",
+
+    "Alexandrine Parakeet":
+        "Alexandrine parakeet",
+
+    "Great Hornbill":
+        "Great hornbill",
+
+    "Indian Grey Hornbill":
+        "Indian grey hornbill",
+
+    "Red Junglefowl":
+        "Red junglefowl",
+
+    "Baya Weaver":
+        "Baya weaver",
+
+    "Coppersmith Barbet":
+        "Coppersmith barbet",
+
+    "Olive Ridley Turtle":
+        "Olive ridley sea turtle",
+
+    "Leatherback Turtle":
+        "Leatherback sea turtle",
+
+    "Hawksbill Turtle":
+        "Hawksbill sea turtle"
+
+};
+
+
+/* ======================================================
+   GET WIKIPEDIA IMAGE
+====================================================== */
+
+async function getAnimalImage(name){
+
+    if(imageCache.has(name)){
+
+        return imageCache.get(name);
+
+    }
+
+
+    const searchName =
+        wikiNames[name] || name;
+
+
+    try{
+
+        /*
+         * Wikipedia API search.
+         * This is more reliable than assuming
+         * a Wikipedia article title.
+         */
+
+        const api =
+            "https://en.wikipedia.org/w/api.php" +
+            "?action=query" +
+            "&generator=search" +
+            "&gsrsearch=" +
+            encodeURIComponent(searchName) +
+            "&gsrnamespace=0" +
+            "&gsrlimit=1" +
+            "&prop=pageimages" +
+            "&piprop=thumbnail" +
+            "&pithumbsize=900" +
+            "&format=json" +
+            "&origin=*";
+
+
+        const response =
+            await fetch(api);
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Wikipedia request failed"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if(
+            data.query &&
+            data.query.pages
+        ){
+
+            const pages =
+                Object.values(
+                    data.query.pages
+                );
+
+
+            if(
+                pages.length &&
+                pages[0].thumbnail &&
+                pages[0].thumbnail.source
+            ){
+
+                const image =
+                    pages[0].thumbnail.source;
+
+
+                imageCache.set(
+                    name,
+                    image
+                );
+
+
+                return image;
+
+            }
+
+        }
+
+    }
+
+    catch(error){
+
+        console.warn(
+            "Could not load image:",
+            name
+        );
+
+    }
+
+
+    return null;
+
 }
 
 
 /* ======================================================
-   CATEGORY LABEL
+   FALLBACK IMAGE
+====================================================== */
+
+function fallbackImage(category){
+
+    const icons = {
+
+        animal:"🐘",
+
+        bird:"🦚",
+
+        insect:"🦋",
+
+        fish:"🐟"
+
+    };
+
+
+    const icon =
+        icons[category] || "🌿";
+
+
+    const svg = `
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="900"
+            height="500"
+            viewBox="0 0 900 500">
+
+            <defs>
+
+                <linearGradient
+                    id="g"
+                    x1="0"
+                    x2="1"
+                    y1="0"
+                    y2="1">
+
+                    <stop
+                        offset="0%"
+                        stop-color="#21170d"/>
+
+                    <stop
+                        offset="100%"
+                        stop-color="#0c0906"/>
+
+                </linearGradient>
+
+            </defs>
+
+
+            <rect
+                width="900"
+                height="500"
+                fill="url(#g)"/>
+
+
+            <text
+                x="450"
+                y="280"
+                text-anchor="middle"
+                font-size="170">
+
+                ${icon}
+
+            </text>
+
+        </svg>
+
+    `;
+
+
+    return "data:image/svg+xml;charset=UTF-8," +
+        encodeURIComponent(svg);
+
+}
+
+
+/* ======================================================
+   CATEGORY NAME
 ====================================================== */
 
 function categoryName(category){
 
-    const names={
-        animal:"Animal",
-        bird:"Bird",
-        insect:"Insect / Arthropod",
-        fish:"Fish / Aquatic"
+    const names = {
+
+        animal:
+            "Animal",
+
+        bird:
+            "Bird",
+
+        insect:
+            "Insect / Arthropod",
+
+        fish:
+            "Fish / Aquatic"
+
     };
 
-    return names[category] || category;
+
+    return names[category] ||
+        category;
+
 }
+
+
+/* ======================================================
+   DOM
+====================================================== */
+
+const grid =
+    document.getElementById("grid");
+
+
+const search =
+    document.getElementById("search");
+
+
+const stats =
+    document.getElementById("stats");
+
+
+let currentCategory =
+    "all";
 
 
 /* ======================================================
    RENDER
 ====================================================== */
 
-const grid=document.getElementById("grid");
-const search=document.getElementById("search");
-const stats=document.getElementById("stats");
+async function render(){
 
-let currentCategory="all";
+    const keyword =
+        search.value
+        .toLowerCase()
+        .trim();
 
 
-function render(){
+    const filtered =
+        database.filter(item => {
 
-    const keyword=search.value.toLowerCase().trim();
+            const categoryMatch =
 
-    const filtered=database.filter(item=>{
+                currentCategory === "all" ||
 
-        const categoryMatch=
-            currentCategory==="all" ||
-            item.category===currentCategory;
+                item.category ===
+                    currentCategory;
 
-        const textMatch=
-            item.name.toLowerCase().includes(keyword) ||
-            item.bn.toLowerCase().includes(keyword);
 
-        return categoryMatch && textMatch;
+            const textMatch =
 
-    });
+                item.name
+                    .toLowerCase()
+                    .includes(keyword)
 
-    grid.innerHTML="";
+                ||
 
-    if(filtered.length===0){
+                item.bn
+                    .toLowerCase()
+                    .includes(keyword);
 
-        grid.innerHTML=`
-        <div class="no-results">
-            <h2>No result found</h2>
-            <p>Try another animal, bird, insect or fish name.</p>
-        </div>
+
+            return (
+                categoryMatch &&
+                textMatch
+            );
+
+        });
+
+
+    grid.innerHTML = "";
+
+
+    if(filtered.length === 0){
+
+        grid.innerHTML = `
+
+            <div class="no-results">
+
+                <h2>
+                    No result found
+                </h2>
+
+                <p>
+                    Try another animal,
+                    bird, insect or fish name.
+                </p>
+
+            </div>
+
         `;
 
-        stats.textContent="No entries found";
+
+        stats.textContent =
+            "No entries found";
+
+
         return;
+
     }
 
 
-    filtered.forEach((item,index)=>{
-
-        const card=document.createElement("article");
-
-        card.className="card";
-
-        const image=imageURL(item.name);
-
-        card.innerHTML=`
-
-        <div class="card-image">
-
-            <img
-            src="${image}"
-            alt="${item.name}"
-            loading="lazy"
-            onerror="this.style.display='none';"
-            >
-
-        </div>
-
-        <div class="card-body">
-
-            <span class="badge">
-                ${categoryName(item.category)}
-            </span>
-
-            <h3>
-                ${item.name}
-            </h3>
-
-            <div class="bengali">
-                ${item.bn}
-            </div>
-
-            <p>
-                Recorded in the Prani Jagat educational
-                catalogue of The Sanatan Hindu.
-            </p>
-
-        </div>
-
-        `;
-
-        grid.appendChild(card);
-
-    });
-
-
-    stats.textContent=
+    stats.textContent =
         `Showing ${filtered.length} of ${database.length} entries`;
+
+
+    /*
+     * Create cards immediately.
+     */
+
+    filtered.forEach(
+        (item,index) => {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "card";
+
+
+            card.innerHTML = `
+
+                <div
+                    class="card-image"
+                    id="image-box-${index}">
+
+                    <div class="image-loading">
+
+                        <div class="loader"></div>
+
+                        <span>
+                            Loading image...
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <span class="badge">
+
+                        ${categoryName(
+                            item.category
+                        )}
+
+                    </span>
+
+
+                    <h3>
+
+                        ${item.name}
+
+                    </h3>
+
+
+                    <div class="bengali">
+
+                        ${item.bn}
+
+                    </div>
+
+
+                    <p>
+
+                        Recorded in the
+                        Prani Jagat educational
+                        catalogue of
+                        The Sanatan Hindu.
+
+                    </p>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(card);
+
+
+            /*
+             * Load unique image
+             */
+
+            getAnimalImage(item.name)
+                .then(image => {
+
+                    const box =
+                        document.getElementById(
+                            `image-box-${index}`
+                        );
+
+
+                    if(!box){
+
+                        return;
+
+                    }
+
+
+                    const finalImage =
+                        image ||
+                        fallbackImage(
+                            item.category
+                        );
+
+
+                    box.innerHTML = `
+
+                        <img
+
+                            src="${finalImage}"
+
+                            alt="${item.name}"
+
+                            loading="lazy"
+
+                            onerror="
+                                this.onerror=null;
+                                this.src='${fallbackImage(item.category)}';
+                            "
+
+                        >
+
+                    `;
+
+                });
+
+        }
+    );
 
 }
 
@@ -1170,33 +2132,53 @@ function render(){
    FILTER BUTTONS
 ====================================================== */
 
-document.querySelectorAll(".filter").forEach(button=>{
+document
+    .querySelectorAll(".filter")
+    .forEach(button => {
 
-    button.addEventListener("click",()=>{
+        button.addEventListener(
+            "click",
+            () => {
 
-        document
-        .querySelectorAll(".filter")
-        .forEach(btn=>btn.classList.remove("active"));
+                document
+                    .querySelectorAll(".filter")
+                    .forEach(btn => {
 
-        button.classList.add("active");
+                        btn.classList
+                            .remove("active");
 
-        currentCategory=button.dataset.category;
+                    });
 
-        render();
+
+                button.classList
+                    .add("active");
+
+
+                currentCategory =
+                    button.dataset.category;
+
+
+                render();
+
+            }
+        );
 
     });
-
-});
 
 
 /* ======================================================
    SEARCH
 ====================================================== */
 
-search.addEventListener("input",render);
+search.addEventListener(
+    "input",
+    render
+);
 
 
-/* INITIAL LOAD */
+/* ======================================================
+   INITIAL LOAD
+====================================================== */
 
 render();
 
