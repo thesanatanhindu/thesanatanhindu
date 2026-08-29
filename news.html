@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News | The Sanatan Hindu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans Bengali", Arial, sans-serif;
+      background: #f8f5ef;
+      color: #222;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #8b0000, #b8860b);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .om {
+      font-size: 30px;
+      margin-right: 8px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #ffe082;
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(rgba(80,0,0,0.65), rgba(80,0,0,0.65)),
+        url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    /* CATEGORY */
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 25px 15px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .categories button {
+      border: none;
+      background: #8b0000;
+      color: white;
+      padding: 9px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .categories button:hover {
+      background: #b8860b;
+    }
+
+    /* MAIN */
+    .container {
+      width: 88%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .section-title {
+      border-left: 5px solid #b8860b;
+      padding-left: 12px;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #8b0000;
+    }
+
+    /* NEWS GRID */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 18px;
+    }
+
+    .category {
+      display: inline-block;
+      color: #8b0000;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .news-content h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .news-content p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .date {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 60px;
+      background: #350000;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer h2 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        width: 92%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <span class="om">ॐ</span>
+      The Sanatan Hindu
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="deities.html">Deities</a>
+      <a href="temples.html">Temples</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>News</h1>
+      <p>Stay informed. Know the world around you.</p>
+    </div>
+  </section>
+
+
+  <!-- CATEGORIES -->
+  <div class="categories">
+    <button>All News</button>
+    <button>Bangladesh</button>
+    <button>India</button>
+    <button>World</button>
+    <button>Sanatan</button>
+    <button>History</button>
+    <button>Culture</button>
+  </div>
+
+
+  <!-- NEWS -->
+  <main class="container">
+
+    <h2 class="section-title">Latest News</h2>
+
+    <div class="news-grid">
+
+      <!-- NEWS 1 -->
+      <article class="news-card">
+        <img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=900&q=80">
+
+        <div class="news-content">
+          <span class="category">SANATAN</span>
+
+          <h3>
+            Sanatan traditions and cultural heritage in the modern world
+          </h3>
+
+          <p>
+            Discover important stories, traditions and cultural developments
+            connected with Sanatan heritage.
+          </p>
+
+          <div class="date">
+            August 30, 2026
+          </div>
+        </div>
+      </article>
+
+
+      <!-- NEWS 2 -->
+      <article class="news-card">
+        <img src="https://images.unsplash.com/photo-1524498250077-390f9e378fc0?auto=format&fit=crop&w=900&q=80">
+
+        <div class="news-content">
+          <span class="category">INDIA</span>
+
+          <h3>
+            India's history, heritage and cultural landscape
+          </h3>
+
+          <p>
+            Explore current developments and stories related to India's
+            historical and cultural heritage.
+          </p>
+
+          <div class="date">
+            August 30, 2026
+          </div>
+        </div>
+      </article>
+
+
+      <!-- NEWS 3 -->
+      <article class="news-card">
+        <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=900&q=80">
+
+        <div class="news-content">
+          <span class="category">WORLD</span>
+
+          <h3>
+            Important events happening around the world
+          </h3>
+
+          <p>
+            A simple overview of major international developments and
+            stories from around the world.
+          </p>
+
+          <div class="date">
+            August 30, 2026
+          </div>
+        </div>
+      </article>
+
+
+      <!-- NEWS 4 -->
+      <article class="news-card">
+        <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=900&q=80">
+
+        <div class="news-content">
+          <span class="category">HISTORY</span>
+
+          <h3>
+            Stories from the pages of history
+          </h3>
+
+          <p>
+            Learn about important historical events, personalities and
+            civilizations that shaped our world.
+          </p>
+
+          <div class="date">
+            August 30, 2026
+          </div>
+        </div>
+      </article>
+
+
+      <!-- NEWS 5 -->
+      <article class="news-card">
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80">
+
+        <div class="news-content">
+          <span class="category">CULTURE</span>
+
+          <h3>
+            Culture, festivals and traditions
+          </h3>
+
+          <p>
+            Read stories about festivals, traditions, art and cultural
+            heritage from different parts of the world.
+          </p>
+
+          <div class="date">
+            August 30, 2026
+          </div>
+        </div>
+      </article>
+
+
+      <!-- NEWS 6 -->
+      <article class="news-card">
+        <img src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=900&q=80">
+
+        <div class="news-content">
+          <span class="category">BANGLADESH</span>
+
+          <h3>
+            Bangladesh: society, culture and heritage
+          </h3>
+
+          <p>
+            Stories about Bangladesh's society, cultural heritage and
+            historical identity.
+          </p>
+
+          <div class="date">
+            August 30, 2026
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <h2>ॐ The Sanatan Hindu</h2>
+    <p>Explore • Learn • Preserve • Share</p>
+    <br>
+    <p>© 2026 The Sanatan Hindu. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
